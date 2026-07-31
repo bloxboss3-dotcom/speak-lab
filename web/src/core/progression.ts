@@ -395,11 +395,20 @@ export function weeklyGoalIsMet(goal: WeeklyGoal): boolean {
   return goal.completed >= goal.target
 }
 
-/** Rolls the counter over when a new week starts. */
+/**
+ * Rolls the counter over when a new week starts.
+ *
+ * Compares the *week* the stored date falls in rather than the exact string, so
+ * a `weekStart` that was written as a mid-week timestamp doesn't silently reset
+ * the count on every read.
+ */
 export function rolledForward(goal: WeeklyGoal, date: Date): WeeklyGoal {
-  const currentWeek = startOfWeek(date).toISOString()
-  if (currentWeek === goal.weekStart) return goal
-  return { target: goal.target, completed: 0, weekStart: currentWeek }
+  const currentWeek = startOfWeek(date)
+  const storedWeek = startOfWeek(new Date(goal.weekStart))
+  if (Number.isFinite(storedWeek.getTime()) && storedWeek.getTime() === currentWeek.getTime()) {
+    return goal
+  }
+  return { target: goal.target, completed: 0, weekStart: currentWeek.toISOString() }
 }
 
 // MARK: - Calendar helpers

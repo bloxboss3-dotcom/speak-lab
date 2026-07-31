@@ -344,30 +344,43 @@ export function ConversationSession({
     }
     sessionRef.current = withAnxiety
 
-    update((current) => {
-      const withSession = upsertSession(current, withAnxiety)
-      const result = completeSession(withSession, {
-        session: withAnxiety,
-        scenario,
-        targetSkillID,
-        improved,
-        bonusObjectivesMet: objectiveMet ? 1 : 0,
-        ...(rubricRating ? { rubricRating } : {}),
-        ...(feedback?.optionalGoldenNugget ? { suggestedNugget: feedback.optionalGoldenNugget } : {}),
-      })
-      setRewards(result.rewards)
-      const targetSkill = findSkill(targetSkillID)
-      if (improved && targetSkill) {
-        return assignMission(
-          result.state,
-          targetSkillID,
-          `This week, use "${targetSkill.name}" in a real conversation. ${targetSkill.retryCue}`,
-        )
-      }
-      return result.state
+    // Computed outside the state updater rather than inside it: the reward
+    // rules also produce a summary to show, and an updater that has side
+    // effects runs twice under React's development double-invocation.
+    const result = completeSession(upsertSession(state, withAnxiety), {
+      session: withAnxiety,
+      scenario,
+      targetSkillID,
+      improved,
+      bonusObjectivesMet: objectiveMet ? 1 : 0,
+      ...(rubricRating ? { rubricRating } : {}),
+      ...(feedback?.optionalGoldenNugget ? { suggestedNugget: feedback.optionalGoldenNugget } : {}),
     })
+
+    const targetSkill = findSkill(targetSkillID)
+    const nextState =
+      improved && targetSkill
+        ? assignMission(
+            result.state,
+            targetSkillID,
+            `This week, use "${targetSkill.name}" in a real conversation. ${targetSkill.retryCue}`,
+          )
+        : result.state
+
+    setRewards(result.rewards)
+    update(() => nextState)
     setStage('summary')
-  }, [comparison, feedback, scenario, skill, objectiveMet, anxietyBefore, anxietyAfter, update])
+  }, [
+    state,
+    comparison,
+    feedback,
+    scenario,
+    skill,
+    objectiveMet,
+    anxietyBefore,
+    anxietyAfter,
+    update,
+  ])
 
   if (!skill || !scenario.character) {
     return (

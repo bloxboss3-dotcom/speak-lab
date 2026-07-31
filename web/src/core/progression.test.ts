@@ -256,4 +256,12 @@ describe('weekly goal', () => {
     expect(rolled.completed).toBe(0)
     expect(rolled.target).toBe(4)
   })
+
+  it('does not reset when weekStart was stored mid-week', () => {
+    // Comparing weeks rather than exact strings: a stored timestamp that is not
+    // precisely a Monday midnight must not wipe the count on every read.
+    const goal = { target: 4, completed: 3, weekStart: addDays(monday, 2).toISOString() }
+    expect(rolledForward(goal, addDays(monday, 3)).completed).toBe(3)
+    expect(rolledForward(goal, addDays(monday, 9)).completed).toBe(0)
+  })
 })

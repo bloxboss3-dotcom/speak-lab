@@ -236,33 +236,45 @@ export function SpeakingSession({
     }
     sessionRef.current = withAnxiety
 
-    update((current) => {
-      const withSession = upsertSession(current, withAnxiety)
-      const result = completeSession(withSession, {
-        session: withAnxiety,
-        scenario,
-        targetSkillID,
-        improved,
-        bonusObjectivesMet: claimedBonuses.size,
-        ...(rubricRating ? { rubricRating } : {}),
-        ...(feedback?.optionalGoldenNugget ? { suggestedNugget: feedback.optionalGoldenNugget } : {}),
-      })
-      setRewards(result.rewards)
-
-      // A real-world mission is only assigned once the behaviour has actually
-      // moved — otherwise it is homework on something not yet learned.
-      const targetSkill = findSkill(targetSkillID)
-      if (improved && targetSkill) {
-        return assignMission(
-          result.state,
-          targetSkillID,
-          `This week, use "${targetSkill.name}" once for real. ${targetSkill.retryCue} Come back and tell me what happened.`,
-        )
-      }
-      return result.state
+    // Computed outside the state updater rather than inside it: the reward
+    // rules also produce a summary to show, and an updater that has side
+    // effects runs twice under React's development double-invocation.
+    const result = completeSession(upsertSession(state, withAnxiety), {
+      session: withAnxiety,
+      scenario,
+      targetSkillID,
+      improved,
+      bonusObjectivesMet: claimedBonuses.size,
+      ...(rubricRating ? { rubricRating } : {}),
+      ...(feedback?.optionalGoldenNugget ? { suggestedNugget: feedback.optionalGoldenNugget } : {}),
     })
+
+    // A real-world mission is only assigned once the behaviour has actually
+    // moved — otherwise it is homework on something not yet learned.
+    const targetSkill = findSkill(targetSkillID)
+    const nextState =
+      improved && targetSkill
+        ? assignMission(
+            result.state,
+            targetSkillID,
+            `This week, use "${targetSkill.name}" once for real. ${targetSkill.retryCue} Come back and tell me what happened.`,
+          )
+        : result.state
+
+    setRewards(result.rewards)
+    update(() => nextState)
     setStage('summary')
-  }, [comparison, feedback, scenario, skill, anxietyBefore, anxietyAfter, claimedBonuses, update])
+  }, [
+    state,
+    comparison,
+    feedback,
+    scenario,
+    skill,
+    anxietyBefore,
+    anxietyAfter,
+    claimedBonuses,
+    update,
+  ])
 
   const continueFromComparison = useCallback(() => {
     if (!countsAsImprovement(comparison)) {
