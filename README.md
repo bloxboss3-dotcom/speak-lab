@@ -208,11 +208,12 @@ All four run on every push — see `.github/workflows/ci.yml`.
 
 ## Publishing to GitHub Pages
 
-The web app deploys itself. One manual step, once:
+The web app deploys itself. The workflow asks GitHub to enable Pages on its
+first run, so usually there is nothing to do. If it reports that Pages is not
+enabled, set it by hand — **Settings → Pages → Build and deployment → Source →
+GitHub Actions** — and re-run.
 
-**Settings → Pages → Build and deployment → Source → GitHub Actions.**
-
-After that, every push to `main` builds `web/` and publishes it to
+Every push to `main` builds `web/` and publishes it to
 `https://<owner>.github.io/<repo>/`. You can also trigger it by hand from the
 **Actions** tab → *Deploy web app to GitHub Pages* → *Run workflow*, which is
 useful for publishing a branch before it merges.
