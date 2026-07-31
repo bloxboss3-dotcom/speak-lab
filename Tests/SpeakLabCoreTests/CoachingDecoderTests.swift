@@ -1,5 +1,12 @@
 import XCTest
+// The same test suite runs in two places: `swift test` compiles Core as the
+// SpeakLabCore package, while the Xcode test target compiles those files into
+// the app module. This picks whichever exists.
+#if canImport(SpeakLabCore)
 @testable import SpeakLabCore
+#else
+@testable import SpeakLab
+#endif
 
 final class CoachingDecoderTests: XCTestCase {
 
