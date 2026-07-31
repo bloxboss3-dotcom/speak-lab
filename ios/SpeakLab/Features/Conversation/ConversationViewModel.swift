@@ -55,14 +55,15 @@ final class ConversationViewModel: ObservableObject {
     private let services: AppServices
     private let store: ProgressStore
     private var sessionRecord: PracticeSessionRecord?
-    private let keepRecordings: Bool
+
+    /// Read lazily; see the note on `SessionViewModel.keepRecordings`.
+    private var keepRecordings: Bool { store.profile().keepRecordings }
 
     init(scenario: Scenario, skill: MicroSkill, services: AppServices, store: ProgressStore) {
         self.scenario = scenario
         self.skill = skill
         self.services = services
         self.store = store
-        self.keepRecordings = store.profile().keepRecordings
     }
 
     var isRetry: Bool { runIndex > 0 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF991D045B3B3FEC0C77EBBF"
+               BlueprintIdentifier = "49515DB1FC7B8585B2D9A872"
                BuildableName = "SpeakLab.app"
                BlueprintName = "SpeakLab"
                ReferencedContainer = "container:SpeakLab.xcodeproj">
@@ -30,7 +30,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF991D045B3B3FEC0C77EBBF"
+            BlueprintIdentifier = "49515DB1FC7B8585B2D9A872"
             BuildableName = "SpeakLab.app"
             BlueprintName = "SpeakLab"
             ReferencedContainer = "container:SpeakLab.xcodeproj">
@@ -41,7 +41,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22FF4450CE465CF0D280AC6F"
+               BlueprintIdentifier = "07A2AB86F511C8E322B0751E"
                BuildableName = "SpeakLabTests.xctest"
                BlueprintName = "SpeakLabTests"
                ReferencedContainer = "container:SpeakLab.xcodeproj">
@@ -63,7 +63,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF991D045B3B3FEC0C77EBBF"
+            BlueprintIdentifier = "49515DB1FC7B8585B2D9A872"
             BuildableName = "SpeakLab.app"
             BlueprintName = "SpeakLab"
             ReferencedContainer = "container:SpeakLab.xcodeproj">
@@ -80,7 +80,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF991D045B3B3FEC0C77EBBF"
+            BlueprintIdentifier = "49515DB1FC7B8585B2D9A872"
             BuildableName = "SpeakLab.app"
             BlueprintName = "SpeakLab"
             ReferencedContainer = "container:SpeakLab.xcodeproj">

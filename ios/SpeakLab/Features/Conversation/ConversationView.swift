@@ -195,10 +195,10 @@ struct ConversationTranscriptView: View {
 
     @ObservedObject var model: ConversationViewModel
     @EnvironmentObject private var services: AppServices
+    /// See the note in AppServices: the recorder is observed directly.
+    @EnvironmentObject private var recorder: AudioRecorder
     @Binding var isTyping: Bool
     @FocusState private var inputFocused: Bool
-
-    private var recorder: AudioRecorder { services.recorder }
 
     var body: some View {
         VStack(spacing: 0) {

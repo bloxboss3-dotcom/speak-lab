@@ -1,8 +1,18 @@
+import Combine
 import Foundation
 import SwiftUI
 import UIKit
 
 /// Container for the long-lived services, injected once at the root.
+///
+/// `ObservableObject` does not observe nested observable objects, so a change
+/// inside `config`, `haptics` or `synthesizer` would never reach a view holding
+/// only `AppServices`. Their notifications are forwarded here.
+///
+/// `recorder` is deliberately *not* forwarded: it publishes level meters twenty
+/// times a second, and re-rendering every screen at that rate would be wasteful.
+/// It is injected into the environment separately so only the two views that
+/// draw it redraw.
 @MainActor
 final class AppServices: ObservableObject {
 
@@ -13,6 +23,8 @@ final class AppServices: ObservableObject {
     let player: AudioPlayer
     let haptics: Haptics
     let coach: Coach
+
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
         let config = AppConfig()
@@ -36,6 +48,14 @@ final class AppServices: ObservableObject {
                 return UnconfiguredCoachingService()
             }
         })
+
+        for child in [config.objectWillChange.eraseToAnyPublisher(),
+                      haptics.objectWillChange.eraseToAnyPublisher(),
+                      synthesizer.objectWillChange.eraseToAnyPublisher()] {
+            child
+                .sink { [weak self] _ in self?.objectWillChange.send() }
+                .store(in: &cancellables)
+        }
     }
 
     func refreshPermissions() {

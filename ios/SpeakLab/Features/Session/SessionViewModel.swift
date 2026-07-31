@@ -67,7 +67,11 @@ final class SessionViewModel: ObservableObject {
     private let services: AppServices
     private let store: ProgressStore
     private var sessionRecord: PracticeSessionRecord?
-    private let keepRecordings: Bool
+
+    /// Read lazily rather than in `init`: `profile()` inserts a row the first
+    /// time it runs, and doing that while SwiftUI is building a view is asking
+    /// for "modifying state during view update".
+    private var keepRecordings: Bool { store.profile().keepRecordings }
 
     init(
         scenario: Scenario,
@@ -83,7 +87,6 @@ final class SessionViewModel: ObservableObject {
         self.store = store
         self.isReview = isReview
         self.isTransferRun = isTransferRun
-        self.keepRecordings = store.profile().keepRecordings
     }
 
     // MARK: - Derived

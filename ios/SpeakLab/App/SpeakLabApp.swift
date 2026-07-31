@@ -27,6 +27,9 @@ struct SpeakLabApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(services)
+                // Injected separately so only the recording views redraw when
+                // the level meter ticks; see the note in AppServices.
+                .environmentObject(services.recorder)
                 .tint(Theme.Palette.accent)
                 .onAppear { services.refreshPermissions() }
         }

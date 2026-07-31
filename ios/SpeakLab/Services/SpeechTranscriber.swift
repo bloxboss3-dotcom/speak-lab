@@ -18,7 +18,7 @@ final class SpeechTranscriber: ObservableObject {
         case unavailable
     }
 
-    struct Result {
+    struct TranscriptionResult {
         let transcript: String
         let segments: [SpeechSegment]
         /// False when recognition had to run on Apple's servers.
@@ -78,7 +78,7 @@ final class SpeechTranscriber: ObservableObject {
         recognizer?.supportsOnDeviceRecognition ?? false
     }
 
-    func transcribe(url: URL) async throws -> Result {
+    func transcribe(url: URL) async throws -> TranscriptionResult {
         guard let recognizer, recognizer.isAvailable else {
             throw TranscriptionError.recognizerUnavailable
         }
@@ -123,7 +123,7 @@ final class SpeechTranscriber: ObservableObject {
             )
         }
 
-        return Result(transcript: transcript, segments: segments, ranOnDevice: onDevice)
+        return TranscriptionResult(transcript: transcript, segments: segments, ranOnDevice: onDevice)
     }
 
     /// Duration of a recorded file, used when transcription fails but the

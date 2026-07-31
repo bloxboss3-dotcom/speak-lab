@@ -10,10 +10,11 @@ struct SessionRecordView: View {
 
     @ObservedObject var model: SessionViewModel
     @EnvironmentObject private var services: AppServices
+    /// Observed directly rather than through `services` so the level meter's
+    /// twenty-times-a-second updates only redraw this screen.
+    @EnvironmentObject private var recorder: AudioRecorder
     @State private var hasStarted = false
     @State private var didAutoStop = false
-
-    private var recorder: AudioRecorder { services.recorder }
 
     private var limit: TimeInterval? { model.timeLimit }
 
