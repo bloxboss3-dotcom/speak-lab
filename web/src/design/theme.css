@@ -42,6 +42,12 @@
   --max-width: 560px;
 }
 
+/*
+ * Theme tokens are redefined in three places on purpose. The media query
+ * follows the operating system; the two data-theme selectors follow an explicit
+ * choice made in the page, and have to be able to override the media query in
+ * both directions. Components only ever read the tokens, never the raw values.
+ */
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #0c0e11;
@@ -59,6 +65,40 @@
     --warning-soft: #2a2314;
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 30px -20px rgba(0, 0, 0, 0.9);
   }
+}
+
+:root[data-theme='dark'] {
+  --paper: #0c0e11;
+  --surface: #15181d;
+  --surface-sunken: #1b1f25;
+  --ink: #f1efeb;
+  --ink-muted: #a2a8b0;
+  --ink-faint: #6d747d;
+  --hairline: #262b32;
+  --accent: #4ecfa8;
+  --accent-ink: #06231c;
+  --accent-soft: #14312a;
+  --recording: #ff6a5e;
+  --warning: #e0b45c;
+  --warning-soft: #2a2314;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 30px -20px rgba(0, 0, 0, 0.9);
+}
+
+:root[data-theme='light'] {
+  --paper: #faf9f7;
+  --surface: #ffffff;
+  --surface-sunken: #f2f0ec;
+  --ink: #14161a;
+  --ink-muted: #565c65;
+  --ink-faint: #8b9199;
+  --hairline: #e3e0da;
+  --accent: #0f6a56;
+  --accent-ink: #ffffff;
+  --accent-soft: #e4f0ec;
+  --recording: #c2382f;
+  --warning: #8a6410;
+  --warning-soft: #fbf3e0;
+  --shadow-card: 0 1px 2px rgba(20, 22, 26, 0.04), 0 8px 24px -16px rgba(20, 22, 26, 0.24);
 }
 
 * {
