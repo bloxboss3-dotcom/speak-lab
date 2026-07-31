@@ -8,7 +8,7 @@ import { analyzeAttempt, compareAttempts } from '../../services/coach'
 import { assignMission, completeSession, startSession, upsertSession } from '../../core/state'
 import type { AttemptRecord, SessionRewards, SessionRecord } from '../../core/state'
 import { skill as findSkill, transferScenarioAfter, scenario as findScenario } from '../../core/content'
-import { countsAsImprovement, EMPTY_METRICS } from '../../core/types'
+import { countsAsImprovement } from '../../core/types'
 import type { AttemptComparison, CoachFeedback, MicroSkill, Scenario, SpeakingMetrics } from '../../core/types'
 import {
   AnxietyRating,
@@ -757,5 +757,3 @@ function RecordStage({
     </div>
   )
 }
-
-export const emptyAttemptMetrics = EMPTY_METRICS

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSpeakLab } from '../../app/store'
-import { Button, Card, Notice, SectionLabel, TypingDots, formatDuration } from '../../design/components'
+import { Button, Card, Notice, SectionLabel, TypingDots } from '../../design/components'
 import { computeConversationMetrics, estimatedSpeechDuration } from '../../core/conversationMetrics'
 import { normalizedTokens } from '../../core/text'
 import { segmentsFrom } from '../../services/recorder'
@@ -648,6 +648,3 @@ function CharacterReveal({
     </Card>
   )
 }
-
-export const conversationTurnBudget = TURN_BUDGET
-export const conversationTurnDuration = formatDuration
