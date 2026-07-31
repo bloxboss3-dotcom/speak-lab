@@ -187,7 +187,7 @@ Or press **⌘U** in Xcode to run the same suite against the app target.
 **Web core** (the same suite, ported):
 
 ```bash
-cd web && npm test       # 151 tests
+cd web && npm test       # 152 tests
 ```
 
 **Proxy:**
