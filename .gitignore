@@ -1,0 +1,26 @@
+# --- Secrets (never commit) ---
+ios/SpeakLab/Config/Secrets.xcconfig
+ios/SpeakLab/Config/*.local.*
+server/.env
+server/.env.*
+!server/.env.example
+*.pem
+*.p12
+*.mobileprovision
+
+# --- Swift / Xcode ---
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+.DS_Store
+
+# --- Node ---
+node_modules/
+dist/
+npm-debug.log*
+
+# --- Tooling scratch ---
+.parse-check/
