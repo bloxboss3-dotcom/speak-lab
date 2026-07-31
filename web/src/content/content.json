@@ -1,0 +1,1740 @@
+{
+  "formatVersion" : 1,
+  "nuggets" : [
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "understand-before-persuade",
+        "insight" : "Persuasion that starts before diagnosis is guessing. The first job is to find out what this particular person is weighing up — then you only need one argument instead of six.",
+        "title" : "Understand before you persuade"
+      },
+      "relatedSkillIDs" : [
+        "diagnose-first",
+        "open-question",
+        "discovery-before-pitch"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "connect-to-their-values",
+        "insight" : "People move toward their own reasons, not yours. Quote their words back and attach your recommendation to those, and the decision becomes theirs to defend.",
+        "title" : "Connect to what they already care about"
+      },
+      "relatedSkillIDs" : [
+        "link-to-their-value",
+        "their-language-benefits"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "evidence-beats-adjectives",
+        "insight" : "\"Amazing\" is your opinion; \"eleven of our teens taught a class this year\" is a fact they can check. Facts survive the car-park conversation with their partner. Adjectives don't.",
+        "title" : "Evidence beats adjectives"
+      },
+      "relatedSkillIDs" : [
+        "evidence-not-adjectives",
+        "concrete-story"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "strongest-reasonable-concern",
+        "insight" : "Everyone can hear it when you answer the easy version of an objection. Naming their actual, strongest concern out loud costs you nothing and buys the rest of the conversation.",
+        "title" : "Answer the strongest concern, not the easiest"
+      },
+      "relatedSkillIDs" : [
+        "answer-the-real-one",
+        "ask-what-behind-it"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "preserve-autonomy",
+        "insight" : "Pressure produces agreement that reverses within a day. Saying plainly that no is a fine answer is both the honest move and the one that produces decisions that hold.",
+        "title" : "Leave them their choice"
+      },
+      "relatedSkillIDs" : [
+        "preserve-autonomy",
+        "confirm-fit"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "persuasion",
+        "id" : "make-the-step-easy",
+        "insight" : "\"Let me know\" transfers all the work to them and quietly dies. \"Come Thursday at five, I'll hold a spot\" gets done, because there is nothing left to decide.",
+        "title" : "Make the next step small and specific"
+      },
+      "relatedSkillIDs" : [
+        "specific-close",
+        "clear-ask"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "sales",
+        "id" : "diagnose-before-present",
+        "insight" : "A doctor who prescribes before examining is a bad doctor, whatever the prescription. Two real questions before you describe anything you offer changes the whole conversation.",
+        "title" : "Diagnose before you present"
+      },
+      "relatedSkillIDs" : [
+        "discovery-before-pitch",
+        "diagnose-first"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "sales",
+        "id" : "problem-outcome-barrier",
+        "insight" : "Three things make a recommendation possible: what's wrong now, what they want instead, and what's stopping them. Miss the barrier and you'll solve a problem they weren't blocked on.",
+        "title" : "Problem, outcome, barrier"
+      },
+      "relatedSkillIDs" : [
+        "discovery-before-pitch",
+        "open-question",
+        "reflect-back"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "sales",
+        "id" : "objections-are-information",
+        "insight" : "\"It's expensive\" is not a no — it's the first sentence of a paragraph you haven't heard yet. Ask what's behind it and the real objection is usually something you can actually solve.",
+        "title" : "An objection is information"
+      },
+      "relatedSkillIDs" : [
+        "ask-what-behind-it",
+        "answer-the-real-one",
+        "no-defensive-tone"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "sales",
+        "id" : "confirm-fit-not-pressure",
+        "insight" : "Checking out loud whether this is genuinely right — including saying when it isn't — loses you the sales you'd have lost anyway in six weeks, and wins the ones worth having.",
+        "title" : "Confirm fit rather than pressing for yes"
+      },
+      "relatedSkillIDs" : [
+        "confirm-fit",
+        "preserve-autonomy"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "charisma",
+        "id" : "pause-instead-of-filling",
+        "insight" : "A one-second silence feels like five to you and like nothing to everyone else. The pause is heard as control; the \"um\" is heard as searching. It is the cheapest upgrade available.",
+        "title" : "Pause instead of filling"
+      },
+      "relatedSkillIDs" : [
+        "deliberate-pause",
+        "hold-the-silence"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "charisma",
+        "id" : "vivid-over-vague",
+        "insight" : "\"They build resilience\" is forgotten before you finish saying it. \"She held the plank while the whole class counted her to sixty\" gets repeated at the school gate.",
+        "title" : "Vivid beats vague"
+      },
+      "relatedSkillIDs" : [
+        "concrete-story",
+        "evidence-not-adjectives",
+        "plain-words"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "charisma",
+        "id" : "warmth-plus-conviction",
+        "insight" : "Warmth alone reads as pleasant and forgettable; conviction alone reads as pushy. The combination — clearly on their side, and clear about what you think — is what people describe as presence.",
+        "title" : "Warmth and conviction together"
+      },
+      "relatedSkillIDs" : [
+        "acknowledge-before-answer",
+        "clear-ask",
+        "stay-in-the-room"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "charisma",
+        "id" : "vary-deliberately",
+        "insight" : "If every sentence arrives at the same speed, the listener has no way to tell which one was the point. Slowing down for one sentence marks it more clearly than any amount of emphasis.",
+        "title" : "Change speed on the line that matters"
+      },
+      "relatedSkillIDs" : [
+        "pace-shift",
+        "land-the-line"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "charisma",
+        "id" : "speak-from-intention",
+        "insight" : "Trying to seem confident splits your attention between the message and yourself. Deciding what you want the listener to do, and aiming at that, does the same job with none of the effort.",
+        "title" : "Speak from an intention, not a performance"
+      },
+      "relatedSkillIDs" : [
+        "speak-to-one-person",
+        "recover-out-loud",
+        "hold-the-opening"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "structure",
+        "id" : "signpost-frees-attention",
+        "insight" : "\"Three things\" lets a listener stop wondering how long this will take and start listening. It costs two words and buys the whole talk.",
+        "title" : "Signposting frees their attention"
+      },
+      "relatedSkillIDs" : [
+        "signpost",
+        "rule-of-three"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "listening",
+        "id" : "silence-does-the-work",
+        "insight" : "The most useful thing someone says is usually the thing they say after the silence you were tempted to fill. Ask, then wait — even when it's uncomfortable, especially then.",
+        "title" : "The answer comes after the pause"
+      },
+      "relatedSkillIDs" : [
+        "hold-the-silence",
+        "open-question",
+        "one-question-at-a-time"
+      ]
+    },
+    {
+      "nugget" : {
+        "category" : "listening",
+        "id" : "acknowledge-first",
+        "insight" : "An answer that arrives before the person feels heard is experienced as a rebuttal, however correct it is. One sentence of acknowledgment makes the same answer land completely differently.",
+        "title" : "Acknowledge before you answer"
+      },
+      "relatedSkillIDs" : [
+        "acknowledge-before-answer",
+        "reflect-back",
+        "stay-in-the-room"
+      ]
+    }
+  ],
+  "paths" : [
+    {
+      "accentHex" : "#E2B04A",
+      "id" : "clear-concise",
+      "name" : "Clear and Concise",
+      "skillIDs" : [
+        "bottom-line-first",
+        "one-idea-per-sentence",
+        "cut-the-runway",
+        "plain-words"
+      ],
+      "symbol" : "scissors",
+      "tagline" : "Say the thing, then stop.",
+      "unlocksAtLevel" : 1
+    },
+    {
+      "accentHex" : "#6FA8DC",
+      "id" : "structure-story",
+      "name" : "Structure and Story",
+      "skillIDs" : [
+        "signpost",
+        "rule-of-three",
+        "concrete-story",
+        "callback-close"
+      ],
+      "symbol" : "square.stack.3d.up",
+      "tagline" : "Give people something to hold onto.",
+      "unlocksAtLevel" : 1
+    },
+    {
+      "accentHex" : "#C98BDB",
+      "id" : "vocal-delivery",
+      "name" : "Vocal Delivery",
+      "skillIDs" : [
+        "deliberate-pause",
+        "pace-shift",
+        "land-the-line"
+      ],
+      "symbol" : "waveform",
+      "tagline" : "Pace, pause, emphasis — used on purpose.",
+      "unlocksAtLevel" : 2
+    },
+    {
+      "accentHex" : "#E28F6F",
+      "id" : "warmth-connection",
+      "name" : "Warmth and Connection",
+      "skillIDs" : [
+        "name-and-notice",
+        "acknowledge-before-answer",
+        "generous-assumption"
+      ],
+      "symbol" : "heart.text.square",
+      "tagline" : "Be someone people want to talk to.",
+      "unlocksAtLevel" : 1
+    },
+    {
+      "accentHex" : "#7FBF9E",
+      "id" : "listening-questions",
+      "name" : "Listening and Questions",
+      "skillIDs" : [
+        "open-question",
+        "reflect-back",
+        "hold-the-silence",
+        "one-question-at-a-time"
+      ],
+      "symbol" : "ear",
+      "tagline" : "Find out before you speak.",
+      "unlocksAtLevel" : 1
+    },
+    {
+      "accentHex" : "#D9846F",
+      "id" : "persuasion",
+      "name" : "Persuasion",
+      "skillIDs" : [
+        "diagnose-first",
+        "link-to-their-value",
+        "evidence-not-adjectives",
+        "preserve-autonomy"
+      ],
+      "symbol" : "arrow.triangle.branch",
+      "tagline" : "Move people without pushing them.",
+      "unlocksAtLevel" : 3
+    },
+    {
+      "accentHex" : "#8FBF7F",
+      "id" : "ethical-sales",
+      "name" : "Ethical Sales Conversations",
+      "skillIDs" : [
+        "discovery-before-pitch",
+        "their-language-benefits",
+        "confirm-fit",
+        "specific-close"
+      ],
+      "symbol" : "checkmark.seal",
+      "tagline" : "Diagnose, then recommend. Or don't.",
+      "unlocksAtLevel" : 4
+    },
+    {
+      "accentHex" : "#BF9F5F",
+      "id" : "objection-handling",
+      "name" : "Objection Handling",
+      "skillIDs" : [
+        "ask-what-behind-it",
+        "answer-the-real-one",
+        "no-defensive-tone"
+      ],
+      "symbol" : "shield.lefthalf.filled",
+      "tagline" : "Treat the objection as information.",
+      "unlocksAtLevel" : 4
+    },
+    {
+      "accentHex" : "#6F9FD9",
+      "id" : "leadership-comms",
+      "name" : "Leadership Communication",
+      "skillIDs" : [
+        "standard-not-scold",
+        "why-then-what",
+        "clear-ask"
+      ],
+      "symbol" : "flag",
+      "tagline" : "Set direction people can act on.",
+      "unlocksAtLevel" : 2
+    },
+    {
+      "accentHex" : "#D96F8F",
+      "id" : "difficult-conversations",
+      "name" : "Difficult Conversations",
+      "skillIDs" : [
+        "lead-with-care",
+        "facts-not-character",
+        "stay-in-the-room"
+      ],
+      "symbol" : "person.2.wave.2",
+      "tagline" : "Say the hard thing and keep the relationship.",
+      "unlocksAtLevel" : 3
+    },
+    {
+      "accentHex" : "#9FA8B8",
+      "id" : "speaking-confidence",
+      "name" : "Public-Speaking Confidence",
+      "skillIDs" : [
+        "speak-to-one-person",
+        "recover-out-loud",
+        "hold-the-opening"
+      ],
+      "symbol" : "figure.stand",
+      "tagline" : "Gradual exposure, one rung at a time.",
+      "unlocksAtLevel" : 1
+    }
+  ],
+  "scenarios" : [
+    {
+      "briefing" : "Class has just finished. Parents are collecting bags and children are pulling at sleeves. You want to announce Buddy Week — the week where every student can bring one friend to class for free — before the room empties.",
+      "hook" : "Thirty parents, coats already half on. You have forty seconds.",
+      "id" : "spk-buddy-week",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "State what Buddy Week is and when it happens in your first two sentences"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Give parents one clear action to take"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Finish inside the time limit"
+        }
+      ],
+      "pathID" : "clear-concise",
+      "prepSeconds" : 45,
+      "primarySkillID" : "bottom-line-first",
+      "tags" : [
+        "announcement",
+        "parents"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 60,
+      "title" : "Buddy Week announcement"
+    },
+    {
+      "briefing" : "Same announcement, harder room. It is loud, half the parents are mid-conversation, and you have less time than last week. You get one shot before people drift.",
+      "hook" : "Same announcement. Now two toddlers are melting down by the door.",
+      "id" : "spk-buddy-week-noise",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Lead with the point — no warm-up sentence"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Keep it under 40 seconds"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "End with a single specific action"
+        }
+      ],
+      "pathID" : "clear-concise",
+      "prepSeconds" : 30,
+      "primarySkillID" : "bottom-line-first",
+      "tags" : [
+        "announcement",
+        "parents",
+        "pressure"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 40,
+      "title" : "Buddy Week, noisy room",
+      "transferOf" : "spk-buddy-week",
+      "transferTwist" : "Less time, noisier room, no second chance."
+    },
+    {
+      "briefing" : "You run a short leadership talk at the start of the teen class. Today's theme is doing the right thing when nobody is checking. You have two minutes and a group who can smell a lecture from across the room.",
+      "hook" : "Fourteen teenagers on the mat. Make them think.",
+      "id" : "spk-leadership-lesson",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Build the lesson around one specific story, not general advice"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Give them one thing to do this week"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Close by returning to your opening image"
+        }
+      ],
+      "pathID" : "structure-story",
+      "prepSeconds" : 30,
+      "primarySkillID" : "concrete-story",
+      "tags" : [
+        "leadership",
+        "teens"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 120,
+      "title" : "Two-minute leadership lesson"
+    },
+    {
+      "briefing" : "You're giving the same leadership idea at an adult class. These are people with jobs, mortgages and opinions. The teenage version will not survive contact with this room.",
+      "hook" : "Same message. Now they're your peers, and one of them owns a business.",
+      "id" : "spk-leadership-lesson-adults",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Keep one concrete story at the centre"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Adapt the example to adult stakes"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Avoid any line that would sound like a motivational poster"
+        }
+      ],
+      "pathID" : "structure-story",
+      "prepSeconds" : 20,
+      "primarySkillID" : "concrete-story",
+      "tags" : [
+        "leadership",
+        "adults"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 120,
+      "title" : "The same lesson, to adults",
+      "transferOf" : "spk-leadership-lesson",
+      "transferTwist" : "Same skill, adult audience, higher scepticism."
+    },
+    {
+      "briefing" : "Attendance has slipped across the school. You want to explain to parents why consistency matters — physically and for the child's sense of progress — without it landing as a telling-off. Several parents in the room have had a genuinely difficult month.",
+      "hook" : "Say the hard thing without making anyone feel told off.",
+      "id" : "spk-attendance-matters",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Explain the reason before any instruction"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Say nothing that implies parents are failing"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Offer one realistic option for families who are struggling"
+        }
+      ],
+      "pathID" : "leadership-comms",
+      "prepSeconds" : 30,
+      "primarySkillID" : "standard-not-scold",
+      "tags" : [
+        "parents",
+        "standards"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 90,
+      "title" : "Why attendance matters"
+    },
+    {
+      "briefing" : "You're giving a short wedding speech. The room is warm, slightly drunk, and entirely on your side — which is its own kind of pressure. Ninety seconds, one story, land the ending.",
+      "hook" : "Cutlery down, phones up. Do not tell the story about Ibiza.",
+      "id" : "spk-wedding-toast",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "One story with a specific moment in it"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Say something true about the couple, not generic"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "End on a callback to your opening line"
+        }
+      ],
+      "pathID" : "structure-story",
+      "prepSeconds" : 20,
+      "primarySkillID" : "callback-close",
+      "tags" : [
+        "speech",
+        "personal"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 90,
+      "title" : "The best man's ninety seconds"
+    },
+    {
+      "briefing" : "Fees are going up by eight percent in September. You're telling the parents yourself rather than sending an email. Say it clearly, give the reason, and don't over-apologise your way into sounding guilty.",
+      "hook" : "You've been putting this off for three months.",
+      "id" : "spk-price-increase",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "State the change and the date plainly in the first fifteen seconds"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Give one honest reason"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Say it without apologising more than once"
+        }
+      ],
+      "pathID" : "leadership-comms",
+      "prepSeconds" : 20,
+      "primarySkillID" : "why-then-what",
+      "tags" : [
+        "parents",
+        "money",
+        "pressure"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 75,
+      "title" : "Announcing a price increase"
+    },
+    {
+      "briefing" : "This one is private and untimed. Explain something you know well — anything at all — to one imagined person. Nothing is scored against a clock. The only goal is to record your voice and hear it back.",
+      "hook" : "No timer, no score. The lowest rung on the ladder.",
+      "id" : "spk-untimed-warmup",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Record something, all the way through, without restarting"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Speak as if to one person you like"
+        }
+      ],
+      "pathID" : "speaking-confidence",
+      "prepSeconds" : 60,
+      "primarySkillID" : "speak-to-one-person",
+      "tags" : [
+        "anxiety-ladder",
+        "warmup"
+      ],
+      "tier" : 1,
+      "title" : "Just talk. Nobody is listening."
+    },
+    {
+      "briefing" : "Tell a sixty-second story about someone who kept going when it got hard. Somewhere in it is one sentence that carries the whole point. Everything hangs on whether the listener can tell which one it was.",
+      "hook" : "One sentence in this story matters. Make it obvious which.",
+      "id" : "spk-story-that-lands",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Deliver one sentence noticeably slower than the rest"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Keep the story to one person and one moment"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Stop cleanly on the last line"
+        }
+      ],
+      "pathID" : "vocal-delivery",
+      "prepSeconds" : 30,
+      "primarySkillID" : "pace-shift",
+      "tags" : [
+        "delivery",
+        "story"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 60,
+      "title" : "The moment that has to land"
+    },
+    {
+      "briefing" : "Explain what you do and who it's for, to someone who has never heard of it. This is your baseline recording. You'll do a comparable one later so you can see what actually changed.",
+      "hook" : "Where you're starting from. No feedback yet — just a marker.",
+      "id" : "spk-baseline-a",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Explain what you do and who it helps"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Finish inside 60 seconds"
+        }
+      ],
+      "pathID" : "clear-concise",
+      "prepSeconds" : 45,
+      "primarySkillID" : "bottom-line-first",
+      "tags" : [
+        "baseline"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 60,
+      "title" : "Baseline: explain your work"
+    },
+    {
+      "briefing" : "Explain a decision you made recently and why, to someone who wasn't there. Deliberately comparable to your first baseline but not the same task, so improvement can't come from having memorised it.",
+      "hook" : "Same difficulty, different content. The honest comparison.",
+      "id" : "spk-baseline-b",
+      "mode" : "speaking",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Explain the decision and the reason"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Finish inside 60 seconds"
+        }
+      ],
+      "pathID" : "clear-concise",
+      "prepSeconds" : 45,
+      "primarySkillID" : "bottom-line-first",
+      "tags" : [
+        "baseline"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 60,
+      "title" : "Re-baseline: explain a decision"
+    },
+    {
+      "briefing" : "Sam has just finished a trial class. Their parent is waiting by the door. You have a few minutes to find out what they're actually hoping for — which is rarely the thing they say first.",
+      "character" : {
+        "emotionalState" : "Mildly hopeful, slightly braced for a sales pitch",
+        "failCondition" : "The learner launches into memberships, timetables or prices before asking anything meaningful.",
+        "hiddenGoal" : "Sam has started saying he's 'rubbish at everything' after being left out at school. She wants him to have one thing that is his.",
+        "name" : "Priya",
+        "objection" : "I'm just looking at a few options at the moment.",
+        "opensWith" : "He seemed to enjoy it, I think. So how does it all work?",
+        "personality" : "Polite, a little guarded, answers briefly until she trusts you. Warms up fast if you notice something specific about her child. Her stated objection is a soft brush-off she will drop as soon as she feels heard.",
+        "role" : "Parent of Sam, 8",
+        "successCondition" : "The learner asks about Sam or Priya's hopes before describing the programme, and Priya says the real reason out loud.",
+        "voiceHint" : "warm-mid"
+      },
+      "hook" : "A parent with their coat on, deciding whether to come back.",
+      "id" : "cnv-trial-welcome",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Find out what they want for their child, in their words"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Ask at least one open question before describing anything you offer"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Reflect their answer back before you respond to it"
+        }
+      ],
+      "pathID" : "listening-questions",
+      "prepSeconds" : 45,
+      "primarySkillID" : "open-question",
+      "tags" : [
+        "parents",
+        "discovery"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 300,
+      "title" : "After the first trial class"
+    },
+    {
+      "briefing" : "A parent has been to two classes with their daughter and likes it. Now the monthly cost has come up. Most people answer this objection within two seconds — and answer the wrong version of it.",
+      "character" : {
+        "emotionalState" : "Slightly embarrassed to be talking about money",
+        "failCondition" : "The learner defends the price, breaks it down per class, or compares to other activities without asking anything.",
+        "hiddenGoal" : "He can afford it. He's worried Ellie will quit in two months like she did with swimming, and he'll have wasted it again.",
+        "name" : "Dan",
+        "objection" : "\"It's a lot per month, and I've been stung before.\"",
+        "opensWith" : "So look — she likes it. But it's a fair bit a month, isn't it?",
+        "personality" : "Direct, practical, not hostile. Respects a straight answer and dislikes being sold to.",
+        "role" : "Parent of Ellie, 10",
+        "successCondition" : "The learner asks what specifically is behind the concern and gets Dan to name the quitting fear, then responds to that.",
+        "voiceHint" : "brisk-low"
+      },
+      "hook" : "The objection everyone answers too fast.",
+      "id" : "cnv-too-expensive",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Find out which part of the cost is the real concern before answering"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Answer the concern they actually have"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Leave the decision explicitly with them"
+        }
+      ],
+      "pathID" : "objection-handling",
+      "prepSeconds" : 30,
+      "primarySkillID" : "ask-what-behind-it",
+      "tags" : [
+        "parents",
+        "money",
+        "objection"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 300,
+      "title" : "\"It's a lot of money\""
+    },
+    {
+      "briefing" : "The same conversation, three weeks later. He's had a rough month and has come in intending to pause the membership. The skill is unchanged; the resistance is not.",
+      "character" : {
+        "emotionalState" : "Braced for a hard sell, ready to leave",
+        "failCondition" : "The learner pushes to keep the full membership, or accepts the cancellation without asking a single question.",
+        "hiddenGoal" : "He wants permission to downgrade rather than quit — but won't ask for it, because he thinks it isn't an option.",
+        "name" : "Dan",
+        "objection" : "\"I think we need to stop for a bit.\"",
+        "opensWith" : "I'll be honest with you, I think we're going to have to knock it on the head.",
+        "personality" : "Direct, tired, slightly defensive because he feels he's letting his daughter down.",
+        "role" : "Parent of Ellie, 10",
+        "successCondition" : "The learner uncovers that pausing is about money-this-month rather than value, and surfaces a smaller option without pressure.",
+        "voiceHint" : "brisk-low"
+      },
+      "hook" : "Same objection, but he came in planning to say no.",
+      "id" : "cnv-too-expensive-firmer",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Find the real concern without arguing"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Offer something that fits his actual situation"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Accept a no gracefully if that's the honest answer"
+        }
+      ],
+      "pathID" : "objection-handling",
+      "prepSeconds" : 20,
+      "primarySkillID" : "answer-the-real-one",
+      "tags" : [
+        "parents",
+        "money",
+        "pressure"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 300,
+      "title" : "\"It's a lot of money\" — and he's already decided",
+      "transferOf" : "cnv-too-expensive",
+      "transferTwist" : "He's arrived having already decided. Same skill, no goodwill."
+    },
+    {
+      "briefing" : "You're asking your employer to change your schedule — you're teaching five nights a week and it isn't sustainable. You want to stay. You need this to change. Both of those are true at once.",
+      "character" : {
+        "emotionalState" : "Distracted, genuinely short-staffed",
+        "failCondition" : "The learner softens into 'whenever suits you', or turns it into a complaint about being undervalued.",
+        "hiddenGoal" : "He can move one night if someone names which one and offers a workable swap. He won't volunteer this.",
+        "name" : "Marcus",
+        "objection" : "\"There's nobody else to cover Thursdays.\"",
+        "opensWith" : "You wanted a word? I've got about ten minutes before the four o'clock.",
+        "personality" : "Reasonable but stretched. Deflects with logistics. Responds well to specifics and badly to vagueness.",
+        "role" : "Your manager / school owner",
+        "successCondition" : "The learner names a specific change, holds it under deflection, and stays respectful throughout.",
+        "voiceHint" : "brisk-mid"
+      },
+      "hook" : "Respectful and firm are not opposites. Prove it.",
+      "id" : "cnv-schedule-request",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Make one specific, unmissable ask"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Stay respectful without retreating from the ask"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Acknowledge their constraint without abandoning yours"
+        }
+      ],
+      "pathID" : "difficult-conversations",
+      "prepSeconds" : 30,
+      "primarySkillID" : "clear-ask",
+      "tags" : [
+        "work",
+        "boundaries"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 300,
+      "title" : "Asking for a healthier schedule"
+    },
+    {
+      "briefing" : "Ellie has made three of the last ten classes. Her parent is here today. You want to raise it — because she's about to lose her grading — without it landing as a complaint about commitment.",
+      "character" : {
+        "emotionalState" : "Immediately guilty, expects to be told off",
+        "failCondition" : "The learner accepts the apology and leaves it there, or emphasises the missed classes until she withdraws.",
+        "hiddenGoal" : "Her working hours changed in April and Thursday is now impossible. She's embarrassed to say so and has been hoping nobody noticed.",
+        "name" : "Nadia",
+        "objection" : "\"I know, I know, we've been terrible, sorry — it's just been mad.\"",
+        "opensWith" : "Oh — hi. Sorry, we've been rubbish lately, I know.",
+        "personality" : "Warm, over-apologetic, deflects with jokes when uncomfortable.",
+        "role" : "Parent of Ellie, 10",
+        "successCondition" : "The learner gets past the apology to the actual Thursday obstacle and they find a concrete alternative.",
+        "voiceHint" : "warm-mid"
+      },
+      "hook" : "Three of the last ten classes. Say it without it sounding like a bill.",
+      "id" : "cnv-missed-classes",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Open with why you're raising it before what the issue is"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Describe what happened as facts, not as a character judgement"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Leave with one agreed next step"
+        }
+      ],
+      "pathID" : "difficult-conversations",
+      "prepSeconds" : 30,
+      "primarySkillID" : "lead-with-care",
+      "tags" : [
+        "parents",
+        "attendance"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 300,
+      "title" : "The child who stopped coming"
+    },
+    {
+      "briefing" : "Jayden, 13, has been talking through instructions and pulling focus for three weeks. Today he stepped on a younger student's foot messing about. You need to correct it properly — in front of the class or after it, your call — without losing him.",
+      "character" : {
+        "emotionalState" : "Defensive, expecting to be embarrassed in front of the class",
+        "failCondition" : "The learner shames him, argues about who started it, or lets the behaviour go entirely.",
+        "hiddenGoal" : "He's bored — he's been on the same material for months and is acting up to fill the gap. He wants responsibility, not attention.",
+        "name" : "Jayden",
+        "objection" : "\"I wasn't even doing anything, it was Tom as well.\"",
+        "opensWith" : "What? I barely touched him.",
+        "personality" : "Quick, funny, deflects with jokes, extremely alert to unfairness. Shuts down completely if he feels humiliated.",
+        "role" : "Student, 13",
+        "successCondition" : "The learner corrects the behaviour with a standard rather than an insult, and Jayden accepts it without shutting down.",
+        "voiceHint" : "bright-high"
+      },
+      "hook" : "Authority and connection in the same sentence.",
+      "id" : "cnv-correct-student",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Name the standard and the next action, not his character"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Keep the relationship intact — he should still want to be there"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Give him a way to be useful rather than just told off"
+        }
+      ],
+      "pathID" : "leadership-comms",
+      "prepSeconds" : 30,
+      "primarySkillID" : "standard-not-scold",
+      "tags" : [
+        "students",
+        "discipline"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 240,
+      "title" : "Correcting a student, keeping the student"
+    },
+    {
+      "briefing" : "A parent is upset. Their child was moved out of the grading list without warning and they found out from another parent. They are not being unreasonable. You need to hear it fully before you explain anything.",
+      "character" : {
+        "emotionalState" : "Angry, and embarrassed about being angry",
+        "failCondition" : "The learner explains the policy first, says 'to be fair', or tries to end the conversation early.",
+        "hiddenGoal" : "He mainly wants to know it wasn't a judgement on Kai. The grading itself matters less than what it implied.",
+        "name" : "Tom",
+        "objection" : "\"I had to hear it from someone else in the car park.\"",
+        "opensWith" : "Have you got a minute? Because I've got to say, I'm not happy about this.",
+        "personality" : "Articulate, controlled anger, notices evasion instantly. De-escalates quickly when genuinely heard — and escalates just as quickly when managed.",
+        "role" : "Parent of Kai, 9",
+        "successCondition" : "The learner acknowledges the substance without defending, and Tom's tone drops before any explanation is offered.",
+        "voiceHint" : "firm-low"
+      },
+      "hook" : "No defence. No 'to be fair'. Stay in the room.",
+      "id" : "cnv-upset-parent",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Let them finish and acknowledge the substance before responding"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Say nothing defensive — no 'actually', no 'to be fair'"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "End with something concrete you will do"
+        }
+      ],
+      "pathID" : "difficult-conversations",
+      "prepSeconds" : 20,
+      "primarySkillID" : "stay-in-the-room",
+      "tags" : [
+        "parents",
+        "conflict"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 300,
+      "title" : "The parent who is genuinely angry"
+    },
+    {
+      "briefing" : "The same complaint, raised loudly in a full reception area with other parents present. Everything that worked in private is harder here, and the temptation to shut it down quickly is enormous.",
+      "character" : {
+        "emotionalState" : "Angry, publicly committed to his position",
+        "failCondition" : "The learner defends themselves in public, or insists on moving without acknowledging first.",
+        "hiddenGoal" : "Same as before — he wants to know it wasn't about Kai — but now he also needs to not look foolish for having made a scene.",
+        "name" : "Tom",
+        "objection" : "\"No, we can talk about it here, it's not a secret.\"",
+        "opensWith" : "Actually — since you're here. Can you explain why Kai's off the grading list?",
+        "personality" : "Articulate, controlled anger, hyper-alert to being handled. An audience makes him less willing to back down.",
+        "role" : "Parent of Kai, 9",
+        "successCondition" : "The learner acknowledges publicly, gives him a dignified exit from the audience, and holds the concrete commitment.",
+        "voiceHint" : "firm-low"
+      },
+      "hook" : "Same conversation. Now nine people are pretending not to listen.",
+      "id" : "cnv-upset-parent-public",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Acknowledge fully without defending, in public"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Move it somewhere private without making it look like a brush-off"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Leave with a concrete commitment"
+        }
+      ],
+      "pathID" : "difficult-conversations",
+      "prepSeconds" : 15,
+      "primarySkillID" : "stay-in-the-room",
+      "tags" : [
+        "parents",
+        "conflict",
+        "boss"
+      ],
+      "tier" : 4,
+      "timeLimitSeconds" : 300,
+      "title" : "The angry parent, in front of everyone",
+      "transferOf" : "cnv-upset-parent",
+      "transferTwist" : "Same skill, public audience, no easy exit."
+    },
+    {
+      "briefing" : "Another trial class, another parent by the door — but this one answers in three words and looks at their phone. Filling the silence will get you nowhere. Holding it might.",
+      "character" : {
+        "emotionalState" : "Reserved, slightly tired",
+        "failCondition" : "The learner fills every pause, stacks questions, or gives up and pitches the timetable.",
+        "hiddenGoal" : "Rowan was recently assessed for anxiety and Alex doesn't know whether it's relevant to mention. If given room, they will.",
+        "name" : "Alex",
+        "objection" : "We'll see how it goes, I suppose.",
+        "opensWith" : "Yeah, it was fine.",
+        "personality" : "Short answers, not rude, genuinely uncomfortable with small talk. Opens up substantially if given actual silence to fill.",
+        "role" : "Parent of Rowan, 7",
+        "successCondition" : "The learner asks something open and then stays quiet long enough for Alex to say the real thing.",
+        "voiceHint" : "flat-mid"
+      },
+      "hook" : "Monosyllables. Now find the real answer.",
+      "id" : "cnv-trial-welcome-quiet",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Ask one open question and wait through the silence"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Resist explaining the programme to fill the gap"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Get one piece of real information about the child"
+        }
+      ],
+      "pathID" : "listening-questions",
+      "prepSeconds" : 20,
+      "primarySkillID" : "hold-the-silence",
+      "tags" : [
+        "parents",
+        "discovery",
+        "pressure"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 300,
+      "title" : "The parent who won't give you anything",
+      "transferOf" : "cnv-trial-welcome",
+      "transferTwist" : "Same discovery skill, a person who gives you nothing to work with."
+    },
+    {
+      "briefing" : "A parent has asked, directly, which programme you'd put their child in. The easy move is to answer immediately. The right move is to diagnose first — and then to be honest if the cheaper option is the better fit.",
+      "character" : {
+        "emotionalState" : "Ready to buy, slightly rushed",
+        "failCondition" : "The learner sells the largest programme, or recommends anything before asking about Noor's week.",
+        "hiddenGoal" : "Noor already does three evening activities. The three-a-week programme would break her, but Grace hasn't connected those facts.",
+        "name" : "Grace",
+        "objection" : "\"Can you just tell me which one is best?\"",
+        "opensWith" : "Right — which one should we do? The full thing, I assume?",
+        "personality" : "Decisive, wants a recommendation, mildly impatient with questions until she sees why they're being asked.",
+        "role" : "Parent of Noor, 11",
+        "successCondition" : "The learner uncovers the existing schedule and recommends the smaller programme with an honest reason.",
+        "voiceHint" : "brisk-mid"
+      },
+      "hook" : "You know what they need. Now earn the right to say it.",
+      "id" : "cnv-recommend-programme",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Ask at least two real questions before recommending anything"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Describe the benefit in their words"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Confirm fit honestly, including whether a smaller option is better"
+        }
+      ],
+      "pathID" : "ethical-sales",
+      "prepSeconds" : 30,
+      "primarySkillID" : "discovery-before-pitch",
+      "tags" : [
+        "parents",
+        "sales"
+      ],
+      "tier" : 2,
+      "timeLimitSeconds" : 300,
+      "title" : "Recommending the right thing"
+    },
+    {
+      "briefing" : "A student who disappeared four months ago has walked back in. They're hovering at the edge of the mat, half expecting to be asked where they've been. What you say in the next twenty seconds decides whether they come back on Thursday.",
+      "character" : {
+        "emotionalState" : "Embarrassed, ready to leave at the first sign of judgement",
+        "failCondition" : "The learner asks where he's been, mentions the missed months, or is generically friendly in a way that could be aimed at anyone.",
+        "hiddenGoal" : "He stopped coming after a bad grading and has told himself he's not good enough. He wants to be told he still belongs here, not that he was missed.",
+        "name" : "Ryan",
+        "objection" : "Yeah, been busy. You know how it is.",
+        "opensWith" : "Alright. Is it — do I need to sign up again or something?",
+        "personality" : "Guarded, monosyllabic when self-conscious, funny once relaxed. Watches closely for any hint of a telling-off. Deflects rather than explains.",
+        "role" : "Student, 16, returning after four months",
+        "successCondition" : "The learner welcomes him specifically and warmly without interrogating the gap, and Ryan says something real about why he stopped.",
+        "voiceHint" : "flat-mid"
+      },
+      "hook" : "Four months away. Don't make it weird.",
+      "id" : "cnv-returning-student",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Use their name and mention one specific thing you remember"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Don't ask them to account for the absence"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Give them a concrete reason to come back this week"
+        }
+      ],
+      "pathID" : "warmth-connection",
+      "prepSeconds" : 45,
+      "primarySkillID" : "name-and-notice",
+      "tags" : [
+        "students",
+        "warmth"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 180,
+      "title" : "The one who came back"
+    },
+    {
+      "briefing" : "Noor is ready to grade and has decided she isn't. You believe she should enter. You cannot want it more than she does, and pushing will make it worse — but leaving it alone means she stalls for another six months.",
+      "character" : {
+        "emotionalState" : "Quietly anxious, presenting as indifferent",
+        "failCondition" : "The learner insists she's ready, lists her strengths at her, or applies pressure about letting people down.",
+        "hiddenGoal" : "She failed a piano exam in front of people last year. It isn't the grading she's avoiding — it's being watched while she fails.",
+        "name" : "Noor",
+        "objection" : "\"I'm just not ready, I'd rather wait for the next one.\"",
+        "opensWith" : "I saw the sheet. I think I'll leave it this time, to be honest.",
+        "personality" : "Thoughtful, self-critical, articulate. Argues her corner well and spots a pep talk instantly.",
+        "role" : "Student, 14",
+        "successCondition" : "The learner uncovers the fear of being watched, connects the grading to something Noor herself values, and leaves the choice with her.",
+        "voiceHint" : "warm-mid"
+      },
+      "hook" : "She's ready. She doesn't think she is.",
+      "id" : "cnv-persuade-grading",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Find out what she's actually afraid of before making any case"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Connect your recommendation to something she said she wanted"
+        },
+        {
+          "id" : "o3",
+          "isBonus" : true,
+          "text" : "Say out loud that the decision is hers"
+        }
+      ],
+      "pathID" : "persuasion",
+      "prepSeconds" : 20,
+      "primarySkillID" : "link-to-their-value",
+      "tags" : [
+        "students",
+        "persuasion",
+        "pressure"
+      ],
+      "tier" : 3,
+      "timeLimitSeconds" : 300,
+      "title" : "Talking someone into the grading"
+    },
+    {
+      "briefing" : "A neutral, friendly conversation with a parent who is curious about the school. This is your conversational baseline — no pressure, no hidden objection. Talk the way you normally would.",
+      "character" : {
+        "emotionalState" : "Relaxed and interested",
+        "failCondition" : "None — this is a baseline measurement, not a test.",
+        "hiddenGoal" : "Genuinely just curious. Will happily follow wherever the learner takes the conversation.",
+        "name" : "Jo",
+        "objection" : "I don't really know what I'm asking, to be honest — what should I be asking?",
+        "opensWith" : "Someone at work mentioned you — what's the school like?",
+        "personality" : "Friendly, chatty, easy to talk to, no agenda. Raises nothing you have to overcome — there is no objection in this one.",
+        "role" : "Parent, curious",
+        "successCondition" : "The conversation reaches a natural end after several exchanges.",
+        "voiceHint" : "warm-mid"
+      },
+      "hook" : "Your starting point in conversation. Just talk normally.",
+      "id" : "cnv-baseline-conversation",
+      "mode" : "conversation",
+      "objectives" : [
+        {
+          "id" : "o1",
+          "isBonus" : false,
+          "text" : "Have a normal conversation"
+        },
+        {
+          "id" : "o2",
+          "isBonus" : false,
+          "text" : "Find out something about them"
+        }
+      ],
+      "pathID" : "listening-questions",
+      "prepSeconds" : 45,
+      "primarySkillID" : "open-question",
+      "tags" : [
+        "baseline"
+      ],
+      "tier" : 1,
+      "timeLimitSeconds" : 240,
+      "title" : "Baseline: a parent asks about your school"
+    }
+  ],
+  "skills" : [
+    {
+      "id" : "bottom-line-first",
+      "name" : "Bottom line first",
+      "pathID" : "clear-concise",
+      "retryCue" : "First sentence: the point. Context after.",
+      "rubricDimension" : "opening",
+      "strongExample" : "\"Buddy Week is the 14th to the 18th. Your child brings a friend to class, free. Here's how it works.\"",
+      "summary" : "State the main point in your first sentence, before any context.",
+      "weakExample" : "\"So, um, we've been thinking for a while about how to grow the school, and one thing we've talked about — and this has worked at other schools — is a kind of week where…\"",
+      "whyItMatters" : "Listeners decide how hard to concentrate in the first few seconds. If the point arrives late, they spend your best material trying to work out where you're going."
+    },
+    {
+      "id" : "one-idea-per-sentence",
+      "name" : "One idea per sentence",
+      "pathID" : "clear-concise",
+      "retryCue" : "Short sentences. Full stop after each idea.",
+      "rubricDimension" : "clarity",
+      "strongExample" : "\"Attendance matters. Skills fade in about two weeks. Coming twice a week keeps what they've built.\"",
+      "summary" : "Break compound sentences apart. Full stop, then the next idea.",
+      "weakExample" : "\"Attendance matters because skills fade quite quickly if they're not practised, which is why we recommend twice a week, although obviously life happens.\"",
+      "whyItMatters" : "Chained clauses force the listener to hold three things at once. Short sentences let each idea land before the next arrives."
+    },
+    {
+      "id" : "cut-the-runway",
+      "name" : "Cut the runway",
+      "pathID" : "clear-concise",
+      "retryCue" : "Delete your first sentence. Start at the second one.",
+      "rubricDimension" : "concision",
+      "strongExample" : "\"Two things before you go.\"",
+      "summary" : "Delete the throat-clearing before your first real sentence.",
+      "weakExample" : "\"Okay so, um, before everyone heads off, I just wanted to quickly mention, if that's alright, a couple of things…\"",
+      "whyItMatters" : "\"So basically what I wanted to say is…\" costs you the moment where people are paying most attention."
+    },
+    {
+      "id" : "plain-words",
+      "name" : "Plain words",
+      "pathID" : "clear-concise",
+      "retryCue" : "Say it the way you'd say it to a friend.",
+      "rubricDimension" : "clarity",
+      "strongExample" : "\"They'll spar with a partner their own size.\"",
+      "summary" : "Replace insider or abstract vocabulary with what you'd say to a friend.",
+      "weakExample" : "\"They'll engage in controlled kumite within an appropriate skill-differential bracket.\"",
+      "whyItMatters" : "Jargon makes the speaker feel precise and the listener feel excluded. Plain words are understood at speed."
+    },
+    {
+      "id" : "signpost",
+      "name" : "Signpost",
+      "pathID" : "structure-story",
+      "retryCue" : "Say how many points, then number them.",
+      "rubricDimension" : "organization",
+      "strongExample" : "\"Three things. First, the dates. Second, what it costs. Third, what I need from you.\"",
+      "summary" : "Tell people how many points are coming, then number them out loud.",
+      "weakExample" : "\"There's the dates, and cost is a thing, oh and also I need something from you at the end.\"",
+      "whyItMatters" : "A listener who knows there are three points can relax and follow. A listener who doesn't is quietly wondering when you'll finish."
+    },
+    {
+      "id" : "rule-of-three",
+      "name" : "Three, not seven",
+      "pathID" : "structure-story",
+      "retryCue" : "Three items. Cut the rest.",
+      "rubricDimension" : "concision",
+      "strongExample" : "\"Focus, fitness, and finishing what you start.\"",
+      "summary" : "Cut your list to three items. Keep the strongest three.",
+      "weakExample" : "\"Focus, fitness, discipline, respect, coordination, confidence, resilience, and making friends.\"",
+      "whyItMatters" : "People remember three. Seven reads as a list of everything you could think of, and dilutes the strong items."
+    },
+    {
+      "id" : "concrete-story",
+      "name" : "One concrete story",
+      "pathID" : "structure-story",
+      "retryCue" : "Tell one story about one person. Name, moment, change.",
+      "rubricDimension" : "specificity",
+      "strongExample" : "\"Maya couldn't hold a plank for ten seconds in January. In June she held it while the whole class counted her up to sixty.\"",
+      "summary" : "Replace the general claim with one specific thirty-second story.",
+      "weakExample" : "\"Students really build a lot of physical and mental resilience over time.\"",
+      "whyItMatters" : "Abstract claims are agreed with and forgotten. A specific person doing a specific thing is remembered and repeated."
+    },
+    {
+      "id" : "callback-close",
+      "name" : "Close on the callback",
+      "pathID" : "structure-story",
+      "retryCue" : "End by echoing your opening line.",
+      "rubricDimension" : "ending",
+      "strongExample" : "\"…and that's why we count out loud. Sixty seconds, whole class. See you Thursday.\"",
+      "summary" : "End by returning to the image or phrase you opened with.",
+      "weakExample" : "\"So yeah. That's pretty much everything. Any questions? No? Okay.\"",
+      "whyItMatters" : "A callback signals 'that's the end' without you having to say 'so, yeah, that's it', and makes the whole thing feel designed."
+    },
+    {
+      "id" : "deliberate-pause",
+      "name" : "Pause instead of filling",
+      "pathID" : "vocal-delivery",
+      "retryCue" : "Every time you want to say 'um', close your mouth and count one.",
+      "rubricDimension" : "clarity",
+      "strongExample" : "\"Buddy Week starts Monday. [pause] Bring one friend.\"",
+      "summary" : "When you'd reach for 'um', close your mouth for one full second instead.",
+      "weakExample" : "\"Buddy Week starts Monday, um, and, uh, you can bring, like, a friend.\"",
+      "whyItMatters" : "A pause reads as control. A filler reads as searching. The silence feels far longer to you than to anyone listening."
+    },
+    {
+      "id" : "pace-shift",
+      "name" : "Slow down for the important part",
+      "pathID" : "vocal-delivery",
+      "retryCue" : "Pick your key sentence. Say it noticeably slower than the rest.",
+      "rubricDimension" : "organization",
+      "strongExample" : "Normal pace through the setup, then markedly slower: \"She. Held it. For sixty seconds.\"",
+      "summary" : "Drop your speed noticeably on the sentence that matters most.",
+      "whyItMatters" : "If everything is delivered at one speed, the listener has no way to tell which sentence was the point."
+    },
+    {
+      "id" : "land-the-line",
+      "name" : "Land the last line",
+      "pathID" : "vocal-delivery",
+      "retryCue" : "Say your last sentence, then stop completely.",
+      "rubricDimension" : "ending",
+      "strongExample" : "\"Sign-up sheet's by the door. See you Monday.\" [stop]",
+      "summary" : "Finish the final sentence and stop. No trailing 'so yeah', no upward inflection.",
+      "weakExample" : "\"Sign-up sheet's by the door, so, yeah, if you want to, or not, that's fine too…\"",
+      "whyItMatters" : "Trailing off invites the audience to decide whether you meant it. A clean stop tells them you did."
+    },
+    {
+      "id" : "name-and-notice",
+      "name" : "Name and notice",
+      "pathID" : "warmth-connection",
+      "retryCue" : "Use their name. Name one thing you actually saw.",
+      "rubricDimension" : "warmthAndRespect",
+      "strongExample" : "\"Priya — I saw Sam stick with that partner drill even when it got hard. That's not nothing on a first day.\"",
+      "summary" : "Use the person's name and mention one specific thing you noticed.",
+      "weakExample" : "\"Hi! Thanks so much for coming, we're really glad to have you!\"",
+      "whyItMatters" : "Generic friendliness is forgettable. Evidence that you were actually paying attention is not."
+    },
+    {
+      "id" : "acknowledge-before-answer",
+      "name" : "Acknowledge before you answer",
+      "pathID" : "warmth-connection",
+      "retryCue" : "Before answering, say back what they're feeling. Then pause.",
+      "rubricDimension" : "listeningAndAcknowledgment",
+      "strongExample" : "\"That's a real cost, and you're weighing it against everything else this month. Can I ask what part of it is the sticking point?\"",
+      "summary" : "Say the thing they're feeling back to them before you respond to it.",
+      "weakExample" : "\"Actually, when you break it down per class, it works out cheaper than most activities.\"",
+      "whyItMatters" : "An answer that arrives before the person feels heard is experienced as a rebuttal, however correct it is."
+    },
+    {
+      "id" : "generous-assumption",
+      "name" : "Generous assumption",
+      "pathID" : "warmth-connection",
+      "retryCue" : "Open with the kindest explanation that could be true.",
+      "rubricDimension" : "warmthAndRespect",
+      "strongExample" : "\"I'm guessing the last few weeks have been busy rather than anything about the class — am I right?\"",
+      "summary" : "Open with the most charitable reading of their behaviour.",
+      "weakExample" : "\"We've noticed a real drop-off in commitment lately.\"",
+      "whyItMatters" : "People defend themselves against accusation and engage with curiosity. The generous reading is also usually the true one."
+    },
+    {
+      "id" : "open-question",
+      "name" : "Ask an open question",
+      "pathID" : "listening-questions",
+      "retryCue" : "Ask one question starting with what or how. Then stop talking.",
+      "rubricDimension" : "questionQuality",
+      "strongExample" : "\"What made you look for a class for Sam right now?\"",
+      "summary" : "Ask something that cannot be answered with yes or no.",
+      "weakExample" : "\"Did you enjoy the class?\"",
+      "whyItMatters" : "Closed questions confirm what you already believe. Open questions tell you what you were missing."
+    },
+    {
+      "id" : "reflect-back",
+      "name" : "Reflect it back",
+      "pathID" : "listening-questions",
+      "retryCue" : "Say their point back in your words. Check you've got it.",
+      "rubricDimension" : "listeningAndAcknowledgment",
+      "strongExample" : "\"So it's less about the fighting side and more that he's been shrinking at school. Have I got that right?\"",
+      "summary" : "Say their point back in your own words before you add yours.",
+      "weakExample" : "\"Right, yeah, totally. So what we do here is…\"",
+      "whyItMatters" : "It proves you listened, and it catches misunderstandings while they're still cheap to fix."
+    },
+    {
+      "id" : "hold-the-silence",
+      "name" : "Hold the silence",
+      "pathID" : "listening-questions",
+      "retryCue" : "Ask your question, then say nothing until they answer.",
+      "rubricDimension" : "questionQuality",
+      "strongExample" : "\"What's worrying you most about it?\" [waits]",
+      "summary" : "After you ask, wait. Do not answer your own question.",
+      "weakExample" : "\"What's worrying you most about it? Is it the cost? Or the time? Because a lot of parents say the time.\"",
+      "whyItMatters" : "The most useful thing a person says usually arrives after the pause you were tempted to fill."
+    },
+    {
+      "id" : "one-question-at-a-time",
+      "name" : "One question at a time",
+      "pathID" : "listening-questions",
+      "retryCue" : "One question. Nothing after the question mark.",
+      "rubricDimension" : "questionQuality",
+      "strongExample" : "\"What does a good outcome look like for Sam?\"",
+      "summary" : "Ask a single question and let it be answered before asking another.",
+      "weakExample" : "\"What are you hoping for — is it confidence, or fitness, or the discipline side, or making friends?\"",
+      "whyItMatters" : "Stacked questions get answered selectively — usually the easiest one — and you lose the answer you needed."
+    },
+    {
+      "id" : "diagnose-first",
+      "name" : "Diagnose before you recommend",
+      "pathID" : "persuasion",
+      "retryCue" : "Ask about their situation before you propose anything.",
+      "rubricDimension" : "questionQuality",
+      "strongExample" : "\"Before I suggest anything — what's changed recently that made this feel urgent?\"",
+      "summary" : "Understand their situation before proposing anything.",
+      "weakExample" : "\"I'd definitely put him in the three-a-week programme.\"",
+      "whyItMatters" : "A recommendation made before diagnosis is a guess, and people can tell. It also wastes your strongest argument on the wrong problem."
+    },
+    {
+      "id" : "link-to-their-value",
+      "name" : "Link to what they said they wanted",
+      "pathID" : "persuasion",
+      "retryCue" : "Quote their own words, then connect your point to them.",
+      "rubricDimension" : "audienceAdaptation",
+      "strongExample" : "\"You said you want him to stop shrinking when things get hard. That's exactly what the belt tests are for.\"",
+      "summary" : "Connect your recommendation to their own stated words, not your favourite benefit.",
+      "weakExample" : "\"Our programme builds tremendous discipline and character.\"",
+      "whyItMatters" : "People are persuaded by their own reasons. Quoting their words back makes the recommendation theirs, not yours."
+    },
+    {
+      "id" : "evidence-not-adjectives",
+      "name" : "Evidence, not adjectives",
+      "pathID" : "persuasion",
+      "retryCue" : "Delete every adjective. Replace one with a number or an example.",
+      "rubricDimension" : "specificity",
+      "strongExample" : "\"Eleven of our teens have taught a class this year.\"",
+      "summary" : "Replace 'amazing', 'incredible', 'life-changing' with a specific observable fact.",
+      "weakExample" : "\"The confidence transformation is genuinely incredible.\"",
+      "whyItMatters" : "Adjectives are the speaker's opinion. Facts let the listener form their own, which is the only kind that sticks."
+    },
+    {
+      "id" : "preserve-autonomy",
+      "name" : "Leave the door open",
+      "pathID" : "persuasion",
+      "retryCue" : "Say out loud that the choice is theirs, and mean it.",
+      "rubricDimension" : "warmthAndRespect",
+      "strongExample" : "\"Take the week. If it's not right for you, tell me and I'll stop asking.\"",
+      "summary" : "Say plainly that the decision is theirs and that no is a fine answer.",
+      "weakExample" : "\"I've only got two spots left and they'll be gone tonight.\"",
+      "whyItMatters" : "Pressure produces compliance that reverses in the car park. Explicit autonomy produces decisions that hold — and it's the honest thing to do."
+    },
+    {
+      "id" : "discovery-before-pitch",
+      "name" : "Discovery before pitch",
+      "pathID" : "ethical-sales",
+      "retryCue" : "Two real questions before you mention anything you sell.",
+      "rubricDimension" : "questionQuality",
+      "strongExample" : "\"What's she like at home when something's hard? …And what would you want to be different in six months?\"",
+      "summary" : "Ask at least two real questions before you describe anything you offer.",
+      "weakExample" : "\"Let me walk you through our three membership tiers.\"",
+      "whyItMatters" : "You cannot recommend well without knowing the problem, the desired outcome, and the barrier. Pitching first means guessing."
+    },
+    {
+      "id" : "their-language-benefits",
+      "name" : "Benefits in their language",
+      "pathID" : "ethical-sales",
+      "retryCue" : "Describe the benefit using their exact words.",
+      "rubricDimension" : "benefitExplanation",
+      "strongExample" : "\"So — fewer meltdowns when homework gets hard. That's what the belt system is actually training.\"",
+      "summary" : "Describe the outcome using the words they used, not your feature names.",
+      "weakExample" : "\"Our curriculum includes a structured progression framework.\"",
+      "whyItMatters" : "Feature language makes people translate. Their own language needs no translation and proves you were listening."
+    },
+    {
+      "id" : "confirm-fit",
+      "name" : "Confirm fit, don't push",
+      "pathID" : "ethical-sales",
+      "retryCue" : "Ask whether this is actually right for them. Accept the answer.",
+      "rubricDimension" : "concernHandling",
+      "strongExample" : "\"Honestly — if the twice-a-week is going to be a fight every Tuesday, once a week is a better start. Which sounds more like your reality?\"",
+      "summary" : "Check out loud whether this is actually right for them — including whether it isn't.",
+      "weakExample" : "\"So shall we get you signed up for the full programme?\"",
+      "whyItMatters" : "Confirming fit filters out the people who'd have quit in six weeks, and it's the difference between selling and helping."
+    },
+    {
+      "id" : "specific-close",
+      "name" : "Make the next step tiny and specific",
+      "pathID" : "ethical-sales",
+      "retryCue" : "End with one specific action, with a day and a time.",
+      "rubricDimension" : "ending",
+      "strongExample" : "\"Come Thursday at 5. I'll hold a spot under Sam's name — no charge if you don't stay.\"",
+      "summary" : "End with one concrete, easy action and a time.",
+      "weakExample" : "\"Have a think about it and let me know if you're interested.\"",
+      "whyItMatters" : "'Let me know' puts the work on them and dies quietly. A specific small step gets taken."
+    },
+    {
+      "id" : "ask-what-behind-it",
+      "name" : "Ask what's behind it",
+      "pathID" : "objection-handling",
+      "retryCue" : "Ask what part of the concern is the real one, before answering.",
+      "rubricDimension" : "concernHandling",
+      "strongExample" : "\"Can I ask — is it the monthly number, or is it that you're not sure it'll be worth it yet?\"",
+      "summary" : "Before answering an objection, ask what part of it is the real sticking point.",
+      "weakExample" : "\"It's actually only about eight pounds a class when you work it out.\"",
+      "whyItMatters" : "'Too expensive' can mean the price, the commitment, the value, or a conversation happening at home. Answering the wrong one changes nothing."
+    },
+    {
+      "id" : "answer-the-real-one",
+      "name" : "Answer the real objection",
+      "pathID" : "objection-handling",
+      "retryCue" : "Name their actual concern out loud, then answer that one.",
+      "rubricDimension" : "concernHandling",
+      "strongExample" : "\"You're worried you'll pay for a term he drops out of. That's fair. Here's what we do about that.\"",
+      "summary" : "Address the concern they actually raised, in their terms, without detouring.",
+      "weakExample" : "\"Well, the value you get is really quite exceptional compared to other activities.\"",
+      "whyItMatters" : "Answering an adjacent, easier objection is transparently evasive and costs you trust you had."
+    },
+    {
+      "id" : "no-defensive-tone",
+      "name" : "Drop the defence",
+      "pathID" : "objection-handling",
+      "retryCue" : "No 'actually', no 'to be fair', no defending yourself.",
+      "rubricDimension" : "warmthAndRespect",
+      "strongExample" : "\"You're right that we changed the timetable in April. That was disruptive for you.\"",
+      "summary" : "Remove 'actually', 'to be fair', 'with respect', and any justification of yourself.",
+      "weakExample" : "\"To be fair, we did email everyone about the timetable change.\"",
+      "whyItMatters" : "Defensive markers tell the listener you've taken it personally, which turns a question into a conflict."
+    },
+    {
+      "id" : "standard-not-scold",
+      "name" : "Restate the standard, don't scold",
+      "pathID" : "leadership-comms",
+      "retryCue" : "Name the standard and the next action. Don't mention the person's character.",
+      "rubricDimension" : "warmthAndRespect",
+      "strongExample" : "\"In this room we stand still when someone's talking. Reset your feet.\"",
+      "summary" : "Name the behaviour you want rather than the person's failing.",
+      "weakExample" : "\"Why can't you ever just listen? Every single week with you.\"",
+      "whyItMatters" : "Scolding trains people to hide mistakes. Restating the standard tells everyone exactly what good looks like."
+    },
+    {
+      "id" : "why-then-what",
+      "name" : "Why, then what",
+      "pathID" : "leadership-comms",
+      "retryCue" : "One sentence of why. Then the instruction.",
+      "rubricDimension" : "organization",
+      "strongExample" : "\"We line up by belt so the newer students can copy someone. Belts to the left, please.\"",
+      "summary" : "Give the reason in one sentence before the instruction.",
+      "weakExample" : "\"Line up by belt. Because I said so.\"",
+      "whyItMatters" : "People follow instructions they understand and quietly abandon ones they don't."
+    },
+    {
+      "id" : "clear-ask",
+      "name" : "Make the ask unmissable",
+      "pathID" : "leadership-comms",
+      "retryCue" : "Say who, what, and by when. One sentence.",
+      "rubricDimension" : "ending",
+      "strongExample" : "\"Seniors: I need three of you on the mat at 4:45 on Thursday to help with the beginners.\"",
+      "summary" : "State exactly who does what by when, in one sentence.",
+      "weakExample" : "\"It'd be great if some people could maybe help out with the younger ones sometime.\"",
+      "whyItMatters" : "Vague asks produce vague action and then resentment on both sides."
+    },
+    {
+      "id" : "lead-with-care",
+      "name" : "Lead with the care, not the complaint",
+      "pathID" : "difficult-conversations",
+      "retryCue" : "First sentence: why you care. Then the issue.",
+      "rubricDimension" : "opening",
+      "strongExample" : "\"I'm raising this because I don't want Ellie to lose what she's built. Can we talk about the last month?\"",
+      "summary" : "Open with why you're raising it, which is that you're on their side.",
+      "weakExample" : "\"We need to talk about Ellie's attendance, it's become a problem.\"",
+      "whyItMatters" : "The first sentence decides whether the rest is heard as an attack or as help."
+    },
+    {
+      "id" : "facts-not-character",
+      "name" : "Facts, not character",
+      "pathID" : "difficult-conversations",
+      "retryCue" : "Say only what happened and when. No adjectives about the person.",
+      "rubricDimension" : "specificity",
+      "strongExample" : "\"She's made three of the last ten classes.\"",
+      "summary" : "Describe what happened and when. Say nothing about what kind of person they are.",
+      "weakExample" : "\"She's just not committed, and honestly neither are you.\"",
+      "whyItMatters" : "Facts can be discussed. Character judgements can only be defended against."
+    },
+    {
+      "id" : "stay-in-the-room",
+      "name" : "Stay in the room",
+      "pathID" : "difficult-conversations",
+      "retryCue" : "When it gets tense: acknowledge, slow down, stay on topic.",
+      "rubricDimension" : "concernHandling",
+      "strongExample" : "\"I can hear you're angry, and I'd rather stay with it than leave it here. What's the part I've got wrong?\"",
+      "summary" : "When it gets heated, slow down and stay on the topic instead of retreating or escalating.",
+      "weakExample" : "\"Look, forget I mentioned it. It's fine.\"",
+      "whyItMatters" : "Most difficult conversations fail not from the wrong words but from ending too early or fighting back."
+    },
+    {
+      "id" : "speak-to-one-person",
+      "name" : "Speak to one person",
+      "pathID" : "speaking-confidence",
+      "retryCue" : "Pick one person. Say it to them, not to the room.",
+      "rubricDimension" : "audienceAdaptation",
+      "strongExample" : "Pick a parent you know. Say it to them.",
+      "summary" : "Deliver it as if to a single named person rather than a crowd.",
+      "whyItMatters" : "A room is intimidating and abstract. One person is a normal conversation, and the delivery comes out warmer and more specific."
+    },
+    {
+      "id" : "recover-out-loud",
+      "name" : "Recover out loud",
+      "pathID" : "speaking-confidence",
+      "retryCue" : "If you stumble: one short reset, then keep going. No apologising.",
+      "rubricDimension" : "clarity",
+      "strongExample" : "\"Let me start that again. Buddy Week is the 14th.\"",
+      "summary" : "When you lose your place, say so plainly and continue. No apology spiral.",
+      "weakExample" : "\"Sorry, sorry, I've completely lost it, sorry, this is embarrassing, um, sorry…\"",
+      "whyItMatters" : "Audiences forgive a stumble instantly and remember a long apology forever. Recovering visibly is a competence signal."
+    },
+    {
+      "id" : "hold-the-opening",
+      "name" : "Hold the opening",
+      "pathID" : "speaking-confidence",
+      "retryCue" : "Wait two full seconds before your first word.",
+      "rubricDimension" : "opening",
+      "strongExample" : "[stands, waits, room settles] \"Two things before you go.\"",
+      "summary" : "Stand still, wait for quiet, and start only when you have the room.",
+      "weakExample" : "[starts talking over chatter] \"So — um — if everyone could — Buddy Week is —\"",
+      "whyItMatters" : "Starting into noise trains people that you can be talked over. Two seconds of waiting buys the whole talk."
+    }
+  ]
+}

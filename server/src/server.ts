@@ -104,6 +104,19 @@ function parseRequest(body: unknown): CoachingRequest {
   return { task: raw.task, system, messages, maxTokens, effort };
 }
 
+/**
+ * Exact origin match, with `*` as an explicit opt-out of the allowlist.
+ *
+ * Deliberately no wildcard subdomains and no substring matching: an origin
+ * check that accepts `https://evil-example.com` because it ends in
+ * `example.com` is worse than no check at all.
+ */
+export function isOriginAllowed(origin: string, allowed: readonly string[]): boolean {
+  if (allowed.length === 0) return false;
+  if (allowed.includes('*')) return true;
+  return allowed.includes(origin);
+}
+
 export function createServer(config: Config, client: Anthropic): Express {
   const app = express();
   const limiter = new RateLimiter(config.requestsPerMinute);
@@ -113,6 +126,26 @@ export function createServer(config: Config, client: Anthropic): Express {
 
   app.disable('x-powered-by');
   app.use(express.json({ limit: '1mb' }));
+
+  // The web client is served from a different origin (GitHub Pages, or a dev
+  // server), and `x-speaklab-key` is a custom header, so every real request is
+  // preceded by a preflight. Origins are opt-in: an unlisted origin simply gets
+  // no CORS headers back and the browser blocks it.
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    const origin = req.header('origin');
+    if (origin && isOriginAllowed(origin, config.allowedOrigins)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Vary', 'Origin');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'content-type, x-speaklab-key');
+      res.setHeader('Access-Control-Max-Age', '600');
+    }
+    if (req.method === 'OPTIONS') {
+      res.status(204).end();
+      return;
+    }
+    next();
+  });
 
   app.get('/healthz', (_req, res) => {
     res.json({

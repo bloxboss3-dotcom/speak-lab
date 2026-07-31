@@ -90,6 +90,32 @@ final class ContentIntegrityTests: XCTestCase {
         }
     }
 
+    /// `objection` is spoken aloud verbatim by the offline scripted character,
+    /// so it has to be a line a person would actually say. A brief written
+    /// *about* them ("Deflects with…") comes out of the speaker as nonsense.
+    func testObjectionsAreWrittenAsSpokenLines() {
+        let narration = ["says", "deflects", "thinks", "wants", "believes", "feels", "avoids", "refuses", "insists", "claims"]
+        let placeholders = ["none", "n/a", "—", "-", "none."]
+
+        for scenario in ScenarioLibrary.scenarios(mode: .conversation) {
+            guard let character = scenario.character else { continue }
+            let stripped = character.objection
+                .trimmingCharacters(in: CharacterSet(charactersIn: "\"“” "))
+                .lowercased()
+            XCTAssertFalse(stripped.isEmpty, "\(scenario.id): character needs an objection")
+            XCTAssertFalse(
+                placeholders.contains(stripped),
+                "\(scenario.id): objection is a placeholder, and would be spoken aloud as one"
+            )
+            for verb in narration {
+                XCTAssertFalse(
+                    stripped.hasPrefix(verb + " "),
+                    "\(scenario.id): objection reads as narration, not speech"
+                )
+            }
+        }
+    }
+
     func testSpeakingScenariosHaveNoCharacter() {
         for scenario in ScenarioLibrary.scenarios(mode: .speaking) {
             XCTAssertNil(scenario.character, "Speaking scenario \(scenario.id) should not carry a character brief")

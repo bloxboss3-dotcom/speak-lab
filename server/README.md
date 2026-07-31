@@ -95,7 +95,15 @@ secrets.
 
 ## Configuration
 
-See `.env.example`. The two that matter:
+See `.env.example`. The three that matter:
+
+- **`SPEAKLAB_ALLOWED_ORIGINS`** — comma-separated browser origins allowed to
+  call the proxy, e.g. `https://your-name.github.io`. Empty by default, which
+  means no web page can reach it; the iOS app is unaffected either way, since
+  native apps are not subject to CORS. Matching is exact — no wildcard
+  subdomains, no substring matching — because an origin check that accepts
+  `https://evil-example.com` for ending in `example.com` is worse than none.
+  Set it to `*` only alongside a client secret.
 
 - **`SPEAKLAB_MODEL`** — `claude-opus-5` by default, which gives the best
   coaching judgement. `claude-sonnet-5` is meaningfully faster and cheaper if

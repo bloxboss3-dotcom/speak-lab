@@ -5,7 +5,7 @@ import type { AddressInfo } from 'node:net';
 import type { Express } from 'express';
 import { loadConfig, type Config } from '../config.js';
 import { createClient } from '../coach.js';
-import { createServer } from '../server.js';
+import { createServer, isOriginAllowed } from '../server.js';
 import { startFakeUpstream, type FakeUpstream, type UpstreamBehaviour } from './fakeUpstream.js';
 
 const VALID_FEEDBACK = {
@@ -406,6 +406,70 @@ describe('refusal fallback', () => {
     assert.equal(json.data.primaryTarget, 'Lead with the point');
     assert.equal(context.upstream.requests.length, 2, 'first attempt with beta, retry without');
     assert.equal((context.upstream.requests[1] as any).fallbacks, undefined);
+    await teardown(context);
+  });
+});
+
+describe('browser origins', () => {
+  it('matches an allowed origin exactly', () => {
+    const allowed = ['https://example.github.io'];
+    assert.equal(isOriginAllowed('https://example.github.io', allowed), true);
+    assert.equal(isOriginAllowed('https://example.github.io.evil.test', allowed), false);
+    assert.equal(isOriginAllowed('http://example.github.io', allowed), false);
+    assert.equal(isOriginAllowed('https://example.github.io', []), false);
+    assert.equal(isOriginAllowed('https://anything.test', ['*']), true);
+  });
+
+  it('parses the allowlist from the environment', () => {
+    const config = loadConfig({
+      ANTHROPIC_API_KEY: 'x',
+      SPEAKLAB_ALLOWED_ORIGINS: ' https://a.test , ,https://b.test ',
+    } as NodeJS.ProcessEnv);
+    assert.deepEqual(config.allowedOrigins, ['https://a.test', 'https://b.test']);
+  });
+
+  it('sends no CORS headers by default, so the proxy is not open to the web', async () => {
+    const context = await makeContext({ text: JSON.stringify(VALID_FEEDBACK) });
+    const response = await fetch(`${context.baseURL}/healthz`, {
+      headers: { origin: 'https://example.github.io' },
+    });
+
+    assert.equal(response.headers.get('access-control-allow-origin'), null);
+    await teardown(context);
+  });
+
+  it('answers the preflight for an allowed origin', async () => {
+    const context = await makeContext(
+      { text: JSON.stringify(VALID_FEEDBACK) },
+      { allowedOrigins: ['https://example.github.io'] },
+    );
+    const response = await fetch(`${context.baseURL}/v1/coach`, {
+      method: 'OPTIONS',
+      headers: {
+        origin: 'https://example.github.io',
+        'access-control-request-method': 'POST',
+        'access-control-request-headers': 'x-speaklab-key',
+      },
+    });
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get('access-control-allow-origin'), 'https://example.github.io');
+    assert.match(String(response.headers.get('access-control-allow-headers')), /x-speaklab-key/);
+    assert.equal(response.headers.get('vary'), 'Origin');
+    await teardown(context);
+  });
+
+  it('refuses the preflight for an origin that is not on the list', async () => {
+    const context = await makeContext(
+      { text: JSON.stringify(VALID_FEEDBACK) },
+      { allowedOrigins: ['https://example.github.io'] },
+    );
+    const response = await fetch(`${context.baseURL}/v1/coach`, {
+      method: 'OPTIONS',
+      headers: { origin: 'https://someone-else.test', 'access-control-request-method': 'POST' },
+    });
+
+    assert.equal(response.headers.get('access-control-allow-origin'), null);
     await teardown(context);
   });
 });

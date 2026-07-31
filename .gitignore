@@ -21,6 +21,7 @@ xcuserdata/
 node_modules/
 dist/
 npm-debug.log*
+*.tsbuildinfo
 
 # --- Tooling scratch ---
 .parse-check/

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="SpeakLab">
+  <rect width="180" height="180" rx="40" fill="#0f6a56" />
+  <g fill="#f4fbf8">
+    <rect x="42" y="76" width="10" height="28" rx="5" opacity="0.55" />
+    <rect x="62" y="62" width="10" height="56" rx="5" opacity="0.75" />
+    <rect x="82" y="44" width="10" height="92" rx="5" />
+    <rect x="102" y="66" width="10" height="48" rx="5" opacity="0.75" />
+    <rect x="122" y="80" width="10" height="20" rx="5" opacity="0.55" />
+  </g>
+</svg>

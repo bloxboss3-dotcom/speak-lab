@@ -23,6 +23,13 @@ let package = Package(
             name: "SpeakLabCoreTests",
             dependencies: ["SpeakLabCore"],
             path: "Tests/SpeakLabCoreTests"
+        ),
+        // Emits the curriculum and scenario catalogue as JSON for the web
+        // client, so both clients share one definition of the content.
+        .executableTarget(
+            name: "speaklab-content-export",
+            dependencies: ["SpeakLabCore"],
+            path: "Tools/ContentExport"
         )
     ]
 )
