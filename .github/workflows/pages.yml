@@ -1,0 +1,82 @@
+name: Deploy web app to GitHub Pages
+
+# Publishes web/ to GitHub Pages. Nothing secret is involved: the built site is
+# a static bundle that coaches from measurements taken in the browser, and it
+# only talks to a coaching server if the person using it enters one in Settings.
+#
+# The build job asks the API to enable Pages, so the first run usually needs no
+# setup. If it reports that Pages is not enabled, the token was not allowed to
+# turn it on: set it by hand under repository Settings → Pages → Build and
+# deployment → Source → "GitHub Actions", then re-run.
+
+on:
+  push:
+    branches:
+      - main
+      # Also deploys from the feature branch so the app can be tried before the
+      # pull request merges. Drop this line once it has.
+      - claude/speaklab-ios-app-g1jvgx
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one mid-flight — a half-published
+# site is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      # `enablement` turns Pages on via the API when it isn't already, so the
+      # first run works without anyone visiting Settings. If the token isn't
+      # allowed to, this step fails and the manual switch is still needed.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        # Project sites are served from /<repo>/, so the bundle needs that base.
+        env:
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: Keep Jekyll out of it
+        run: touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

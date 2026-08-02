@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  core:
+    name: Swift core
+    runs-on: ubuntu-latest
+    # The learning engine is Foundation-only on purpose, so it builds and tests
+    # on Linux without Xcode. The SwiftUI layer is only syntax-checked here —
+    # type-checking it needs the iOS SDK, and therefore a Mac.
+    container: swift:6.2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trust the workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Build
+        run: swift build
+
+      - name: Test
+        run: swift test
+
+      - name: Syntax-check the app and test sources
+        run: Tools/parse_check.sh
+
+      - name: Content export is in step with the Swift definitions
+        # web/src/content/content.json is generated, not hand-edited. If this
+        # fails, run `swift run speaklab-content-export web/src/content/content.json`
+        # and commit the result.
+        run: |
+          swift run speaklab-content-export web/src/content/content.json
+          git diff --exit-code -- web/src/content/content.json
+
+  proxy:
+    name: Coaching proxy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+  web:
+    name: Web app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
