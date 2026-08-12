@@ -1,0 +1,15 @@
+{
+  "name": "Rostrum",
+  "short_name": "Rostrum",
+  "description": "Learn a technique from a great communicator, use it today, retrieve it cold days later.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0c",
+  "theme_color": "#0a0a0c",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

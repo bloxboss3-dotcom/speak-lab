@@ -12,10 +12,10 @@ name: Deploy web app to GitHub Pages
 on:
   push:
     branches:
+      # Only main. The github-pages environment is restricted to it, so a push
+      # to any other branch builds fine and then fails at the deploy step, which
+      # reads as a broken pull request when nothing is broken.
       - main
-      # Also deploys from the feature branch so the app can be tried before the
-      # pull request merges. Drop this line once it has.
-      - claude/speaklab-ios-app-g1jvgx
   workflow_dispatch:
 
 permissions:

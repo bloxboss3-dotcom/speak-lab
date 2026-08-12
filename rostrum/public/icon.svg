@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Rostrum">
+  <rect width="180" height="180" rx="40" fill="#0a0a0c" />
+  <g fill="none" stroke="#d9a441" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 46h68l-11 58H67L56 46Z" />
+    <path d="M90 104v34" />
+    <path d="M64 138h52" />
+  </g>
+</svg>

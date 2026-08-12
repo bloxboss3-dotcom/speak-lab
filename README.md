@@ -25,6 +25,12 @@ Both clients run the **same curriculum, the same metrics, the same coaching
 contract and the same progression rules**. The scenario catalogue is defined
 once in Swift and exported to JSON for the web build, so the two cannot drift.
 
+There is also **[Rostrum](rostrum/README.md)** in this repository: a separate
+app, on its own content and its own engines, that takes a different approach to
+the same problem — learn a technique from someone who used it well, then be
+handed a situation days later that needs it, with nothing named. It does not
+share code with the above and does not replace it.
+
 ---
 
 ## Run it on the web
@@ -151,6 +157,7 @@ web/
   src/design/    Theme, shared components, hand-drawn SVG charts.
   src/features/  Today, Paths, Progress, Settings, and the two session flows.
 server/          Node proxy that holds the API key.
+rostrum/         A second, separate app. See rostrum/README.md.
 Tests/           XCTest suite for Core.
 Tools/           Project generator, syntax checker, content exporter.
 .github/         CI and the GitHub Pages deployment.
