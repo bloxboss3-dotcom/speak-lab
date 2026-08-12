@@ -77,13 +77,14 @@ jobs:
       - name: Build Rostrum for the sub-path
         working-directory: rostrum
         env:
-          ROSTRUM_STATIC: '1'
-          NEXT_PUBLIC_ROSTRUM_STATIC: '1'
+          # build:static sets the two mode flags itself and runs check:static
+          # first, so what gets published is the guarded path rather than a
+          # hand-assembled imitation of it. Only the sub-path is passed in.
           ROSTRUM_BASE_PATH: /${{ github.event.repository.name }}/rostrum
         run: |
           npm ci
           npm test
-          npm run build
+          npm run build:static
 
       - name: Place Rostrum under the SpeakLab site
         run: cp -r ../rostrum/out dist/rostrum
