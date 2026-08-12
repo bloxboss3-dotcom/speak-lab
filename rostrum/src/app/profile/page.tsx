@@ -11,6 +11,7 @@ import {
   weeklyInsight,
 } from '@/lib/progress'
 import { levelFromXp, levelProgress, nextRankAfter, rankFor } from '@/lib/progression'
+import { IS_STATIC_BUILD } from '@/lib/build'
 import { clearStoredProgress, useStore } from '@/lib/store'
 import { emptyProgress } from '@/lib/progress'
 import { Card, Eyebrow, Meter, NotYet, Ring, Stat, relativeDay } from '@/components/ui'
@@ -197,9 +198,15 @@ export default function ProfilePage() {
         <div className="stack-sm">
           <Eyebrow>Your data</Eyebrow>
           <p className="caption">
-            Everything is stored in this browser. Audio is never saved and never uploaded. If a
-            coaching key is configured on the server, transcripts are sent for analysis — never
-            audio, never your history.
+            Everything is stored in this browser. Audio is never saved and never uploaded.
+          </p>
+          {/* A static build has no server at all, so the transcript cannot go
+              anywhere even in principle. Saying which build this is beats a
+              conditional the reader has to evaluate for themselves. */}
+          <p className="caption">
+            {IS_STATIC_BUILD
+              ? 'This build has no server, so nothing you say leaves this device and all coaching is done here in the browser.'
+              : 'If a coaching key is configured on the server, transcripts are sent for analysis — never audio, never your history.'}
           </p>
           {confirmWipe ? (
             <div className="stack-sm">
