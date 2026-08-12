@@ -35,7 +35,8 @@ Profile screen has a button that erases it.
 Copy `.env.example` to `.env.local` and add `ANTHROPIC_API_KEY` to have a model
 judge the words. The key is read only by `src/app/api/coach/route.ts`, which
 runs on the server; it is never sent to the browser and must never be given a
-`NEXT_PUBLIC_` prefix.
+`NEXT_PUBLIC_` prefix. A static build has no server at all, so that route is not
+part of it — see Deploying.
 
 **Without a key the app is still the app.** Every technique carries a list of
 `tells` — checkable properties of the text, like "the same opening repeated
@@ -139,11 +140,36 @@ streaks, the tree, the loadout, and a persistence round trip.
 
 ## Deploying
 
-Vercel, or anything that can run `next start`. It needs a server: the coaching
-route is what keeps the API key out of the browser. Set `ANTHROPIC_API_KEY` as
-an environment variable there if you want model coaching; leave it unset and the
-deployment still works, offline-coached.
+Two modes, from the same source.
 
-This app is a sibling of `web/` in the same repository, which is a different
-take on the same problem and is deployed to GitHub Pages. Neither replaces the
-other and both still build.
+**With a server** — Vercel, or anything that runs `next start`:
+
+```bash
+npm run build && npm start
+```
+
+`/api/coach` exists, so setting `ANTHROPIC_API_KEY` there gets you model
+coaching. This is the better app.
+
+**As static files** — GitHub Pages, or any static host:
+
+```bash
+ROSTRUM_BASE_PATH=/your-repo/rostrum npm run build:static   # writes out/
+```
+
+There is no server in this mode, so `/api/coach` is not built and there is no
+model coaching — the offline evaluator handles everything, and the Profile
+screen says so rather than describing a coaching path that cannot exist. Every
+other feature is identical, because all of them were already browser-side.
+
+The exclusion works by dropping the `ts` page extension: screens are `.tsx` and
+route handlers are `.ts`, so the route disappears from that build and stays in
+the other. `npm run check:static` fails the build if a routable file is ever
+written as `.ts`, which would otherwise vanish from the static site silently.
+The five `[param]` routes each have a `generateStaticParams` in a small server
+shell over the existing screen, because the export needs every id up front and
+that function cannot live in a `'use client'` file.
+
+CI builds both modes. This repository publishes SpeakLab (`web/`) at the root of
+its Pages site and Rostrum beneath it at `/rostrum/`; neither replaces the other
+and all of it still builds.

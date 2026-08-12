@@ -101,3 +101,10 @@ jobs:
       # Builds with no ANTHROPIC_API_KEY, which is also how the app is expected
       # to run in a demo: the offline evaluator covers every coaching path.
       - run: npm run build
+
+      # The other build mode, which is what GitHub Pages publishes. It drops
+      # /api/coach by excluding the `ts` page extension, so it is worth building
+      # here: a screen accidentally added as .ts, or a dynamic route added
+      # without generateStaticParams, fails this step and nothing else.
+      - name: Static export
+        run: npm run build:static

@@ -1,4 +1,5 @@
 import { scenario as findScenario } from '@/content/scenarios'
+import { IS_STATIC_BUILD } from '@/lib/build'
 import { technique as findTechnique } from '@/content/techniques'
 import { CoachDecodeError, decodeEvaluation } from './decode'
 import { detectTechniques, scoreTechnique, strongestLine } from './heuristics'
@@ -22,11 +23,16 @@ const OFFLINE_BASIS =
 const MODEL_BASIS = 'Scored from your transcript. Delivery and tone were not analysed — only the words.'
 
 /**
- * Remembers that the route reported no key, so a key-less install makes one
+ * Remembers that coaching is not reachable, so a key-less install makes one
  * request per session rather than one per attempt. Reset on a reload, which is
  * the right cadence for noticing that a key has been added.
+ *
+ * A static build starts latched: there is no server, so `/api/coach` does not
+ * exist and asking for it only produces a console error on every attempt. What
+ * a static host answers a POST it has no route for varies — 404, 405, 501 — so
+ * knowing at build time beats trying to recognise every host's refusal.
  */
-let coachingUnavailable = false
+let coachingUnavailable = IS_STATIC_BUILD
 
 async function callModel(system: string, user: string, maxTokens = 1400): Promise<string | null> {
   if (coachingUnavailable) return null
@@ -37,8 +43,13 @@ async function callModel(system: string, user: string, maxTokens = 1400): Promis
       body: JSON.stringify({ system, user, maxTokens }),
     })
     if (!response.ok) {
-      // 503 is the route's documented "no key configured" answer.
-      if (response.status === 503) coachingUnavailable = true
+      // 503 is the route saying no key is configured. Any other 4xx means the
+      // endpoint is not going to start working this session either — except
+      // 429, which is exactly the case worth retrying.
+      const structural =
+        response.status === 503 ||
+        (response.status >= 400 && response.status < 500 && response.status !== 429)
+      if (structural) coachingUnavailable = true
       return null
     }
     const payload = (await response.json()) as { text?: string }

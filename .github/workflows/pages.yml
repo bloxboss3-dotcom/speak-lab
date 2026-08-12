@@ -66,6 +66,28 @@ jobs:
       - name: Keep Jekyll out of it
         run: touch dist/.nojekyll
 
+      # Rostrum ships as a second app beneath the first, at /<repo>/rostrum/,
+      # so publishing it takes nothing away from SpeakLab at the root.
+      #
+      # This is the static build: no server, therefore no ANTHROPIC_API_KEY and
+      # no model coaching. That is a real reduction and the app says so on its
+      # Profile screen. Everything else — the lessons, Field Tests, unprompted
+      # retrieval, mastery — is browser-side and works exactly as it does with a
+      # server, because the offline evaluator was never a stub.
+      - name: Build Rostrum for the sub-path
+        working-directory: rostrum
+        env:
+          ROSTRUM_STATIC: '1'
+          NEXT_PUBLIC_ROSTRUM_STATIC: '1'
+          ROSTRUM_BASE_PATH: /${{ github.event.repository.name }}/rostrum
+        run: |
+          npm ci
+          npm test
+          npm run build
+
+      - name: Place Rostrum under the SpeakLab site
+        run: cp -r ../rostrum/out dist/rostrum
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web/dist

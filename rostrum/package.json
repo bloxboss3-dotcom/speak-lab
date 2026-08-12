@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "npm run check:static && ROSTRUM_STATIC=1 NEXT_PUBLIC_ROSTRUM_STATIC=1 next build",
+    "check:static": "node scripts/check-static.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
