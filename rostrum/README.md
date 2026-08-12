@@ -22,7 +22,7 @@ npm run dev            # http://localhost:3000
 
 ```bash
 npm run typecheck
-npm test               # 58 engine tests, no browser needed
+npm test               # 59 engine tests, no browser needed
 npm run build && npm start
 ```
 

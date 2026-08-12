@@ -31,7 +31,7 @@ export const LESSONS: Lesson[] = [
     decodeQuestions: [
       {
         id: 'q1',
-        prompt: 'Which line states what *is*, without blaming anyone for it?',
+        prompt: 'Which line states what is happening now, without blaming anyone for it?',
         options: [
           'Line 1 — “doing this drill at about seventy percent”',
           'Line 3 — “the ones who treat the last five minutes…”',

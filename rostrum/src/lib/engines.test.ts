@@ -781,3 +781,22 @@ describe('detection reports what it actually measured', () => {
     expect(decoded.detectedTechniques[0]?.markersTotal).toBeUndefined()
   })
 })
+
+describe('content is plain text', () => {
+  it('carries no markup the app does not render', () => {
+    // Nothing in the app parses markdown, so an authored *emphasis* or **bold**
+    // would reach the screen as literal asterisks.
+    const strings = [
+      ...TECHNIQUES.flatMap((t) => [t.summary, t.why, t.example, t.whenToUse, t.whenNotToUse, ...t.structure]),
+      ...LESSONS_IN_ORDER.flatMap((l) => [l.title, l.promise, l.decodeExample.setting, ...l.decodeExample.lines]),
+      ...LESSONS_IN_ORDER.flatMap((l) => l.decodeQuestions.flatMap((q) => [q.prompt, ...q.options])),
+      ...PRINCIPLES.flatMap((p) => [p.name, p.summary, p.detail, p.inPractice, p.failureItExplains, ...p.rubric]),
+      ...SCENARIOS.flatMap((s) => [s.title, s.situation, s.mission]),
+      ...MASTERS.flatMap((m) => [m.signature, m.study, m.caution]),
+    ]
+    for (const value of strings) {
+      expect(value, value).not.toMatch(/\*\w|\w\*/)
+      expect(value, value).not.toMatch(/\[[^\]]+\]\(/)
+    }
+  })
+})

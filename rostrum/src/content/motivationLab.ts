@@ -74,7 +74,7 @@ export const PRINCIPLES: MotivationPrinciple[] = [
     tradition: 'Self-determination theory; overjustification research',
     summary: 'Rewards for something already enjoyed can reduce the enjoyment.',
     detail:
-      'The overjustification effect is reasonably well supported for *expected, tangible* rewards given for activity the person already found interesting. It does not show that all praise or all rewards are harmful — unexpected rewards and informational feedback generally do not produce the effect. Belt systems are extrinsic by design, which is fine; the risk is when the belt becomes the only reason left.',
+      'The overjustification effect is reasonably well supported for rewards that are both expected and tangible, given for activity the person already found interesting. It does not show that all praise or all rewards are harmful — unexpected rewards and informational feedback generally do not produce the effect. Belt systems are extrinsic by design, which is fine; the risk is when the belt becomes the only reason left.',
     inPractice:
       'Attach praise to the thing itself rather than to the reward: talk about what the technique felt like, not only about what it earns.',
     failureItExplains:
@@ -164,7 +164,7 @@ export const PRINCIPLES: MotivationPrinciple[] = [
     tradition: 'Feedback intervention research (Kluger & DeNisi)',
     summary: 'Feedback about the task helps; feedback about the person often does not.',
     detail:
-      'A large meta-analysis found feedback interventions improved performance on average but made it *worse* in over a third of cases — and the harmful cases clustered where attention was drawn to the self rather than the task. This is one of the strongest practical findings in the whole area and it is routinely ignored.',
+      'A large meta-analysis found feedback interventions improved performance on average but made it worse in over a third of cases — and the harmful cases clustered where attention was drawn to the self rather than the task. This is one of the strongest practical findings in the whole area and it is routinely ignored.',
     inPractice:
       'Say what the technique did, not what the person is. “The guard dropped” rather than “you are careless”.',
     failureItExplains:
@@ -218,7 +218,7 @@ export const PRINCIPLES: MotivationPrinciple[] = [
     tradition: 'Edmondson',
     summary: 'Teams perform better when it is safe to be wrong out loud.',
     detail:
-      'Originally studied in hospital teams, where the safest units reported *more* errors — because they reported them at all. Safety is not comfort or the absence of standards; the research consistently pairs it with high accountability, and it does nothing on its own.',
+      'Originally studied in hospital teams, where the safest units reported more errors, not fewer — because they reported them at all. Safety is not comfort or the absence of standards; the research consistently pairs it with high accountability, and it does nothing on its own.',
     inPractice:
       'Respond to a leader admitting a mistake in a way the rest of the team will remember. That reaction is the policy.',
     failureItExplains:
@@ -312,7 +312,7 @@ export const PRINCIPLES: MotivationPrinciple[] = [
     detail:
       'The popular version — praise effort, not talent — outran the evidence. Large replications and meta-analyses have found effects that are small on average and concentrated among lower-achieving or at-risk students, and several high-profile studies have not replicated. What survives is modest and worth knowing: attributing a setback to something changeable leaves more room to act than attributing it to something fixed. Do not tell a parent that mindset determines outcomes.',
     inPractice:
-      'Attribute setbacks to specific changeable causes because it is usually *true* and gives a next step — not because it rewires anyone’s brain.',
+      'Attribute setbacks to specific changeable causes because it is usually true and gives a next step — not because it rewires anyone’s brain.',
     failureItExplains:
       'Both the student who concludes they are talentless, and the instructor who thinks saying “yet” will fix it.',
     scenarioId: 'failed-belt-test',
