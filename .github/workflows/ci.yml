@@ -79,3 +79,25 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+
+  rostrum:
+    name: Rostrum
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rostrum
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: rostrum/package-lock.json
+
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # Builds with no ANTHROPIC_API_KEY, which is also how the app is expected
+      # to run in a demo: the offline evaluator covers every coaching path.
+      - run: npm run build

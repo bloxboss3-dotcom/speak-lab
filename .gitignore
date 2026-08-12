@@ -4,6 +4,9 @@ ios/SpeakLab/Config/*.local.*
 server/.env
 server/.env.*
 !server/.env.example
+rostrum/.env
+rostrum/.env.*
+!rostrum/.env.example
 *.pem
 *.p12
 *.mobileprovision
@@ -22,6 +25,11 @@ node_modules/
 dist/
 npm-debug.log*
 *.tsbuildinfo
+
+# --- Next.js ---
+.next/
+out/
+.vercel/
 
 # --- Tooling scratch ---
 .parse-check/
