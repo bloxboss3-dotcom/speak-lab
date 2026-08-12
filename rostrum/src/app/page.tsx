@@ -18,6 +18,7 @@ import {
 } from '@/lib/progress'
 import { levelFromXp, levelProgress, rankFor, xpForLevel, xpIntoLevel } from '@/lib/progression'
 import { useStore } from '@/lib/store'
+import { SKILL_BRANCH_NAMES, type SkillBranch } from '@/lib/types'
 import { Card, Chip, Eyebrow, Meter, Portrait } from '@/components/ui'
 
 /**
@@ -234,6 +235,10 @@ function Snapshot() {
     .filter(([, value]) => value > 0)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
+  const strongest = top[0]?.[0] as SkillBranch | undefined
+  const lastScenario = progress.attempts[0]
+    ? (findScenario(progress.attempts[0].scenarioId)?.title ?? 'a scenario')
+    : undefined
 
   return (
     <Card variant="quiet">
@@ -259,12 +264,11 @@ function Snapshot() {
             <div className="eyebrow">Attempts</div>
           </div>
         </div>
-        {top.length > 0 ? (
+        {strongest ? (
           <p className="caption">
-            Strongest branch: {top[0]?.[0].replace('-', ' ')} ·{' '}
-            {progress.attempts[0]
-              ? `last worked on ${findScenario(progress.attempts[0].scenarioId)?.title ?? 'a scenario'}`
-              : ''}
+            Strongest branch: {SKILL_BRANCH_NAMES[strongest]}
+            {/* The separator only earns its place when something follows it. */}
+            {lastScenario ? ` · last worked on ${lastScenario}` : ''}
           </p>
         ) : null}
       </div>
