@@ -1,3 +1,5 @@
+import { readdirSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { LESSONS, LESSONS_IN_ORDER } from '@/content/lessons'
 import { MASTERS } from '@/content/masters'
@@ -797,6 +799,48 @@ describe('content is plain text', () => {
     for (const value of strings) {
       expect(value, value).not.toMatch(/\*\w|\w\*/)
       expect(value, value).not.toMatch(/\[[^\]]+\]\(/)
+    }
+  })
+})
+
+// ---------------------------------------------------------------- Speech clips
+
+describe('speech clips', () => {
+  const clips = TECHNIQUES.flatMap((technique) => technique.clips ?? [])
+
+  it('ships the audio file every clip points at', () => {
+    // A missing file 404s silently in the player, so this is checked on disk
+    // rather than trusted.
+    const dir = fileURLToPath(new URL('../../public/clips', import.meta.url))
+    const present = new Set(readdirSync(dir))
+    expect(clips.length).toBeGreaterThan(0)
+    for (const clip of clips) {
+      expect(present.has(clip.file), `${clip.file} missing from public/clips`).toBe(true)
+    }
+  })
+
+  it('carries the provenance that makes each clip usable', () => {
+    for (const clip of clips) {
+      // Only US federal recordings qualify — a broadcaster's recording of a
+      // public-domain speech is still the broadcaster's.
+      expect(clip.recordedBy, clip.file).toMatch(/National Archives/)
+      expect(clip.sourceUrl, clip.file).toMatch(/^https:\/\/archive\.org\//)
+      expect(clip.speaker.length, clip.file).toBeGreaterThan(0)
+      expect(clip.occasion.length, clip.file).toBeGreaterThan(0)
+      expect(clip.seconds, clip.file).toBeGreaterThan(0)
+      expect(clip.startsAt, clip.file).toBeGreaterThanOrEqual(0)
+    }
+  })
+
+  it('says what to listen for, since the audio alone teaches little', () => {
+    for (const clip of clips) {
+      expect(clip.listenFor.length, clip.file).toBeGreaterThan(60)
+    }
+  })
+
+  it('keeps clips short enough to replay', () => {
+    for (const clip of clips) {
+      expect(clip.seconds, clip.file).toBeLessThanOrEqual(45)
     }
   })
 })
