@@ -12,11 +12,12 @@ import {
 } from '@/lib/progress'
 import { levelFromXp, levelProgress, nextRankAfter, rankFor } from '@/lib/progression'
 import { IS_STATIC_BUILD } from '@/lib/build'
+import { storedBytes } from '@/lib/localClips'
 import { clearStoredProgress, useStore } from '@/lib/store'
 import { emptyProgress } from '@/lib/progress'
 import { Card, Eyebrow, Meter, NotYet, Ring, Stat, relativeDay } from '@/components/ui'
 import { SKILL_BRANCH_NAMES, type SkillBranch } from '@/lib/types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /**
  * Progress.
@@ -28,6 +29,15 @@ import { useState } from 'react'
 export default function ProfilePage() {
   const { progress, replace, storageFailed } = useStore()
   const [confirmWipe, setConfirmWipe] = useState(false)
+  const [stored, setStored] = useState({ count: 0, bytes: 0 })
+
+  // Audio the learner attached lives in IndexedDB rather than in `progress`,
+  // so the data summary has to ask for it separately.
+  useEffect(() => {
+    storedBytes()
+      .then(setStored)
+      .catch(() => undefined)
+  }, [])
 
   const level = levelFromXp(progress.xp)
   const rank = rankFor(level)
@@ -198,8 +208,17 @@ export default function ProfilePage() {
         <div className="stack-sm">
           <Eyebrow>Your data</Eyebrow>
           <p className="caption">
-            Everything is stored in this browser. Audio is never saved and never uploaded.
+            Everything is stored in this browser. Recordings you make while practising are never
+            saved and never uploaded.
           </p>
+          {stored.count > 0 ? (
+            <p className="caption">
+              You have attached {stored.count} audio file{stored.count === 1 ? '' : 's'} to
+              techniques, taking {Math.max(1, Math.round(stored.bytes / 1024 / 1024))}MB on this
+              device. Those stay here too — they are not part of the app and were never sent
+              anywhere.
+            </p>
+          ) : null}
           {/* A static build has no server at all, so the transcript cannot go
               anywhere even in principle. Saying which build this is beats a
               conditional the reader has to evaluate for themselves. */}

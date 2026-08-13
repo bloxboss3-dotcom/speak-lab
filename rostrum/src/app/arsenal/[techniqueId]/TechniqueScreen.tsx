@@ -8,6 +8,7 @@ import { masteryFor } from '@/lib/progress'
 import { nextMasteryRequirement } from '@/lib/progression'
 import { useStore } from '@/lib/store'
 import { HearIt } from '@/components/HearIt'
+import { OwnClips } from '@/components/OwnClips'
 import { Card, Eyebrow, NotYet, Ring, StageBadge, relativeDay, stageColour } from '@/components/ui'
 import { SKILL_CATEGORY_NAMES } from '@/lib/types'
 
@@ -90,6 +91,8 @@ export default function TechniqueScreen() {
       </div>
 
       {technique.clips?.length ? <HearIt clips={technique.clips} /> : null}
+
+      <OwnClips techniqueId={technique.id} />
 
       <Card variant="quiet">
         <div className="stack-sm">

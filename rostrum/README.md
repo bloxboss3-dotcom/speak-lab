@@ -82,6 +82,19 @@ A clip demonstrates a technique; it does not own it. Roosevelt using a repeated
 structure does not make repetition his, so the speaker on a clip is often not
 the master the technique is credited to.
 
+### Your own recordings
+
+Most of the Hall therefore has no shipped clip, which is a limit on what this
+repository may publish rather than on what its owner may study. Any technique
+will accept a recording you attach yourself: it is stored in IndexedDB in your
+browser, on your device, and is never uploaded, never committed, and not part of
+the build. The Profile screen reports how much is stored so it is never a
+surprise, and each one can be deleted from the technique page.
+
+This distinction is the whole of it. Publishing someone's recording is the app's
+problem; playing a copy of one you already have, for your own practice, is not
+something the app has any business policing.
+
 ## What it will not tell you
 
 Scores come from a transcript and nothing else. The app never reports on tone of
