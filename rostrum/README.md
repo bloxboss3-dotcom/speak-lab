@@ -22,7 +22,7 @@ npm run dev            # http://localhost:3000
 
 ```bash
 npm run typecheck
-npm test               # 63 engine tests, no browser needed
+npm test               # 67 engine tests, no browser needed
 npm run build && npm start
 ```
 
@@ -53,6 +53,26 @@ scored against. A detection reports `3 of 3 markers for it are in what you said`
 rather than a confidence percentage, because marker coverage is what was
 actually measured — a model's judgement is a different claim and keeps its
 percentage.
+
+## Examples
+
+Every technique carries two written examples and, where there is one, a real
+instance.
+
+`example` is general. `matExample` is the same move said in a Taekwondo hall,
+and it is the one that does most of the work — a technique becomes usable at
+the point you can hear yourself saying it on a Thursday night, not at the point
+you can define it.
+
+`inTheWild` says where someone used it and what they did there. The `what` is
+a structural description written for this app. The `words` field carries the
+line itself and appears **only where the source is public domain** — Lincoln,
+or a US official recorded in office. Everyone still in copyright is located and
+described instead, which is enforced by a test rather than left to discipline.
+
+That is not purely a rights decision. The sentence belongs to whoever said it;
+the structure underneath is the part you can take, and describing it is what
+makes the transfer explicit.
 
 ## Hearing it
 

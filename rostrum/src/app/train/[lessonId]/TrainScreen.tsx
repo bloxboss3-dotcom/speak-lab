@@ -12,6 +12,7 @@ import type { AttemptOutcome } from '@/lib/progress'
 import { useStore } from '@/lib/store'
 import { Coaching, Working } from '@/components/Coaching'
 import { Perform, type Performance } from '@/components/Perform'
+import { Examples } from '@/components/Examples'
 import { Card, Chip, Eyebrow, Portrait } from '@/components/ui'
 import type { CoachEvaluation } from '@/lib/types'
 
@@ -220,12 +221,7 @@ export default function TrainScreen() {
             </Card>
           </div>
 
-          <div className="stack-sm">
-            <Eyebrow>Sounds like</Eyebrow>
-            <Card variant="amber">
-              <p className="spoken">“{technique.example}”</p>
-            </Card>
-          </div>
+          <Examples technique={technique} />
 
           <div className="stack-sm">
             <Card variant="quiet">

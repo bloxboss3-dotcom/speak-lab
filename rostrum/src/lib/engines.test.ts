@@ -844,3 +844,53 @@ describe('speech clips', () => {
     }
   })
 })
+
+// ---------------------------------------------------------------- Examples
+
+describe('examples', () => {
+  it('gives every technique a version for the hall', () => {
+    for (const technique of TECHNIQUES) {
+      expect(technique.matExample.length, technique.id).toBeGreaterThan(40)
+      // The two examples must be different, or the second one is not earning
+      // its place on the screen.
+      expect(technique.matExample, technique.id).not.toBe(technique.example)
+    }
+  })
+
+  it('quotes only sources that are marked public domain', () => {
+    // The rule the content follows: `words` carries someone's actual line, so
+    // it may appear only where the source is out of copyright. Everyone else is
+    // described instead. This is the guard against that slipping later.
+    for (const technique of TECHNIQUES) {
+      const wild = technique.inTheWild
+      if (!wild?.words) continue
+      expect(wild.where.toLowerCase(), `${technique.id} quotes ${wild.speaker}`).toContain(
+        'public domain',
+      )
+    }
+  })
+
+  it('locates and describes the passage wherever it names one', () => {
+    for (const technique of TECHNIQUES) {
+      const wild = technique.inTheWild
+      if (!wild) continue
+      expect(wild.speaker.length, technique.id).toBeGreaterThan(0)
+      expect(wild.where.length, technique.id).toBeGreaterThan(12)
+      expect(wild.what.length, technique.id).toBeGreaterThan(80)
+    }
+  })
+
+  it('attributes in-the-wild entries to real people in the Hall where one is credited', () => {
+    const names = new Set(MASTERS.map((entry) => entry.name))
+    for (const technique of TECHNIQUES) {
+      const wild = technique.inTheWild
+      if (!wild || !technique.masterId) continue
+      // A clip may demonstrate someone else's technique, but an in-the-wild
+      // entry on a credited technique should be that master.
+      const master = MASTERS.find((entry) => entry.id === technique.masterId)
+      if (master && names.has(wild.speaker)) {
+        expect(wild.speaker, technique.id).toBe(master.name)
+      }
+    }
+  })
+})
