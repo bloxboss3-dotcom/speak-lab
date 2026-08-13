@@ -7,6 +7,7 @@ import { technique as findTechnique } from '@/content/techniques'
 import { masteryFor } from '@/lib/progress'
 import { nextMasteryRequirement } from '@/lib/progression'
 import { useStore } from '@/lib/store'
+import { HearIt } from '@/components/HearIt'
 import { Card, Eyebrow, NotYet, Ring, StageBadge, relativeDay, stageColour } from '@/components/ui'
 import { SKILL_CATEGORY_NAMES } from '@/lib/types'
 
@@ -87,6 +88,8 @@ export default function TechniqueScreen() {
           </ol>
         </Card>
       </div>
+
+      {technique.clips?.length ? <HearIt clips={technique.clips} /> : null}
 
       <Card variant="quiet">
         <div className="stack-sm">

@@ -496,6 +496,34 @@ textarea.field {
   );
 }
 
+/* Clip playback. Smaller and quieter than the record button — this is
+   listening, not performing, and the amber is spent on the record path. */
+.play-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-hairline-strong);
+  background: var(--color-sunken);
+  color: var(--color-ivory);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.play-btn:hover {
+  border-color: var(--color-amber);
+  color: var(--color-amber);
+}
+
+.play-btn:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
 .record-btn {
   width: 92px;
   height: 92px;

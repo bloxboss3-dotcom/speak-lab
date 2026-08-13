@@ -22,7 +22,7 @@ npm run dev            # http://localhost:3000
 
 ```bash
 npm run typecheck
-npm test               # 59 engine tests, no browser needed
+npm test               # 63 engine tests, no browser needed
 npm run build && npm start
 ```
 
@@ -54,6 +54,34 @@ rather than a confidence percentage, because marker coverage is what was
 actually measured — a model's judgement is a different claim and keeps its
 percentage.
 
+## Hearing it
+
+Reading that a structure repeats teaches the shape. Hearing it teaches where the
+pitch climbs and where the pause falls, which is most of why it works — so some
+techniques carry a short recording of someone using it, with a note on what to
+listen for.
+
+The note is the point. A famous speech played end to end teaches very little;
+being told which twenty seconds to attend to, and what is happening inside them,
+teaches the move.
+
+**Only US federal recordings are used.** A work of the US government carries no
+copyright at all under 17 U.S.C. §105, which makes those recordings genuinely
+free to host. That rule is deliberately narrow and rules out almost every famous
+speech of the last century: King's estate holds copyright until the end of 2058
+and enforces it, and a broadcaster's recording of an otherwise public-domain
+speech is still the broadcaster's recording. Nothing here relies on fair use.
+
+Each clip stores who recorded it and a link to the archive item, and the screen
+shows both — the provenance travels with the audio rather than living in a
+commit message. Clip boundaries were taken from a transcript of the recording,
+and each clip was transcribed again afterwards to confirm it contains the
+passage it claims to.
+
+A clip demonstrates a technique; it does not own it. Roosevelt using a repeated
+structure does not make repetition his, so the speaker on a clip is often not
+the master the technique is credited to.
+
 ## What it will not tell you
 
 Scores come from a transcript and nothing else. The app never reports on tone of
@@ -71,7 +99,7 @@ Profile screen too, not just here.
 | **Train** | Hook → micro lesson → decode a real example → build one → perform it. |
 | **Coaching** | A score for the technique you were training, the strongest line you said, and one instruction for the next rep. |
 | **Field Test** | A situation with no technique named. What you reach for is the measurement. |
-| **Masters** | Nine people, what each did to language, and the caution that goes with them. |
+| **Masters** | Eleven people, what each did to language, and the caution that goes with them. |
 | **Arsenal** | What you own, with the mastery stage of each. |
 | **Skill tree** | The same techniques as nine limbs, coloured by mastery stage. |
 | **Loadout** | Five slots. What you equip leads the plan in Speech Gym. |
@@ -98,13 +126,14 @@ only above a confidence floor.
 
 | | |
 | --- | --- |
-| Masters | 9 |
-| Techniques | 34 |
+| Masters | 11 |
+| Techniques | 36 |
 | Lessons | 12 |
 | Scenarios | 47 |
 | Field Tests | 12 |
 | Motivation Lab principles | 17 |
 | Achievements | 13 |
+| Speech clips | 5 |
 
 All of it is TypeScript in `src/content/`, typed against `src/lib/types.ts`, and
 covered by integrity tests. Every example line is written for this app.
@@ -130,6 +159,7 @@ src/app/          Routes. Bottom nav: Today, Masters, Arsenal, Gym, Profile.
 src/app/api/      The coaching route. The only place the API key exists.
 src/components/   Perform (record/transcribe), Coaching, and the UI primitives.
 src/content/      Masters, techniques, lessons, scenarios, field tests, the Lab.
+public/clips/     Public-domain speech excerpts, with provenance in the content.
 src/lib/          Types, progression, mastery, review, tree, loadout, store.
 src/lib/coach/    Prompts, tolerant JSON decoding, the offline evaluator.
 ```

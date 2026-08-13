@@ -16,7 +16,7 @@ export default function MastersPage() {
     <main className="screen stack-lg">
       <header className="stack-sm">
         <Eyebrow amber>Hall of Masters</Eyebrow>
-        <h1 className="display">Nine people who did something to language</h1>
+        <h1 className="display">{MASTERS.length} people who did something to language</h1>
         <p className="caption">
           Every technique here is transferable and domain-neutral. None of these entries endorses
           anyone’s politics, theology or persona — take the principle, leave the personality.

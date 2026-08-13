@@ -139,6 +139,34 @@ export const MASTERS: Master[] = [
     accent: '#c2924f',
     techniqueIds: ['direct-address', 'possibility-frame', 'repeat-the-anchor'],
   },
+  {
+    id: 'fdr',
+    name: 'Franklin D. Roosevelt',
+    role: '32nd US President',
+    years: '1882–1945',
+    signature: 'One structure repeated until the scale of a thing lands',
+    study:
+      'Roosevelt was willing to be repetitive on purpose. Facing an audience that already knew the headline, he would hold one sentence shape and change only the place name inside it, so the accumulation did the arguing instead of adjectives. He also read slowly, and trusted a plain sentence to carry weight without being decorated.',
+    caution:
+      'Wartime gravity is not a style to borrow. The transferable part is the discipline of repeating a structure exactly while the content inside it grows.',
+    initials: 'FR',
+    accent: '#7f95a8',
+    techniqueIds: ['accumulating-list'],
+  },
+  {
+    id: 'jfk',
+    name: 'John F. Kennedy',
+    role: '35th US President',
+    years: '1917–1963',
+    signature: 'Balanced opposites, and clauses that turn back on themselves',
+    study:
+      'Kennedy built sentences as pairs. He set one half against the other so the shape itself carried the meaning, and he was fond of inverting a clause and saying it back — a construction that sounds inevitable out loud and is very hard to argue with in the moment. He also stacked short parallel clauses to build pressure before releasing it.',
+    caution:
+      'This is an elevated register that can sound pompous in a small room. The mechanism — putting two halves in deliberate balance — works at any scale; the grandeur does not.',
+    initials: 'JK',
+    accent: '#9a8fb5',
+    techniqueIds: ['the-turn'],
+  },
 ]
 
 export const MASTER_BY_ID = new Map(MASTERS.map((master) => [master.id, master]))

@@ -37,6 +37,19 @@ export const TECHNIQUES: Technique[] = [
       { kind: 'escalation' },
       { kind: 'short-close', maxWords: 22 },
     ],
+    clips: [
+      {
+        file: 'fdr-anaphora.mp3',
+        speaker: 'Franklin D. Roosevelt',
+        occasion: 'Address to Congress, 8 December 1941',
+        seconds: 36,
+        startsAt: 171,
+        sourceUrl: 'https://archive.org/details/FranklinDelanoRooseveltDayOfInfamySpeech',
+        recordedBy: 'Franklin D. Roosevelt Presidential Library and Museum (US National Archives)',
+        listenFor:
+          'One sentence shape, held exactly, with only the place name changing inside it. Notice that he does not raise his volume — the pressure comes from accumulation, and from how little he varies. Count the repetitions before he breaks the pattern.',
+      },
+    ],
   },
   {
     id: 'moral-contrast',
@@ -59,6 +72,19 @@ export const TECHNIQUES: Technique[] = [
     example:
       'Right now we bow when the instructor is looking. A black belt bows because the room deserves it whether or not anyone sees. That is not a rule away — it is a habit away.',
     tells: [{ kind: 'antithesis' }, { kind: 'concrete-nouns', min: 4 }],
+    clips: [
+      {
+        file: 'jfk-antithesis.mp3',
+        speaker: 'John F. Kennedy',
+        occasion: 'Inaugural Address, 20 January 1961',
+        seconds: 14,
+        startsAt: 16,
+        sourceUrl: 'https://archive.org/details/JohnF.KennedyInauguralAddress',
+        recordedBy: 'John F. Kennedy Presidential Library (US National Archives)',
+        listenFor:
+          'He says what the moment is not before he says what it is, and the two halves are balanced to almost the same length. Listen for the small dip in pitch at the hinge between them — that pause is what makes the second half land as the answer.',
+      },
+    ],
   },
   {
     id: 'concrete-image',
@@ -210,6 +236,19 @@ export const TECHNIQUES: Technique[] = [
     whenNotToUse: 'More than once in a short talk. Two tricolons in a row is a tic, not a technique.',
     example: 'Show up. Work when it is boring. Then find out what you are actually made of.',
     tells: [{ kind: 'anaphora', minRepeats: 3 }, { kind: 'escalation' }],
+    clips: [
+      {
+        file: 'jfk-escalation.mp3',
+        speaker: 'John F. Kennedy',
+        occasion: 'Inaugural Address, 20 January 1961',
+        seconds: 26,
+        startsAt: 145,
+        sourceUrl: 'https://archive.org/details/JohnF.KennedyInauguralAddress',
+        recordedBy: 'John F. Kennedy Presidential Library (US National Archives)',
+        listenFor:
+          'A run of very short parallel clauses, each the same length, taken at a steady clip. Listen to how the pitch lifts slightly on each one and how little air sits between them — the run is doing the work, not any single phrase in it.',
+      },
+    ],
   },
   {
     id: 'resolve-without-denial',
@@ -748,6 +787,92 @@ export const TECHNIQUES: Technique[] = [
     tells: [
       { kind: 'phrases', any: ['let me think', 'i am weighing', 'i’m weighing', 'on one side', 'on the other'], label: 'reasoning narrated' },
       { kind: 'antithesis' },
+    ],
+  },
+  // ---------------------------------------------------------------- Kennedy
+  {
+    id: 'the-turn',
+    name: 'The Turn',
+    masterId: 'jfk',
+    category: 'rhetoric',
+    branch: 'persuasion',
+    summary: 'Say the clause, then say it back with the halves swapped.',
+    why: 'Reversing a clause forces the listener to hold both orders at once, and the second one arrives sounding like a conclusion they reached rather than a claim you made. It is also unusually memorable: the shape is a hook, so the sentence survives long after the talk.',
+    structure: [
+      'Write the ordinary sentence',
+      'Find its two halves',
+      'Say it again with them swapped',
+      'Keep it only if the reversal is actually true',
+    ],
+    whenToUse:
+      'One line per talk, at the point you most want repeated afterwards. It works best when the reversal exposes something real rather than being clever.',
+    whenNotToUse:
+      'Any time the reversed version is not true. The construction sounds so convincing out loud that it will carry a false claim past people, which is precisely why it should be used carefully.',
+    example:
+      'Do not train until you can get it right. Train until you cannot get it wrong.',
+    tells: [{ kind: 'antithesis' }, { kind: 'short-close', maxWords: 24 }],
+    clips: [
+      {
+        file: 'jfk-ask-not.mp3',
+        speaker: 'John F. Kennedy',
+        occasion: 'Inaugural Address, 20 January 1961',
+        seconds: 14,
+        startsAt: 755,
+        sourceUrl: 'https://archive.org/details/JohnF.KennedyInauguralAddress',
+        recordedBy: 'John F. Kennedy Presidential Library (US National Archives)',
+        listenFor:
+          'The best-known example of the shape. Listen to how evenly the two halves are weighted and how he slows into the second one — the reversal is given room rather than rushed, which is what stops it sounding like wordplay.',
+      },
+      {
+        file: 'jfk-chiasmus.mp3',
+        speaker: 'John F. Kennedy',
+        occasion: 'Inaugural Address, 20 January 1961',
+        seconds: 25,
+        startsAt: 470,
+        sourceUrl: 'https://archive.org/details/JohnF.KennedyInauguralAddress',
+        recordedBy: 'John F. Kennedy Presidential Library (US National Archives)',
+        listenFor:
+          'The more useful example, because the reversal carries an actual argument about fear rather than a slogan. Notice it arrives mid-passage at conversational volume, and that the surrounding sentences are plain — the turn stands out because nothing around it is competing.',
+      },
+    ],
+  },
+  // ---------------------------------------------------------------- Roosevelt
+  {
+    id: 'accumulating-list',
+    name: 'The Accumulating List',
+    masterId: 'fdr',
+    category: 'rhetoric',
+    branch: 'clarity',
+    summary: 'Hold one sentence shape exactly and change only one word in it.',
+    why: 'When the frame never varies, the listener stops processing grammar and starts counting. The scale of a thing is then established by the count itself rather than by any adjective, which is why it survives scepticism — you have not told them it was big, you have listed it until it was.',
+    structure: [
+      'Choose the one sentence shape',
+      'Change only the single variable inside it',
+      'Keep your volume and pace flat',
+      'Stop as soon as the count has landed',
+    ],
+    whenToUse:
+      'When a group has heard the headline and shrugged. Listing the instances plainly re-establishes a scale that summarising it away destroys.',
+    whenNotToUse:
+      'When there are only two instances, or when you would have to stretch to reach a third. A short list draws attention to how short it is.',
+    example:
+      'On Monday the mats were left out. On Tuesday the mats were left out. On Wednesday I put them away myself. Nobody is in trouble. I am telling you what a week looks like from where I stand.',
+    tells: [
+      { kind: 'anaphora', minRepeats: 3 },
+      { kind: 'concrete-nouns', min: 4 },
+    ],
+    clips: [
+      {
+        file: 'fdr-anaphora.mp3',
+        speaker: 'Franklin D. Roosevelt',
+        occasion: 'Address to Congress, 8 December 1941',
+        seconds: 36,
+        startsAt: 171,
+        sourceUrl: 'https://archive.org/details/FranklinDelanoRooseveltDayOfInfamySpeech',
+        recordedBy: 'Franklin D. Roosevelt Presidential Library and Museum (US National Archives)',
+        listenFor:
+          'One sentence shape, held exactly, with only the place name changing. He does not raise his volume and he does not speed up — the flatness is the technique. Count the entries and notice that the list, not any single line, is what establishes the scale.',
+      },
     ],
   },
 ]

@@ -95,6 +95,34 @@ export interface Master {
   techniqueIds: string[]
 }
 
+/**
+ * A recording of someone using a technique, so it can be heard and not only
+ * read. Half of what makes these techniques work is prosody — where the pitch
+ * climbs, where the pause falls — and none of that survives on the page.
+ *
+ * Every clip here is a US Government work: an official recorded by a federal
+ * agency in the course of their duties, which carries no copyright at all under
+ * 17 U.S.C. §105. That is a deliberately narrow rule. A broadcaster's recording
+ * of the same public-domain speech is still the broadcaster's recording, and
+ * most great speeches of the last century cannot be used at any price — so the
+ * provenance travels with the clip rather than sitting in a comment somewhere.
+ */
+export interface SpeechClip {
+  /** File under public/clips. */
+  file: string
+  speaker: string
+  occasion: string
+  /** Length of the clip, and where it sits in the full recording. */
+  seconds: number
+  startsAt: number
+  /** The archive it came from, so the claim can be checked. */
+  sourceUrl: string
+  /** Which agency made the recording — the reason it is free to use. */
+  recordedBy: string
+  /** What is happening in the audio. Original commentary, and the actual lesson. */
+  listenFor: string
+}
+
 export interface Technique {
   id: string
   name: string
@@ -120,6 +148,8 @@ export interface Technique {
   tells: TechniqueTell[]
   /** Techniques that should be learned first. */
   requires?: string[]
+  /** Recordings of the technique in use. Most techniques have none. */
+  clips?: SpeechClip[]
 }
 
 /** A checkable property of a transcript. */
