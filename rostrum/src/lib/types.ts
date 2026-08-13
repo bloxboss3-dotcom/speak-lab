@@ -123,6 +123,24 @@ export interface SpeechClip {
   listenFor: string
 }
 
+/**
+ * Where a technique was used for real.
+ *
+ * `what` describes the move structurally and is written for this app. `words`
+ * carries the actual line, and appears only where the source is public domain —
+ * Lincoln, or a US official recorded in office. For everyone else the passage
+ * is described and located rather than reproduced, which is the part that
+ * transfers in any case: knowing that one opening is held fixed while the thing
+ * after it widens teaches more than the sentence does.
+ */
+export interface InTheWild {
+  speaker: string
+  /** The occasion, specific enough to find and listen to. */
+  where: string
+  what: string
+  words?: string
+}
+
 export interface Technique {
   id: string
   name: string
@@ -140,6 +158,15 @@ export interface Technique {
   whenNotToUse: string
   /** An original line written for this app, not a quotation. */
   example: string
+  /**
+   * The same move said in a Taekwondo hall. Written for this app.
+   *
+   * A technique only becomes usable at the point you can hear yourself saying
+   * it on a Thursday night, so this is the example that does most of the work.
+   */
+  matExample: string
+  /** Where someone used it for real, and what they did there. */
+  inTheWild?: InTheWild
   /**
    * Observable markers the offline evaluator looks for in a transcript.
    * These are what make coaching work with no API key — each is a real,
