@@ -8,6 +8,7 @@ import { masteryFor } from '@/lib/progress'
 import { nextMasteryRequirement } from '@/lib/progression'
 import { useStore } from '@/lib/store'
 import { Blueprint } from '@/components/Blueprint'
+import { TakenApart } from '@/components/TakenApart'
 import { Examples } from '@/components/Examples'
 import { HearIt } from '@/components/HearIt'
 import { OwnClips } from '@/components/OwnClips'
@@ -91,6 +92,8 @@ export default function TechniqueScreen() {
           </ol>
         </Card>
       </div>
+
+      {technique.breakdown ? <TakenApart breakdown={technique.breakdown} /> : null}
 
       <Blueprint lines={technique.blueprint} />
 

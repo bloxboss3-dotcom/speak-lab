@@ -124,6 +124,36 @@ export interface SpeechClip {
 }
 
 /**
+ * One line of a worked example, with what that line is doing.
+ *
+ * `doing` is mechanical on purpose — "same opening, word for word", not "this
+ * builds a sense of momentum". The learner is looking at the line while they
+ * read it, so the note has to describe the move, not admire it.
+ */
+export interface BreakdownLine {
+  text: string
+  doing: string
+}
+
+/**
+ * A real thing, taken apart.
+ *
+ * This is the centre of a lesson. Explaining a technique and then asking for a
+ * performance is a classroom model; showing one that works, marking what every
+ * line in it is doing, and then asking for the same shape is closer to how a
+ * physical skill is actually taught.
+ */
+export interface Breakdown {
+  /** Where it came from, said plainly on screen. */
+  source: string
+  /** True only when these are someone's actual recorded words. */
+  verbatim: boolean
+  lines: BreakdownLine[]
+  /** The one instruction for making your own. */
+  nowYou: string
+}
+
+/**
  * Where a technique was used for real.
  *
  * `what` describes the move structurally and is written for this app. `words`
@@ -177,6 +207,8 @@ export interface Technique {
   matExample: string
   /** Where someone used it for real, and what they did there. */
   inTheWild?: InTheWild
+  /** One worked example taken apart line by line. The centre of the lesson. */
+  breakdown?: Breakdown
   /**
    * Observable markers the offline evaluator looks for in a transcript.
    * These are what make coaching work with no API key — each is a real,

@@ -13,6 +13,8 @@ import { useStore } from '@/lib/store'
 import { Coaching, Working } from '@/components/Coaching'
 import { Perform, type Performance } from '@/components/Perform'
 import { Blueprint } from '@/components/Blueprint'
+import { ShadowDrill } from '@/components/ShadowDrill'
+import { TakenApart } from '@/components/TakenApart'
 import { Examples } from '@/components/Examples'
 import { Card, Chip, Eyebrow, Portrait } from '@/components/ui'
 import type { CoachEvaluation } from '@/lib/types'
@@ -27,7 +29,7 @@ import type { CoachEvaluation } from '@/lib/types'
  * into performance produces a bad attempt and teaches nothing.
  */
 
-type Stage = 'hook' | 'lesson' | 'decode' | 'build' | 'perform' | 'working' | 'coaching'
+type Stage = 'hook' | 'lesson' | 'shadow' | 'decode' | 'build' | 'perform' | 'working' | 'coaching'
 
 export default function TrainScreen() {
   const params = useParams<{ lessonId: string }>()
@@ -196,49 +198,58 @@ export default function TrainScreen() {
             <p className="body">{technique.summary}</p>
           </div>
 
-          <Card>
-            <div className="stack-sm">
-              <Eyebrow>Why it works</Eyebrow>
-              <p className="body">{technique.why}</p>
-            </div>
-          </Card>
-
-          <div className="stack-sm">
-            <Eyebrow amber>The shape</Eyebrow>
-            <Card variant="sunken">
-              <ol className="list-reset stack-sm">
-                {technique.structure.map((step, index) => (
-                  <li key={step} className="row" style={{ alignItems: 'flex-start', gap: 12 }}>
-                    <span
-                      className="numeral faint"
-                      style={{ fontSize: 12, width: 16, flex: '0 0 auto', paddingTop: 3 }}
-                    >
-                      {index + 1}
-                    </span>
-                    <span className="body">{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </Card>
-          </div>
+          {/* The teaching happens here: a line that works, then what every part
+              of it is doing. The abstract description of the shape used to live
+              on this screen and taught nobody how to make one. */}
+          {technique.breakdown ? (
+            <TakenApart breakdown={technique.breakdown} />
+          ) : (
+            <Examples technique={technique} />
+          )}
 
           <Blueprint lines={technique.blueprint} />
 
-          <Examples technique={technique} />
+          <details className="disclosure">
+            <summary className="caption">Why this works, and when not to use it</summary>
+            <div className="stack-sm" style={{ marginTop: 12 }}>
+              <p className="caption">{technique.why}</p>
+              <p className="caption">
+                <strong>Use it when:</strong> {technique.whenToUse}
+              </p>
+              <p className="caption">
+                <strong>Not when:</strong> {technique.whenNotToUse}
+              </p>
+            </div>
+          </details>
 
+          <button
+            type="button"
+            className="btn btn-block"
+            onClick={() => setStage(technique.breakdown ? 'shadow' : 'decode')}
+          >
+            {technique.breakdown ? 'Say it back' : 'Spot it in another one'}
+          </button>
+        </div>
+      ) : null}
+
+      {stage === 'shadow' && technique.breakdown ? (
+        <div className="stack-lg enter">
           <div className="stack-sm">
-            <Card variant="quiet">
-              <div className="stack-sm">
-                <Eyebrow>Use it when</Eyebrow>
-                <p className="caption">{technique.whenToUse}</p>
-                <Eyebrow>Do not use it when</Eyebrow>
-                <p className="caption">{technique.whenNotToUse}</p>
-              </div>
-            </Card>
+            <h1 className="title">Say it back</h1>
+            <p className="caption">
+              Copy it before you invent one. The words stay on screen — this is imitation, not a
+              memory test.
+            </p>
           </div>
 
-          <button type="button" className="btn btn-block" onClick={() => setStage('decode')}>
-            Take one apart
+          <ShadowDrill
+            breakdown={technique.breakdown}
+            {...(technique.clips?.[0] ? { clip: technique.clips[0] } : {})}
+            onFinish={() => setStage('build')}
+          />
+
+          <button type="button" className="btn-quiet" onClick={() => setStage('decode')}>
+            Spot it in another one instead
           </button>
         </div>
       ) : null}

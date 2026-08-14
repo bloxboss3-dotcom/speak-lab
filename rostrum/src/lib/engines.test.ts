@@ -31,6 +31,7 @@ import {
   completeLesson,
 } from '@/lib/progress'
 import { containsPhrase } from '@/lib/text'
+import { shadowMatch, shadowVerdict } from '@/lib/shadow'
 import { buildTree } from '@/lib/tree'
 import { equip, equippedCount, equippedTechniqueIds, slotCandidates, slotFor } from '@/lib/loadout'
 import type { CoachEvaluation, TechniqueMastery } from '@/lib/types'
@@ -933,5 +934,104 @@ describe('blueprints', () => {
         expect(text, technique.id).not.toMatch(/\b(is|was) not [a-z ]+ away\b/i)
       }
     }
+  })
+})
+
+// ---------------------------------------------------------------- Breakdowns
+
+describe('breakdowns', () => {
+  const withBreakdown = TECHNIQUES.filter((technique) => technique.breakdown)
+
+  it('covers every technique the curriculum teaches', () => {
+    // These are the ones a learner is walked through, so the lesson has to have
+    // something to take apart.
+    for (const lesson of LESSONS_IN_ORDER) {
+      const technique = findTechnique(lesson.techniqueId)
+      expect(technique?.breakdown, `${lesson.id} → ${lesson.techniqueId}`).toBeDefined()
+    }
+  })
+
+  it('says what every line is doing', () => {
+    for (const technique of withBreakdown) {
+      const breakdown = technique.breakdown
+      if (!breakdown) continue
+      expect(breakdown.lines.length, technique.id).toBeGreaterThanOrEqual(2)
+      for (const line of breakdown.lines) {
+        expect(line.text.length, technique.id).toBeGreaterThan(8)
+        expect(line.doing.length, technique.id).toBeGreaterThan(15)
+      }
+      expect(breakdown.nowYou.length, technique.id).toBeGreaterThan(30)
+    }
+  })
+
+  it('dissects the same words it shows whole', () => {
+    // The example at the top and the lines underneath must be the same thing,
+    // or the learner is taking apart something they were never shown.
+    for (const technique of withBreakdown) {
+      const joined = technique.breakdown?.lines.map((line) => line.text).join(' ')
+      expect(joined, technique.id).toBe(technique.matExample)
+    }
+  })
+
+  it('claims verbatim only when it means it', () => {
+    for (const technique of withBreakdown) {
+      const breakdown = technique.breakdown
+      if (breakdown?.verbatim) {
+        // Anything presented as someone's actual words needs a real source.
+        expect(breakdown.source, technique.id).not.toMatch(/written for this app/i)
+      }
+    }
+  })
+
+  it('sounds like speech rather than prose', () => {
+    // The complaint that started this: the examples read as written English.
+    // Contractions are the cheapest checkable proxy for someone talking.
+    const contractions = withBreakdown.filter((technique) =>
+      /['’](s|t|re|ll|ve|m)\b/.test(technique.matExample),
+    )
+    expect(contractions.length).toBe(withBreakdown.length)
+  })
+})
+
+// ---------------------------------------------------------------- Shadowing
+
+describe('shadow matching', () => {
+  it('counts an exact copy as complete', () => {
+    const line = 'You are not missing talent. You are missing five minutes.'
+    const match = shadowMatch(line, line)
+    expect(match.ratio).toBe(1)
+    expect(match.missed).toEqual([])
+  })
+
+  it('ignores wording a copy would not be judged on', () => {
+    // Articles and pronouns say nothing about whether the line was copied, so
+    // dropping one should not read as a miss.
+    const match = shadowMatch('missing talent, missing five minutes', 'You are missing talent. You are missing five minutes.')
+    expect(match.ratio).toBe(1)
+  })
+
+  it('reports what was actually left out', () => {
+    const match = shadowMatch('You are missing talent.', 'You are missing talent. You are missing five minutes.')
+    expect(match.missed).toContain('five')
+    expect(match.missed).toContain('minutes')
+    expect(match.ratio).toBeLessThan(1)
+  })
+
+  it('does not let one repeated word cover several misses', () => {
+    const match = shadowMatch('minutes minutes minutes', 'five minutes and ten minutes')
+    // Three "minutes" said, two wanted: the second is covered, "five"/"ten" are not.
+    expect(match.missed).toContain('five')
+    expect(match.missed).toContain('ten')
+  })
+
+  it('calls a near copy close and an unrelated answer off', () => {
+    const target = 'Everybody has form in the first minute.'
+    expect(shadowVerdict(shadowMatch('Everybody has form in the first minute', target))).toBe('close')
+    expect(shadowVerdict(shadowMatch('I have no idea what to say', target))).toBe('off')
+  })
+
+  it('survives an empty attempt without dividing by zero', () => {
+    expect(shadowMatch('', 'anything at all here').ratio).toBe(0)
+    expect(shadowMatch('something', 'the a of it').ratio).toBe(1)
   })
 })
