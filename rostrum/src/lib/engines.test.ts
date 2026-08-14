@@ -894,3 +894,44 @@ describe('examples', () => {
     }
   })
 })
+
+// ---------------------------------------------------------------- Blueprints
+
+describe('blueprints', () => {
+  it('gives every technique a skeleton with slots to fill', () => {
+    for (const technique of TECHNIQUES) {
+      expect(technique.blueprint.length, technique.id).toBeGreaterThanOrEqual(2)
+      const slots = technique.blueprint.join(' ').match(/\[[^\]]+\]/g) ?? []
+      // A skeleton with nothing to fill in is just the structure again.
+      expect(slots.length, `${technique.id} has no slots`).toBeGreaterThan(0)
+    }
+  })
+
+  it('closes every bracket it opens', () => {
+    for (const technique of TECHNIQUES) {
+      for (const line of technique.blueprint) {
+        const opens = (line.match(/\[/g) ?? []).length
+        const closes = (line.match(/\]/g) ?? []).length
+        expect(opens, `${technique.id}: ${line}`).toBe(closes)
+      }
+    }
+  })
+
+  it('keeps blueprint lines short enough to read as a shape', () => {
+    for (const technique of TECHNIQUES) {
+      for (const line of technique.blueprint) {
+        expect(line.length, `${technique.id}: ${line}`).toBeLessThanOrEqual(110)
+      }
+    }
+  })
+
+  it('leaves no unexplained jargon from the old prose in the examples', () => {
+    // "not a rule away" was a construction borrowed from another line that does
+    // not parse on its own. It read as clever and meant nothing.
+    for (const technique of TECHNIQUES) {
+      for (const text of [technique.example, technique.matExample]) {
+        expect(text, technique.id).not.toMatch(/\b(is|was) not [a-z ]+ away\b/i)
+      }
+    }
+  })
+})

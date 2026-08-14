@@ -7,6 +7,7 @@ import { technique as findTechnique } from '@/content/techniques'
 import { masteryFor } from '@/lib/progress'
 import { nextMasteryRequirement } from '@/lib/progression'
 import { useStore } from '@/lib/store'
+import { Blueprint } from '@/components/Blueprint'
 import { Examples } from '@/components/Examples'
 import { HearIt } from '@/components/HearIt'
 import { OwnClips } from '@/components/OwnClips'
@@ -90,6 +91,8 @@ export default function TechniqueScreen() {
           </ol>
         </Card>
       </div>
+
+      <Blueprint lines={technique.blueprint} />
 
       <Examples technique={technique} />
 

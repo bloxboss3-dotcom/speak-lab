@@ -33,6 +33,12 @@ export const TECHNIQUES: Technique[] = [
       'Repeat again, widen who it touches',
       'Break the pattern on the strongest idea',
     ],
+    blueprint: [
+      'Anyone can [do the thing] when [it is easy].',
+      'Anyone can [do the thing] when [it is harder].',
+      'Anyone can [do the thing] when [it is hardest].',
+      '[What actually separates them] — short, and stop there.',
+    ],
     whenToUse:
       'When you need a group to feel that something ordinary matters more than it appears to. Ends of classes, ends of talks, moments where effort is fading.',
     whenNotToUse:
@@ -80,14 +86,20 @@ export const TECHNIQUES: Technique[] = [
       'Name the distance between them',
       'Point at the first step across',
     ],
+    blueprint: [
+      'Right now, [what is actually happening — no names].',
+      'A [the standard] does [what it looks like done right], because [the reason].',
+      'You are not missing [what they think is missing].',
+      'You are missing [the small real gap].',
+    ],
     whenToUse:
       'When standards have slipped and you want the group to raise them without being scolded into it.',
     whenNotToUse:
       'When the gap is somebody’s personal failure and they are in the room. Aim contrast at a situation, never at a person.',
     example:
-      'Right now we bow when the instructor is looking. A black belt bows because the room deserves it whether or not anyone sees. That is not a rule away — it is a habit away.',
+      'Right now we bow when the instructor is looking. A black belt bows because the room deserves it, whether or not anyone sees. You are not missing a rule. You are missing a habit.',
     matExample:
-      'Right now, half of us tie our belts in the doorway on the way in. A black belt ties it before they step on the mat, because the mat is not where you get ready. That is not a rule away. That is thirty seconds away.',
+      'Right now, half of us tie our belts in the doorway on the way in. A black belt ties it before they step on the mat, because the mat is not where you get ready. You are not missing a rule. You are missing thirty seconds.',
     inTheWild: {
       speaker: 'Martin Luther King Jr.',
       where: 'The opening third of the same 1963 address',
@@ -123,6 +135,10 @@ export const TECHNIQUES: Technique[] = [
       'Say that instead',
       'Only then name the abstraction, if at all',
     ],
+    blueprint: [
+      '[The abstract word] is not [the feeling people assume].',
+      'It is [one thing you could photograph], [when it happens].',
+    ],
     whenToUse: 'Any time you catch yourself about to say a word ending in -ity, -ness or -ment.',
     whenNotToUse:
       'When precision matters more than memory — safety instructions, testing criteria, anything someone must follow exactly.',
@@ -151,6 +167,11 @@ export const TECHNIQUES: Technique[] = [
       'Turn: “and here is what is coming”',
       'Describe the future in specifics, not adjectives',
       'Stop',
+    ],
+    blueprint: [
+      '[The hard thing that just happened] — once, plainly.',
+      'In [how long], that same thing is [the ordinary way it looks once fixed].',
+      'Then stop. Do not add encouragement.',
     ],
     whenToUse: 'The last twenty seconds of anything.',
     whenNotToUse:
@@ -183,13 +204,18 @@ export const TECHNIQUES: Technique[] = [
       'Replace it with a word a ten-year-old uses',
       'Keep the sentence if it still means the same thing',
     ],
+    blueprint: [
+      '[The hard news, in words a ten-year-old uses].',
+      '[The distinction that matters], in one short clause.',
+      '[What happens next].',
+    ],
     whenToUse: 'When the stakes are highest. Difficult news, corrections, anything emotional.',
     whenNotToUse:
       'When the technical term is the point and vagueness would mislead — belt requirements, medical facts, legal obligations.',
     example:
       'I am not going to pass you today. You are close. What is missing is the part I have asked you for four weeks in a row.',
     matExample:
-      'You did not fail. You are not ready yet. Those are not the same thing, and only one of them lasts.',
+      'You did not fail. You are not ready yet. Those are not the same thing. The first one would be permanent. The second one is a date we pick.',
     inTheWild: {
       speaker: 'Abraham Lincoln',
       where: 'The Gettysburg Address, November 1863 — public domain',
@@ -214,13 +240,18 @@ export const TECHNIQUES: Technique[] = [
       'Only then introduce the difference',
       'Keep the shared want in view while you do',
     ],
+    blueprint: [
+      'All of us [the thing everyone here already agrees on].',
+      'That is why [the shared situation].',
+      'So let us talk about [the contested thing].',
+    ],
     whenToUse: 'Parent conversations, disagreements with staff, anything that could become a fight.',
     whenNotToUse:
       'When there genuinely is no shared ground and pretending otherwise would be dishonest.',
     example:
       'We both want him to finish something hard for the first time in his life. That is exactly why I do not want to move his grading yet.',
     matExample:
-      'Every one of us came here tonight because we would rather be tired than bored. Good. That is the only reason the next ten minutes are going to work.',
+      'All of us would rather be tired than bored. That is why we are here on a Thursday night. So let us talk about the last ten minutes of class, because that is the part where we get bored.',
     inTheWild: {
       speaker: 'Abraham Lincoln',
       where: 'The Second Inaugural Address, March 1865 — public domain',
@@ -247,6 +278,11 @@ export const TECHNIQUES: Technique[] = [
       'Say the necessary setup',
       'Say the sentence',
       'Say nothing else',
+    ],
+    blueprint: [
+      '[The one fact that matters].',
+      '[The instruction — one or two words].',
+      'Nothing else. No summary.',
     ],
     whenToUse: 'When you are tempted to explain a good line. Do not explain the good line.',
     whenNotToUse:
@@ -278,6 +314,11 @@ export const TECHNIQUES: Technique[] = [
       'Turn once: “and”',
       'Make the ask, sized to the difficulty you just named',
     ],
+    blueprint: [
+      '[Cost one]. [Cost two]. [Cost three].',
+      'I am asking you to do it anyway.',
+      'I am telling you now so [why hearing it early helps].',
+    ],
     whenToUse:
       'Before a hard training block, an unpopular change, or any request that will actually cost people something.',
     whenNotToUse: 'When the thing is not, in fact, hard. Manufactured difficulty is transparent.',
@@ -306,6 +347,11 @@ export const TECHNIQUES: Technique[] = [
       'Find two lighter items to precede it',
       'Order them shortest to longest',
       'Put the idea last',
+    ],
+    blueprint: [
+      '[Short instruction].',
+      '[Short instruction, same shape].',
+      '[The one that matters — longest, most specific].',
     ],
     whenToUse: 'Announcing values, summarising, closing. Anywhere you want a phrase to be repeatable.',
     whenNotToUse: 'More than once in a short talk. Two tricolons in a row is a tic, not a technique.',
@@ -346,6 +392,11 @@ export const TECHNIQUES: Technique[] = [
       'State it as behaviour, not feeling',
       'Invite them into the same commitment',
     ],
+    blueprint: [
+      '[The honest bad possibility].',
+      'I am not going to pretend otherwise.',
+      'We are going to [the commitment], because [why that is the only route].',
+    ],
     whenToUse: 'Before belt tests, competitions, anything with a real chance of failure.',
     whenNotToUse: 'When success genuinely is assured and doubt would be theatre.',
     example:
@@ -376,6 +427,12 @@ export const TECHNIQUES: Technique[] = [
       'Delete whichever half was not necessary',
       'Say the rest as separate sentences',
     ],
+    blueprint: [
+      '[The problem].',
+      '[Why it causes the thing they noticed].',
+      '[The fix, as an instruction].',
+      'Go again.',
+    ],
     whenToUse: 'Noisy rooms, young children, tired audiences, and anything you want repeated back.',
     whenNotToUse:
       'When the relationship between two ideas is the point — causes, conditions and consequences need their connective.',
@@ -403,6 +460,12 @@ export const TECHNIQUES: Technique[] = [
       'Deliver the expected items',
       'Pause before the last',
       'Turn it into something they did not expect',
+    ],
+    blueprint: [
+      'I am going to show you [what they expect].',
+      'Watch [the obvious place].',
+      '(one second of silence)',
+      'It was never [the obvious place]. It is [the real cause].',
     ],
     whenToUse: 'Talks over two minutes, where attention will otherwise decay.',
     whenNotToUse:
@@ -436,6 +499,11 @@ export const TECHNIQUES: Technique[] = [
       'Let it finish',
       'Then, one sentence: what it meant',
     ],
+    blueprint: [
+      '[Person]. [What happened]. [What they did next]. [How it ended].',
+      'I did not tell you that to [the sentimental reason they expect].',
+      'I told you because [the one detail that is the actual point].',
+    ],
     whenToUse: 'Any point you have made before and that stopped landing.',
     whenNotToUse:
       'When you have thirty seconds. A truncated story is worse than the plain statement.',
@@ -466,6 +534,10 @@ export const TECHNIQUES: Technique[] = [
       'Say what you are asking for',
       'Say what it looks like done well',
       'Stop — do not re-justify',
+    ],
+    blueprint: [
+      'We [the practice] because [the reason, in one clause].',
+      'So: [the instruction].',
     ],
     whenToUse: 'Every instruction to anyone you want acting without you present.',
     whenNotToUse:
@@ -499,6 +571,10 @@ export const TECHNIQUES: Technique[] = [
       'If it does, say “we”',
       'If it does not, keep “you” and own the asymmetry',
     ],
+    blueprint: [
+      'We have been [the problem, stated as ours].',
+      'Let us [the fix, stated as ours].',
+    ],
     whenToUse: 'Setting team standards, addressing a group, anything about culture.',
     whenNotToUse:
       'When one person specifically is not doing their job. A collective “we” there is cowardice dressed as inclusion, and everyone can tell.',
@@ -530,6 +606,11 @@ export const TECHNIQUES: Technique[] = [
       'Tell it briefly and without self-criticism',
       'Return the focus to them in the next sentence',
     ],
+    blueprint: [
+      '[The thing that happened to you — past tense, already over].',
+      'I know what [the specific feeling] is like.',
+      'I am telling you because [how it helps the person in front of you].',
+    ],
     whenToUse: 'When someone believes they are uniquely bad at something.',
     whenNotToUse:
       'When you are still upset about it, or when the story would make them responsible for reassuring you.',
@@ -558,6 +639,11 @@ export const TECHNIQUES: Technique[] = [
       'Say it as a guess, not a verdict',
       'Stop and let them correct you',
       'Only then move to the situation',
+    ],
+    blueprint: [
+      'You are [the specific emotion].',
+      'Not [the vague word] — [the specific one], because [the precise cause].',
+      '[How long it actually lasts].',
     ],
     whenToUse:
       'Immediately after a failure, in front of peers, or any time someone has gone quiet.',
@@ -589,6 +675,11 @@ export const TECHNIQUES: Technique[] = [
       'Say explicitly that this is about the action',
       'Give the specific next attempt',
     ],
+    blueprint: [
+      'You [the behaviour, described exactly].',
+      'That is a habit, and habits are fixable.',
+      'You are not [the identity they fear]. You are [the accurate one].',
+    ],
     whenToUse: 'Every correction, but especially in front of others.',
     whenNotToUse: 'Never skip it. There is no situation improved by removing someone’s dignity.',
     example:
@@ -619,6 +710,11 @@ export const TECHNIQUES: Technique[] = [
       'Introduce the thing it does not account for',
       'Answer that version, not a weaker one',
     ],
+    blueprint: [
+      'You are thinking [their objection, put better than they would].',
+      'You are right that [the part that is genuinely true].',
+      'Here is [the answer to that version].',
+    ],
     whenToUse: 'Any parent conversation, any resistant teenager, any unpopular decision.',
     whenNotToUse:
       'When you cannot actually answer the objection. Raising it and failing is worse than not raising it.',
@@ -647,6 +743,11 @@ export const TECHNIQUES: Technique[] = [
       'Name what it assumes',
       'Offer the question underneath it',
       'Answer that one',
+    ],
+    blueprint: [
+      'You asked [their question, repeated fairly].',
+      'The real question is [the one underneath].',
+      'Because [why that is what actually decides it].',
     ],
     whenToUse: '“Am I any good at this?” “Why am I not a black belt yet?” “Do you even like me?”',
     whenNotToUse:
@@ -677,6 +778,11 @@ export const TECHNIQUES: Technique[] = [
       'Map it explicitly — this is that',
       'Say where the analogy stops working',
     ],
+    blueprint: [
+      '[The difficult thing] is [something they use every day].',
+      '[How the familiar thing behaves] — same with [the difficult thing].',
+      'It stops being true when [where the analogy breaks].',
+    ],
     whenToUse: 'Abstract ideas: patience, grace, compound progress, delayed reward.',
     whenNotToUse:
       'When you have not found a genuinely matching shape. A loose analogy teaches a wrong idea confidently.',
@@ -705,6 +811,10 @@ export const TECHNIQUES: Technique[] = [
       'Pause at the point of agreement',
       'Turn: “here is why I care that you know that”',
       'Say what it changes for them personally',
+    ],
+    blueprint: [
+      'Technically, [the argument on its own terms].',
+      'And practically, [what it means for this person].',
     ],
     whenToUse: 'Devotionals, leadership talks, any explanation that keeps being understood and ignored.',
     whenNotToUse:
@@ -737,6 +847,10 @@ export const TECHNIQUES: Technique[] = [
       'Stop talking',
       'Do not rescue them from the silence',
     ],
+    blueprint: [
+      '[The question that costs something to answer honestly].',
+      'Then say nothing. Count to five.',
+    ],
     whenToUse: 'With teens and adults who have stopped hearing statements.',
     whenNotToUse:
       'With young children, or in front of an audience. A costly question asked publicly is an ambush.',
@@ -764,6 +878,11 @@ export const TECHNIQUES: Technique[] = [
       'Describe the behaviour, factually and without adjectives',
       'Let the gap sit',
       'Offer one concrete way to close it',
+    ],
+    blueprint: [
+      'We say [the stated value].',
+      '[The observed behaviour — with a date or a number].',
+      'Then stop. Do not resolve it for them.',
     ],
     whenToUse: 'Leadership teams, senior students, anyone who has stopped being challenged.',
     whenNotToUse:
@@ -793,6 +912,11 @@ export const TECHNIQUES: Technique[] = [
       'Use contractions and ordinary words',
       'Do not announce that it is important',
       'Let the content carry the weight',
+    ],
+    blueprint: [
+      'I am not going to [the speech they expect].',
+      'I just think [why it matters], and I will say it plainly.',
+      '[The thing itself, the way you would tell a friend].',
     ],
     whenToUse: 'Devotionals, difficult news, anything where a raised register would feel false.',
     whenNotToUse:
@@ -825,6 +949,11 @@ export const TECHNIQUES: Technique[] = [
       'Speak to them singularly — “you”',
       'Leave room for everyone else to overhear',
     ],
+    blueprint: [
+      'Somebody in here [the private thought they are having].',
+      'I am talking to you.',
+      '[The correction, plus the evidence you actually have].',
+    ],
     whenToUse: 'Group talks where one subgroup is the real audience.',
     whenNotToUse:
       'When the description is narrow enough to identify an individual. That is public correction wearing a disguise.',
@@ -854,6 +983,11 @@ export const TECHNIQUES: Technique[] = [
       'Describe what it will look like from the outside',
       'Name the first thing that gets them there',
     ],
+    blueprint: [
+      'In [how long], you are [the specific role — not a compliment].',
+      'Not because [the flattering reason].',
+      'Because [the small observable thing that makes it true].',
+    ],
     whenToUse: 'Students who have stopped believing improvement applies to them.',
     whenNotToUse:
       'When you cannot honestly picture it. An invented future is a lie the listener will eventually check.',
@@ -882,6 +1016,11 @@ export const TECHNIQUES: Technique[] = [
       'Say it early',
       'Say it in the middle, in a different context',
       'Say it last, alone',
+    ],
+    blueprint: [
+      '[The line] — say it early.',
+      '[The same line, word for word] — in the middle.',
+      '[The same line] — at the moment it becomes true.',
     ],
     whenToUse: 'Anything over ninety seconds that you want remembered.',
     whenNotToUse:
@@ -913,6 +1052,10 @@ export const TECHNIQUES: Technique[] = [
       'Offer a different frame that fits the same facts',
       'Give the action the new frame makes obvious',
     ],
+    blueprint: [
+      'You are not [the identity they gave themselves].',
+      'You are [the accurate description], and [the fact that explains it].',
+    ],
     whenToUse: 'Failure, plateaus, comparison to peers, any “I am just bad at this”.',
     whenNotToUse:
       'Before the feeling has been acknowledged. Reframing first is heard as being told you are wrong to be upset.',
@@ -936,6 +1079,10 @@ export const TECHNIQUES: Technique[] = [
       'Attach a place or a person',
       'Make it small enough to be embarrassing to skip',
     ],
+    blueprint: [
+      '[The one action], [where], [when — precisely].',
+      'Not [the vaguer time they would default to].',
+    ],
     whenToUse: 'The end of every talk, class and conversation that is meant to change anything.',
     whenNotToUse: 'When you have not decided what you actually want. Vagueness here is a planning failure.',
     example:
@@ -956,6 +1103,10 @@ export const TECHNIQUES: Technique[] = [
       'Start one sentence before it',
       'Give context only when the listener needs it to follow',
       'Never open with “so I want to talk about”',
+    ],
+    blueprint: [
+      '[The most vivid second of the story] — first, with no set-up.',
+      'Only now: [the context they need to follow it].',
     ],
     whenToUse: 'The first ten seconds of anything.',
     whenNotToUse:
@@ -978,6 +1129,11 @@ export const TECHNIQUES: Technique[] = [
       'Count one',
       'Deliver the line at normal volume',
     ],
+    blueprint: [
+      '[The set-up line].',
+      '(one full second of silence)',
+      '[The line that matters].',
+    ],
     whenToUse: 'Once per talk, on the line you would put on a poster.',
     whenNotToUse:
       'Repeatedly. Constant pausing reads as searching for words, which is the opposite effect.',
@@ -998,6 +1154,10 @@ export const TECHNIQUES: Technique[] = [
       'Stop for a beat',
       'Then give the reasoning',
       'Do not add anything you were not asked for',
+    ],
+    blueprint: [
+      '[Yes, or no, or the number].',
+      '[Then the explanation].',
     ],
     whenToUse: 'Hostile questions, parent complaints, anything you did not see coming.',
     whenNotToUse:
@@ -1020,6 +1180,12 @@ export const TECHNIQUES: Technique[] = [
       'Name the two things you are weighing',
       'Reason to a position out loud',
       'State the position as a position, not a certainty',
+    ],
+    blueprint: [
+      'I am weighing two things.',
+      'On one side, [the first consideration].',
+      'On the other, [the second].',
+      'I am going to [the decision], and [the condition attached].',
     ],
     whenToUse: 'Questions with no prepared answer, in front of people who will know if you bluff.',
     whenNotToUse:
@@ -1047,6 +1213,11 @@ export const TECHNIQUES: Technique[] = [
       'Find its two halves',
       'Say it again with them swapped',
       'Keep it only if the reversal is actually true',
+    ],
+    blueprint: [
+      '[First half] [second half].',
+      '[Second half] [first half].',
+      'Only keep it if the reversed version is actually true.',
     ],
     whenToUse:
       'One line per talk, at the point you most want repeated afterwards. It works best when the reversal exposes something real rather than being clever.',
@@ -1103,6 +1274,12 @@ export const TECHNIQUES: Technique[] = [
       'Change only the single variable inside it',
       'Keep your volume and pace flat',
       'Stop as soon as the count has landed',
+    ],
+    blueprint: [
+      '[Name] [did the thing].',
+      '[Name] [did the thing] — same words.',
+      '[Name] [did the thing] — same words.',
+      '[What the count adds up to].',
     ],
     whenToUse:
       'When a group has heard the headline and shrugged. Listing the instances plainly re-establishes a scale that summarising it away destroys.',
