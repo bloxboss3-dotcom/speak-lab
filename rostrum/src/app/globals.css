@@ -707,3 +707,21 @@ textarea.field {
   outline-offset: 2px;
   border-radius: 6px;
 }
+
+/* Collapsed detail. The prose that used to be a mandatory screen still exists,
+   but it no longer stands between the learner and saying something. */
+.disclosure {
+  border: 1px solid var(--color-hairline);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--color-raised);
+}
+
+.disclosure > summary {
+  cursor: pointer;
+  color: var(--color-ivory-muted);
+}
+
+.disclosure > summary::marker {
+  color: var(--color-ivory-faint);
+}

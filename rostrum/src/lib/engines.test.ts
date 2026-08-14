@@ -935,3 +935,59 @@ describe('blueprints', () => {
     }
   })
 })
+
+// ---------------------------------------------------------------- Breakdowns
+
+describe('breakdowns', () => {
+  const withBreakdown = TECHNIQUES.filter((technique) => technique.breakdown)
+
+  it('covers every technique the curriculum teaches', () => {
+    // These are the ones a learner is walked through, so the lesson has to have
+    // something to take apart.
+    for (const lesson of LESSONS_IN_ORDER) {
+      const technique = findTechnique(lesson.techniqueId)
+      expect(technique?.breakdown, `${lesson.id} → ${lesson.techniqueId}`).toBeDefined()
+    }
+  })
+
+  it('says what every line is doing', () => {
+    for (const technique of withBreakdown) {
+      const breakdown = technique.breakdown
+      if (!breakdown) continue
+      expect(breakdown.lines.length, technique.id).toBeGreaterThanOrEqual(2)
+      for (const line of breakdown.lines) {
+        expect(line.text.length, technique.id).toBeGreaterThan(8)
+        expect(line.doing.length, technique.id).toBeGreaterThan(15)
+      }
+      expect(breakdown.nowYou.length, technique.id).toBeGreaterThan(30)
+    }
+  })
+
+  it('dissects the same words it shows whole', () => {
+    // The example at the top and the lines underneath must be the same thing,
+    // or the learner is taking apart something they were never shown.
+    for (const technique of withBreakdown) {
+      const joined = technique.breakdown?.lines.map((line) => line.text).join(' ')
+      expect(joined, technique.id).toBe(technique.matExample)
+    }
+  })
+
+  it('claims verbatim only when it means it', () => {
+    for (const technique of withBreakdown) {
+      const breakdown = technique.breakdown
+      if (breakdown?.verbatim) {
+        // Anything presented as someone's actual words needs a real source.
+        expect(breakdown.source, technique.id).not.toMatch(/written for this app/i)
+      }
+    }
+  })
+
+  it('sounds like speech rather than prose', () => {
+    // The complaint that started this: the examples read as written English.
+    // Contractions are the cheapest checkable proxy for someone talking.
+    const contractions = withBreakdown.filter((technique) =>
+      /['’](s|t|re|ll|ve|m)\b/.test(technique.matExample),
+    )
+    expect(contractions.length).toBe(withBreakdown.length)
+  })
+})

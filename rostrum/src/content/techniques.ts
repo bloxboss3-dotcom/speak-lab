@@ -34,9 +34,9 @@ export const TECHNIQUES: Technique[] = [
       'Break the pattern on the strongest idea',
     ],
     blueprint: [
-      'Anyone can [do the thing] when [it is easy].',
-      'Anyone can [do the thing] when [it is harder].',
-      'Anyone can [do the thing] when [it is hardest].',
+      'Anyone can [do the thing] when [it’s easy].',
+      'Anyone can [do the thing] when [it’s harder].',
+      'Anyone can [do the thing] when [it’s hardest].',
       '[What actually separates them] — short, and stop there.',
     ],
     whenToUse:
@@ -46,7 +46,32 @@ export const TECHNIQUES: Technique[] = [
     example:
       'Anyone can show up when they feel like it. Anyone can train hard when someone is watching. Anyone can finish when the end is already in sight. What you do in the next five minutes is the part nobody else will ever see.',
     matExample:
-      'Anyone can hold a stance while the class is watching. Anyone can hold a stance while the round is still fresh. Anyone can hold a stance before it starts to hurt. The belt is what you do in the last thirty seconds, when none of those are true.',
+      'Everybody’s got form in the first minute. Everybody’s got form when I’m standing right here. Everybody’s got form when they’re fresh. Show me minute nine, when I’m across the room and you’re tired.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Everybody’s got form in the first minute.',
+          doing: 'Sets the frame. Easiest version first.',
+        },
+        {
+          text: 'Everybody’s got form when I’m standing right here.',
+          doing: 'Same five words. Only the condition changed.',
+        },
+        {
+          text: 'Everybody’s got form when they’re fresh.',
+          doing: 'Same five words again. Hardest version.',
+        },
+        {
+          text: 'Show me minute nine, when I’m across the room and you’re tired.',
+          doing:
+            'Breaks the pattern. This is the whole point, and it lands because the shape stopped.',
+        },
+      ],
+      nowYou:
+        'Three lines that start the same way, each one harder. Then one line that breaks the pattern.',
+    },
     inTheWild: {
       speaker: 'Martin Luther King Jr.',
       where: 'The closing passage of the 1963 address at the March on Washington',
@@ -89,8 +114,8 @@ export const TECHNIQUES: Technique[] = [
     blueprint: [
       'Right now, [what is actually happening — no names].',
       'A [the standard] does [what it looks like done right], because [the reason].',
-      'You are not missing [what they think is missing].',
-      'You are missing [the small real gap].',
+      'You’re not missing [what they think is missing].',
+      'You’re missing [the small real gap].',
     ],
     whenToUse:
       'When standards have slipped and you want the group to raise them without being scolded into it.',
@@ -99,7 +124,30 @@ export const TECHNIQUES: Technique[] = [
     example:
       'Right now we bow when the instructor is looking. A black belt bows because the room deserves it, whether or not anyone sees. You are not missing a rule. You are missing a habit.',
     matExample:
-      'Right now, half of us tie our belts in the doorway on the way in. A black belt ties it before they step on the mat, because the mat is not where you get ready. You are not missing a rule. You are missing thirty seconds.',
+      'Right now, the last five minutes look like everybody’s already in the car. A black belt finishes the last rep at the same speed as the first one. You’re not missing talent. You’re missing five minutes.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Right now, the last five minutes look like everybody’s already in the car.',
+          doing: 'Says what is happening. No names, no blame.',
+        },
+        {
+          text: 'A black belt finishes the last rep at the same speed as the first one.',
+          doing: 'The standard — as something you could watch someone do.',
+        },
+        {
+          text: 'You’re not missing talent.',
+          doing: 'Takes away the excuse they were reaching for.',
+        },
+        {
+          text: 'You’re missing five minutes.',
+          doing: 'The real gap. Small, specific, fixable tonight.',
+        },
+      ],
+      nowYou: 'Same four lines. Pick something slipping in your class and fill them in.',
+    },
     inTheWild: {
       speaker: 'Martin Luther King Jr.',
       where: 'The opening third of the same 1963 address',
@@ -171,7 +219,7 @@ export const TECHNIQUES: Technique[] = [
     blueprint: [
       '[The hard thing that just happened] — once, plainly.',
       'In [how long], that same thing is [the ordinary way it looks once fixed].',
-      'Then stop. Do not add encouragement.',
+      'Then stop. Don’t add encouragement.',
     ],
     whenToUse: 'The last twenty seconds of anything.',
     whenNotToUse:
@@ -215,7 +263,31 @@ export const TECHNIQUES: Technique[] = [
     example:
       'I am not going to pass you today. You are close. What is missing is the part I have asked you for four weeks in a row.',
     matExample:
-      'You did not fail. You are not ready yet. Those are not the same thing. The first one would be permanent. The second one is a date we pick.',
+      'You didn’t fail. You’re not ready yet. Those aren’t the same thing. One of those would be permanent. The other one’s a date.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'You didn’t fail.',
+          doing: 'Three short words. Nothing to decode.',
+        },
+        {
+          text: 'You’re not ready yet.',
+          doing: 'The actual situation, just as plain.',
+        },
+        {
+          text: 'Those aren’t the same thing.',
+          doing: 'The distinction, in one short clause.',
+        },
+        {
+          text: 'One of those would be permanent. The other one’s a date.',
+          doing: 'What happens next — concrete, and still no long words.',
+        },
+      ],
+      nowYou:
+        'Say the hard thing in words a ten-year-old uses. Every long word you cut is one less thing they translate while upset.',
+    },
     inTheWild: {
       speaker: 'Abraham Lincoln',
       where: 'The Gettysburg Address, November 1863 — public domain',
@@ -242,7 +314,7 @@ export const TECHNIQUES: Technique[] = [
     ],
     blueprint: [
       'All of us [the thing everyone here already agrees on].',
-      'That is why [the shared situation].',
+      'That’s why [the shared situation].',
       'So let us talk about [the contested thing].',
     ],
     whenToUse: 'Parent conversations, disagreements with staff, anything that could become a fight.',
@@ -316,8 +388,8 @@ export const TECHNIQUES: Technique[] = [
     ],
     blueprint: [
       '[Cost one]. [Cost two]. [Cost three].',
-      'I am asking you to do it anyway.',
-      'I am telling you now so [why hearing it early helps].',
+      'I’m asking you to do it anyway.',
+      'I’m telling you now so [why hearing it early helps].',
     ],
     whenToUse:
       'Before a hard training block, an unpopular change, or any request that will actually cost people something.',
@@ -325,7 +397,34 @@ export const TECHNIQUES: Technique[] = [
     example:
       'The next six weeks are the least interesting part of your training. You will repeat one pattern until you are sick of it. And it is the reason the people above you look calm under pressure.',
     matExample:
-      'This grading is longer than the last one, the hall will be hot, and you will be asked to spar after you are already tired. I am asking you to do it anyway. I am telling you now so that on the day it is difficult and not a surprise.',
+      'Saturday’s longer than the last one. The hall’s going to be hot. You’ll spar after you’re already tired. I’m asking you to do it anyway. I’m telling you now so Saturday is hard instead of surprising.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Saturday’s longer than the last one.',
+          doing: 'Cost one. Flat, no softening.',
+        },
+        {
+          text: 'The hall’s going to be hot.',
+          doing: 'Cost two. Same flat delivery — no build-up, no apology.',
+        },
+        {
+          text: 'You’ll spar after you’re already tired.',
+          doing: 'Cost three — the worst one last.',
+        },
+        {
+          text: 'I’m asking you to do it anyway.',
+          doing: 'The ask, only now that nothing is hidden.',
+        },
+        {
+          text: 'I’m telling you now so Saturday is hard instead of surprising.',
+          doing: 'Why they are hearing it early. Turns bad news into respect.',
+        },
+      ],
+      nowYou: 'Costs first, plainly. Ask second. Never the other way round.',
+    },
     inTheWild: {
       speaker: 'Winston Churchill',
       where: 'His first speech as Prime Minister to the Commons, May 1940',
@@ -394,7 +493,7 @@ export const TECHNIQUES: Technique[] = [
     ],
     blueprint: [
       '[The honest bad possibility].',
-      'I am not going to pretend otherwise.',
+      'I’m not going to pretend otherwise.',
       'We are going to [the commitment], because [why that is the only route].',
     ],
     whenToUse: 'Before belt tests, competitions, anything with a real chance of failure.',
@@ -462,7 +561,7 @@ export const TECHNIQUES: Technique[] = [
       'Turn it into something they did not expect',
     ],
     blueprint: [
-      'I am going to show you [what they expect].',
+      'I’m going to show you [what they expect].',
       'Watch [the obvious place].',
       '(one second of silence)',
       'It was never [the obvious place]. It is [the real cause].',
@@ -510,7 +609,35 @@ export const TECHNIQUES: Technique[] = [
     example:
       'Second week of blue belt, I broke my toe on the door frame walking to the mat. I trained the whole session sitting down, doing hand techniques. Nobody remembers my kicks that year. They remember I did not go home.',
     matExample:
-      'A girl in this class failed her first grading. She came back on the Tuesday and asked me to show her the thing she got wrong. She asked me again in March. She tied a black belt on last month. I did not tell you that to cheer you up. I told you because she was here on the Tuesday.',
+      'Maya failed her first grading. She came back Tuesday and asked me what she got wrong. She asked me again in March. She tested for black belt last month. I’m not telling you that so you feel better. I’m telling you because of Tuesday.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Maya failed her first grading.',
+          doing: 'Starts in the story. No warm-up, no "I want to tell you about".',
+        },
+        {
+          text: 'She came back Tuesday and asked me what she got wrong.',
+          doing: 'What she did next. Still no sign of where this is going.',
+        },
+        {
+          text: 'She asked me again in March.',
+          doing: 'The repeat. This is the actual point, hidden in the middle.',
+        },
+        {
+          text: 'She tested for black belt last month.',
+          doing: 'How it ended — said flat, not as a triumph.',
+        },
+        {
+          text: 'I’m not telling you that so you feel better. I’m telling you because of Tuesday.',
+          doing: 'Names the point only now — and names the small detail, not the black belt.',
+        },
+      ],
+      nowYou:
+        'Tell it all the way through. Say what it means only at the end — and pick the small detail, not the ending.',
+    },
     inTheWild: {
       speaker: 'Steve Jobs',
       where: 'Stanford commencement address, 2005',
@@ -545,7 +672,22 @@ export const TECHNIQUES: Technique[] = [
     example:
       'The reason we bow at the line and not at the door is that it marks where training starts in your head. So: bow at the line. If you forget, step back and do it again.',
     matExample:
-      'We bow at the door because it tells your body that the next hour is different from the hour before it. So: bow at the door.',
+      'We bow at the door because it tells your body the next hour’s different from the one before it. So: bow at the door.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'We bow at the door because it tells your body the next hour’s different from the one before it.',
+          doing: 'The reason, in one clause, before anything is asked.',
+        },
+        {
+          text: 'So: bow at the door.',
+          doing: 'The instruction, second. It now inherits the reason.',
+        },
+      ],
+      nowYou: 'Same instruction you were going to give. Just move the reason in front of it.',
+    },
     inTheWild: {
       speaker: 'Simon Sinek',
       where: 'His 2009 TEDx talk on how leaders inspire action',
@@ -572,7 +714,7 @@ export const TECHNIQUES: Technique[] = [
       'If it does not, keep “you” and own the asymmetry',
     ],
     blueprint: [
-      'We have been [the problem, stated as ours].',
+      'We’ve been [the problem, stated as ours].',
       'Let us [the fix, stated as ours].',
     ],
     whenToUse: 'Setting team standards, addressing a group, anything about culture.',
@@ -609,7 +751,7 @@ export const TECHNIQUES: Technique[] = [
     blueprint: [
       '[The thing that happened to you — past tense, already over].',
       'I know what [the specific feeling] is like.',
-      'I am telling you because [how it helps the person in front of you].',
+      'I’m telling you because [how it helps the person in front of you].',
     ],
     whenToUse: 'When someone believes they are uniquely bad at something.',
     whenNotToUse:
@@ -641,7 +783,7 @@ export const TECHNIQUES: Technique[] = [
       'Only then move to the situation',
     ],
     blueprint: [
-      'You are [the specific emotion].',
+      'You’re [the specific emotion].',
       'Not [the vague word] — [the specific one], because [the precise cause].',
       '[How long it actually lasts].',
     ],
@@ -652,7 +794,30 @@ export const TECHNIQUES: Technique[] = [
     example:
       'I think that was embarrassing more than it was disappointing. Everyone was watching. Am I close?',
     matExample:
-      'You are embarrassed. Not upset — embarrassed, because it happened in front of the people whose opinion you actually care about. That is all this is, and it goes faster than you expect.',
+      'You’re embarrassed. Not upset — embarrassed. Because it happened in front of the people you actually care about. That part goes away by Thursday.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'You’re embarrassed.',
+          doing: 'Named flat, first, before any advice.',
+        },
+        {
+          text: 'Not upset — embarrassed.',
+          doing: 'Corrects the vague word to the precise one.',
+        },
+        {
+          text: 'Because it happened in front of the people you actually care about.',
+          doing: 'The precise cause. This is the part that makes them feel read.',
+        },
+        {
+          text: 'That part goes away by Thursday.',
+          doing: 'How long it lasts. Ends the spiral.',
+        },
+      ],
+      nowYou: 'Name it before you fix anything. Getting the exact word is the whole move.',
+    },
     inTheWild: {
       speaker: 'Brené Brown',
       where: 'Her research writing on shame and empathy',
@@ -677,15 +842,35 @@ export const TECHNIQUES: Technique[] = [
     ],
     blueprint: [
       'You [the behaviour, described exactly].',
-      'That is a habit, and habits are fixable.',
-      'You are not [the identity they fear]. You are [the accurate one].',
+      'That’s a habit, and habits are fixable.',
+      'You’re not [the identity they fear]. You’re [the accurate one].',
     ],
     whenToUse: 'Every correction, but especially in front of others.',
     whenNotToUse: 'Never skip it. There is no situation improved by removing someone’s dignity.',
     example:
       'You stopped three times during that pattern. The standard is you finish and fix it afterwards. That is a habit, not a character flaw — run it again and finish it badly if you have to.',
     matExample:
-      'You dropped your hands. That is a habit, and habits are fixable. You are not someone who drops their hands. You are someone who has not fixed it yet.',
+      'You dropped your hands. That’s a habit. Habits are fixable. You’re not someone who drops their hands. You’re someone who hasn’t fixed it yet.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'You dropped your hands.',
+          doing: 'The behaviour, exactly. No adjectives, no "always".',
+        },
+        {
+          text: 'That’s a habit. Habits are fixable.',
+          doing: 'Files it as something changeable.',
+        },
+        {
+          text: 'You’re not someone who drops their hands. You’re someone who hasn’t fixed it yet.',
+          doing: 'Separates what they did from who they are.',
+        },
+      ],
+      nowYou:
+        'Correct as hard as you need to. Just don’t let the correction turn into a description of the person.',
+    },
     inTheWild: {
       speaker: 'Brené Brown',
       where: 'Her work distinguishing guilt from shame',
@@ -711,8 +896,8 @@ export const TECHNIQUES: Technique[] = [
       'Answer that version, not a weaker one',
     ],
     blueprint: [
-      'You are thinking [their objection, put better than they would].',
-      'You are right that [the part that is genuinely true].',
+      'You’re thinking [their objection, put better than they would].',
+      'You’re right that [the part that is genuinely true].',
       'Here is [the answer to that version].',
     ],
     whenToUse: 'Any parent conversation, any resistant teenager, any unpopular decision.',
@@ -721,7 +906,28 @@ export const TECHNIQUES: Technique[] = [
     example:
       'You are going to think I am holding him back to keep the fees coming. That would be a fair suspicion — you have no way to check it. Here is what changes if he grades in November instead.',
     matExample:
-      'You are thinking that patterns are pointless because nobody actually fights like that. You are right that nobody fights like that. Here is what the pattern is for, and it is not fighting.',
+      'You think patterns are pointless because nobody fights like that. You’re right. Nobody fights like that. Patterns aren’t practice for fighting. They’re practice for doing something exactly right when you’re tired.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'You think patterns are pointless because nobody fights like that.',
+          doing: 'Their objection, put more clearly than they would have put it.',
+        },
+        {
+          text: 'You’re right. Nobody fights like that.',
+          doing: 'Concedes the true part outright. This is what buys the next line.',
+        },
+        {
+          text:
+            'Patterns aren’t practice for fighting. They’re practice for doing something exactly right when you’re tired.',
+          doing: 'Answers the strong version.',
+        },
+      ],
+      nowYou:
+        'Say their argument better than they can say it. Then answer that version, not an easier one.',
+    },
     inTheWild: {
       speaker: 'Timothy Keller',
       where: 'A habit of his preaching and writing, rather than one famous instance',
@@ -882,7 +1088,7 @@ export const TECHNIQUES: Technique[] = [
     blueprint: [
       'We say [the stated value].',
       '[The observed behaviour — with a date or a number].',
-      'Then stop. Do not resolve it for them.',
+      'Then stop. Don’t resolve it for them.',
     ],
     whenToUse: 'Leadership teams, senior students, anyone who has stopped being challenged.',
     whenNotToUse:
@@ -914,7 +1120,7 @@ export const TECHNIQUES: Technique[] = [
       'Let the content carry the weight',
     ],
     blueprint: [
-      'I am not going to [the speech they expect].',
+      'I’m not going to [the speech they expect].',
       'I just think [why it matters], and I will say it plainly.',
       '[The thing itself, the way you would tell a friend].',
     ],
@@ -951,7 +1157,7 @@ export const TECHNIQUES: Technique[] = [
     ],
     blueprint: [
       'Somebody in here [the private thought they are having].',
-      'I am talking to you.',
+      'I’m talking to you.',
       '[The correction, plus the evidence you actually have].',
     ],
     whenToUse: 'Group talks where one subgroup is the real audience.',
@@ -1053,8 +1259,8 @@ export const TECHNIQUES: Technique[] = [
       'Give the action the new frame makes obvious',
     ],
     blueprint: [
-      'You are not [the identity they gave themselves].',
-      'You are [the accurate description], and [the fact that explains it].',
+      'You’re not [the identity they gave themselves].',
+      'You’re [the accurate description], and [the fact that explains it].',
     ],
     whenToUse: 'Failure, plateaus, comparison to peers, any “I am just bad at this”.',
     whenNotToUse:
@@ -1062,7 +1268,26 @@ export const TECHNIQUES: Technique[] = [
     example:
       'You missed the board three times. That is real. It also tells us your distance is off, which is a two-week fix — it is not a talent problem, it is a measurement problem.',
     matExample:
-      'You are not bad at sparring. You are new at sparring, and you have been measuring yourself against people who are three years in.',
+      'You’re not bad at sparring. You’re new at sparring. And you’ve been comparing yourself to people who’ve been at it three years.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'You’re not bad at sparring.',
+          doing: 'Takes away the identity they gave themselves.',
+        },
+        {
+          text: 'You’re new at sparring.',
+          doing: 'Swaps in the accurate one. Same facts, different frame.',
+        },
+        {
+          text: 'And you’ve been comparing yourself to people who’ve been at it three years.',
+          doing: 'The fact that explains why it felt like the first thing.',
+        },
+      ],
+      nowYou: 'Don’t argue with the facts. Change what the facts mean.',
+    },
     tells: [{ kind: 'antithesis' }, { kind: 'emotion-named' }],
     requires: ['name-the-feeling'],
   },
@@ -1088,7 +1313,23 @@ export const TECHNIQUES: Technique[] = [
     example:
       'Before you leave tonight, tell one person at the desk which pattern you are fixing this week. Not all of them. One.',
     matExample:
-      'Before you leave tonight, go to the corner and do that turn five times. Not tomorrow. Before your shoes go on.',
+      'Before you put your shoes on, go to the corner and do that turn five times. Not tomorrow — you’ll forget. Tonight, before the shoes.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Before you put your shoes on, go to the corner and do that turn five times.',
+          doing: 'One action. One place. Tied to a thing that is definitely about to happen.',
+        },
+        {
+          text: 'Not tomorrow — you’ll forget. Tonight, before the shoes.',
+          doing: 'Kills the vaguer time they would have defaulted to.',
+        },
+      ],
+      nowYou:
+        'One action, one place, one time. If they can’t picture themselves doing it, it isn’t specific yet.',
+    },
     tells: [{ kind: 'call-to-action' }, { kind: 'short-close', maxWords: 20 }],
   },
   {
@@ -1113,7 +1354,24 @@ export const TECHNIQUES: Technique[] = [
       'When the audience genuinely needs orientation to be safe or to act — briefings, instructions, warnings.',
     example:
       'The board did not break. Forty people were watching, and it did not break — and he stood there holding his hand.',
-    matExample: 'Her hands were shaking so badly she could not tie the knot.',
+    matExample:
+      'Her hands were shaking so bad she couldn’t tie the knot. This was ten minutes before her first grading.',
+    breakdown: {
+      source: 'Written for this app',
+      verbatim: false,
+      lines: [
+        {
+          text: 'Her hands were shaking so bad she couldn’t tie the knot.',
+          doing: 'Starts inside the most vivid second. No set-up at all.',
+        },
+        {
+          text: 'This was ten minutes before her first grading.',
+          doing: 'The context, only now that they want it.',
+        },
+      ],
+      nowYou:
+        'Cut everything before the interesting part. Start there. Backfill only what they need to follow it.',
+    },
     tells: [{ kind: 'narrative-open' }, { kind: 'concrete-nouns', min: 3 }],
   },
   {
@@ -1182,10 +1440,10 @@ export const TECHNIQUES: Technique[] = [
       'State the position as a position, not a certainty',
     ],
     blueprint: [
-      'I am weighing two things.',
+      'I’m weighing two things.',
       'On one side, [the first consideration].',
       'On the other, [the second].',
-      'I am going to [the decision], and [the condition attached].',
+      'I’m going to [the decision], and [the condition attached].',
     ],
     whenToUse: 'Questions with no prepared answer, in front of people who will know if you bluff.',
     whenNotToUse:
