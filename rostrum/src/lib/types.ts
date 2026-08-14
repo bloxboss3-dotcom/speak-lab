@@ -154,6 +154,16 @@ export interface Technique {
   why: string
   /** The pattern, as ordered steps. Rendered as the technique's diagram. */
   structure: string[]
+  /**
+   * The same pattern as a skeleton you fill in.
+   *
+   * `structure` describes the move; this one is the move with the words taken
+   * out, so it can be built rather than admired. Anything inside [brackets] is
+   * a slot the learner supplies, and the words outside them are the fixed
+   * scaffolding. Reading down it should produce a usable line without having to
+   * reverse-engineer the example.
+   */
+  blueprint: string[]
   whenToUse: string
   whenNotToUse: string
   /** An original line written for this app, not a quotation. */

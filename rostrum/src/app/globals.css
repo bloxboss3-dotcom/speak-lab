@@ -498,6 +498,37 @@ textarea.field {
 
 /* Clip playback. Smaller and quieter than the record button — this is
    listening, not performing, and the amber is spent on the record path. */
+/* The fill-in-the-blank skeleton. Slots read as gaps to be filled rather than
+   as text to be spoken, so they are boxed and the frame around them is not. */
+.blueprint {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blueprint-line {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-ivory);
+}
+
+.blueprint-slot {
+  display: inline;
+  padding: 1px 6px;
+  margin: 0 1px;
+  border-radius: 5px;
+  border: 1px dashed var(--color-amber-dim, #6b5427);
+  background: rgba(217, 164, 65, 0.08);
+  color: var(--color-amber);
+  font-size: 13.5px;
+}
+
+.blueprint-aside {
+  color: var(--color-ivory-faint);
+  font-size: 13px;
+  font-style: italic;
+}
+
 .play-btn {
   width: 44px;
   height: 44px;
