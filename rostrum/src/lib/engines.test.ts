@@ -31,6 +31,7 @@ import {
   completeLesson,
 } from '@/lib/progress'
 import { containsPhrase } from '@/lib/text'
+import { shadowMatch, shadowVerdict } from '@/lib/shadow'
 import { buildTree } from '@/lib/tree'
 import { equip, equippedCount, equippedTechniqueIds, slotCandidates, slotFor } from '@/lib/loadout'
 import type { CoachEvaluation, TechniqueMastery } from '@/lib/types'
@@ -989,5 +990,48 @@ describe('breakdowns', () => {
       /['’](s|t|re|ll|ve|m)\b/.test(technique.matExample),
     )
     expect(contractions.length).toBe(withBreakdown.length)
+  })
+})
+
+// ---------------------------------------------------------------- Shadowing
+
+describe('shadow matching', () => {
+  it('counts an exact copy as complete', () => {
+    const line = 'You are not missing talent. You are missing five minutes.'
+    const match = shadowMatch(line, line)
+    expect(match.ratio).toBe(1)
+    expect(match.missed).toEqual([])
+  })
+
+  it('ignores wording a copy would not be judged on', () => {
+    // Articles and pronouns say nothing about whether the line was copied, so
+    // dropping one should not read as a miss.
+    const match = shadowMatch('missing talent, missing five minutes', 'You are missing talent. You are missing five minutes.')
+    expect(match.ratio).toBe(1)
+  })
+
+  it('reports what was actually left out', () => {
+    const match = shadowMatch('You are missing talent.', 'You are missing talent. You are missing five minutes.')
+    expect(match.missed).toContain('five')
+    expect(match.missed).toContain('minutes')
+    expect(match.ratio).toBeLessThan(1)
+  })
+
+  it('does not let one repeated word cover several misses', () => {
+    const match = shadowMatch('minutes minutes minutes', 'five minutes and ten minutes')
+    // Three "minutes" said, two wanted: the second is covered, "five"/"ten" are not.
+    expect(match.missed).toContain('five')
+    expect(match.missed).toContain('ten')
+  })
+
+  it('calls a near copy close and an unrelated answer off', () => {
+    const target = 'Everybody has form in the first minute.'
+    expect(shadowVerdict(shadowMatch('Everybody has form in the first minute', target))).toBe('close')
+    expect(shadowVerdict(shadowMatch('I have no idea what to say', target))).toBe('off')
+  })
+
+  it('survives an empty attempt without dividing by zero', () => {
+    expect(shadowMatch('', 'anything at all here').ratio).toBe(0)
+    expect(shadowMatch('something', 'the a of it').ratio).toBe(1)
   })
 })

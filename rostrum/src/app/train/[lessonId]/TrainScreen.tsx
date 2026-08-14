@@ -13,6 +13,7 @@ import { useStore } from '@/lib/store'
 import { Coaching, Working } from '@/components/Coaching'
 import { Perform, type Performance } from '@/components/Perform'
 import { Blueprint } from '@/components/Blueprint'
+import { ShadowDrill } from '@/components/ShadowDrill'
 import { TakenApart } from '@/components/TakenApart'
 import { Examples } from '@/components/Examples'
 import { Card, Chip, Eyebrow, Portrait } from '@/components/ui'
@@ -28,7 +29,7 @@ import type { CoachEvaluation } from '@/lib/types'
  * into performance produces a bad attempt and teaches nothing.
  */
 
-type Stage = 'hook' | 'lesson' | 'decode' | 'build' | 'perform' | 'working' | 'coaching'
+type Stage = 'hook' | 'lesson' | 'shadow' | 'decode' | 'build' | 'perform' | 'working' | 'coaching'
 
 export default function TrainScreen() {
   const params = useParams<{ lessonId: string }>()
@@ -221,8 +222,34 @@ export default function TrainScreen() {
             </div>
           </details>
 
-          <button type="button" className="btn btn-block" onClick={() => setStage('decode')}>
-            Spot it in another one
+          <button
+            type="button"
+            className="btn btn-block"
+            onClick={() => setStage(technique.breakdown ? 'shadow' : 'decode')}
+          >
+            {technique.breakdown ? 'Say it back' : 'Spot it in another one'}
+          </button>
+        </div>
+      ) : null}
+
+      {stage === 'shadow' && technique.breakdown ? (
+        <div className="stack-lg enter">
+          <div className="stack-sm">
+            <h1 className="title">Say it back</h1>
+            <p className="caption">
+              Copy it before you invent one. The words stay on screen — this is imitation, not a
+              memory test.
+            </p>
+          </div>
+
+          <ShadowDrill
+            breakdown={technique.breakdown}
+            {...(technique.clips?.[0] ? { clip: technique.clips[0] } : {})}
+            onFinish={() => setStage('build')}
+          />
+
+          <button type="button" className="btn-quiet" onClick={() => setStage('decode')}>
+            Spot it in another one instead
           </button>
         </div>
       ) : null}
