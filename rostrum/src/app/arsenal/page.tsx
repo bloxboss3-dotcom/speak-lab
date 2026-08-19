@@ -64,6 +64,9 @@ export default function ArsenalPage() {
           <Link href="/loadout" className="pick" style={{ textDecoration: 'none' }}>
             Loadout {equipped > 0 ? `· ${equipped}/5` : ''}
           </Link>
+          <Link href="/masters" className="pick" style={{ textDecoration: 'none' }}>
+            Masters
+          </Link>
         </div>
       </header>
 

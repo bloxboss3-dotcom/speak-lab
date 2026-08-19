@@ -53,6 +53,7 @@ function load(): Progress {
       gymSessions: parsed.gymSessions ?? [],
       unlockedAchievementIds: parsed.unlockedAchievementIds ?? [],
       loadout: parsed.loadout ?? {},
+      rungsCleared: parsed.rungsCleared ?? {},
     }
   } catch {
     return emptyProgress()

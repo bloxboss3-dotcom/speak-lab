@@ -29,9 +29,13 @@ import {
   knownTechniqueIds,
   recordAttempt,
   completeLesson,
+  clearRung,
+  rungsCleared,
+  totalRungsCleared,
 } from '@/lib/progress'
 import { containsPhrase } from '@/lib/text'
 import { shadowMatch, shadowVerdict } from '@/lib/shadow'
+import { MOVES } from '@/content/moves'
 import { buildTree } from '@/lib/tree'
 import { equip, equippedCount, equippedTechniqueIds, slotCandidates, slotFor } from '@/lib/loadout'
 import type { CoachEvaluation, TechniqueMastery } from '@/lib/types'
@@ -1033,5 +1037,76 @@ describe('shadow matching', () => {
   it('survives an empty attempt without dividing by zero', () => {
     expect(shadowMatch('', 'anything at all here').ratio).toBe(0)
     expect(shadowMatch('something', 'the a of it').ratio).toBe(1)
+  })
+})
+
+// ---------------------------------------------------------------- The six moves
+
+describe('the curriculum', () => {
+  it('accounts for every technique exactly once', () => {
+    // The six are meant to be what the thirty-six are made of. If a technique
+    // belongs to no move, the spine has a hole; if it belongs to two, the moves
+    // are not actually distinct.
+    const counts = new Map<string, number>()
+    for (const move of MOVES) {
+      for (const id of move.techniqueIds) {
+        counts.set(id, (counts.get(id) ?? 0) + 1)
+      }
+    }
+    for (const technique of TECHNIQUES) {
+      expect(counts.get(technique.id), `${technique.id} belongs to no move`).toBe(1)
+    }
+    expect(counts.size).toBe(TECHNIQUES.length)
+  })
+
+  it('names moves in words that are not invented for this app', () => {
+    // The old curriculum made the learner memorise private vocabulary on top of
+    // the skill. A move's name must be one plain word.
+    for (const move of MOVES) {
+      expect(move.name.split(/\s+/).length, move.id).toBe(1)
+      expect(move.name, move.id).toMatch(/^[A-Z][a-z]+$/)
+    }
+  })
+
+  it('gives every move a ladder that actually gets harder', () => {
+    for (const move of MOVES) {
+      expect(move.rungs.length, move.id).toBeGreaterThanOrEqual(4)
+      for (const rung of move.rungs) {
+        expect(rung.move.length, move.id).toBeGreaterThan(15)
+        expect(rung.harder.length, move.id).toBeGreaterThan(40)
+        expect(rung.example.length, move.id).toBeGreaterThan(15)
+        expect(rung.drill.length, move.id).toBeGreaterThan(30)
+      }
+    }
+  })
+
+  it('advances a ladder one rung at a time and never backwards', () => {
+    let p = emptyProgress()
+    expect(rungsCleared(p, 'contrast')).toBe(0)
+
+    p = clearRung(p, 'contrast', 0)
+    expect(rungsCleared(p, 'contrast')).toBe(1)
+
+    // Clearing a rung you already passed does nothing, so the ladder cannot be
+    // inflated by repeating easy reps.
+    p = clearRung(p, 'contrast', 0)
+    expect(rungsCleared(p, 'contrast')).toBe(1)
+
+    // Nor can a rung be skipped.
+    p = clearRung(p, 'contrast', 3)
+    expect(rungsCleared(p, 'contrast')).toBe(1)
+
+    p = clearRung(p, 'contrast', 1)
+    expect(rungsCleared(p, 'contrast')).toBe(2)
+    expect(totalRungsCleared(p)).toBe(2)
+  })
+
+  it('speaks the examples rather than writing them', () => {
+    const spoken = MOVES.flatMap((move) => move.rungs).filter((rung) =>
+      /['’](s|t|re|ll|ve|m)\b/.test(rung.example),
+    )
+    // Most of the ladder should sound like someone talking; a few short lines
+    // legitimately have no contraction in them.
+    expect(spoken.length / MOVES.flatMap((m) => m.rungs).length).toBeGreaterThan(0.6)
   })
 })

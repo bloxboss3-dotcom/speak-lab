@@ -124,6 +124,51 @@ export interface SpeechClip {
 }
 
 /**
+ * One rung of a move's ladder.
+ *
+ * A rung is never a new thing to learn. It is the same move done under a
+ * harder condition, which is why the ladder can be climbed for weeks without
+ * adding vocabulary — the only thing that changes is what you have to control.
+ */
+export interface Rung {
+  /** What you can do here, as an instruction. */
+  move: string
+  /** Why this is harder than the rung below it. */
+  harder: string
+  /** One line showing it. Written for this app, in a voice a person uses. */
+  example: string
+  /** What to actually go and do. */
+  drill: string
+}
+
+/**
+ * A move.
+ *
+ * The curriculum used to be thirty-six named techniques in arbitrary order —
+ * a list, not a course. Nothing built on anything, and every entry carried a
+ * label invented for this app, so the learner memorised private vocabulary on
+ * top of the skill.
+ *
+ * These six are what those thirty-six are made of. Each is a word already in
+ * use, pointing at something you can watch someone do, and each is deep enough
+ * to work on for months.
+ */
+export interface Move {
+  id: string
+  /** A word the learner already owns. No invented jargon. */
+  name: string
+  /** What it is, in one line. */
+  what: string
+  /** Why it works on a listener — the mechanism. */
+  why: string
+  /** The tell that you are doing it at all. */
+  spot: string
+  rungs: Rung[]
+  /** Techniques from the Arsenal that are variations of this move. */
+  techniqueIds: string[]
+}
+
+/**
  * One line of a worked example, with what that line is doing.
  *
  * `doing` is mechanical on purpose — "same opening, word for word", not "this
@@ -554,6 +599,12 @@ export interface Progress {
   unlockedAchievementIds: string[]
   /** Equipped technique ids by slot, for intermediate challenges. */
   loadout: Partial<Record<LoadoutSlot, string>>
+  /**
+   * How far up each move's ladder the learner has climbed, by move id. The
+   * value is the count of rungs cleared, so 0 means started and not yet done a
+   * single one. Absent means never opened.
+   */
+  rungsCleared: Partial<Record<string, number>>
   /** ISO date of the last day a lesson was completed, for the daily card. */
   lastLessonOn?: string
 }

@@ -53,6 +53,7 @@ export function emptyProgress(): Progress {
     gymSessions: [],
     unlockedAchievementIds: [],
     loadout: {},
+    rungsCleared: {},
   }
 }
 
@@ -502,3 +503,30 @@ export function isRetrievalCandidate(mastery: TechniqueMastery, now: Date): bool
 }
 
 export { DELAYED_RETRIEVAL_DAYS, SUCCESS_THRESHOLD }
+
+// ---------------------------------------------------------------- Moves
+
+/** Rungs cleared on a move. 0 when it has been opened but nothing finished. */
+export function rungsCleared(progress: Progress, moveId: string): number {
+  return progress.rungsCleared[moveId] ?? 0
+}
+
+/**
+ * Marks one more rung of a move as cleared.
+ *
+ * Only ever advances by one and never goes backwards, so re-doing a rung you
+ * have already cleared is free practice rather than a way to inflate the ladder.
+ */
+export function clearRung(progress: Progress, moveId: string, rungIndex: number): Progress {
+  const current = progress.rungsCleared[moveId] ?? 0
+  if (rungIndex !== current) return progress
+  return {
+    ...progress,
+    rungsCleared: { ...progress.rungsCleared, [moveId]: current + 1 },
+  }
+}
+
+/** Total rungs cleared across every move. */
+export function totalRungsCleared(progress: Progress): number {
+  return Object.values(progress.rungsCleared).reduce<number>((sum, n) => sum + (n ?? 0), 0)
+}
