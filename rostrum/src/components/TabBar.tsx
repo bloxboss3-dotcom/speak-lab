@@ -11,7 +11,7 @@ import { usePathname } from 'next/navigation'
 
 const TABS = [
   { href: '/', label: 'Today', icon: TodayIcon },
-  { href: '/masters', label: 'Masters', icon: MastersIcon },
+  { href: '/moves', label: 'The Six', icon: MastersIcon },
   { href: '/arsenal', label: 'Arsenal', icon: ArsenalIcon },
   { href: '/gym', label: 'Gym', icon: GymIcon },
   { href: '/profile', label: 'Profile', icon: ProfileIcon },

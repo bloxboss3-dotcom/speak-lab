@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useMemo } from 'react'
 import { FIELD_TESTS } from '@/content/fieldTests'
+import { MOVES } from '@/content/moves'
 import { PRINCIPLES } from '@/content/motivationLab'
 import { master } from '@/content/masters'
 import { scenario as findScenario } from '@/content/scenarios'
@@ -14,6 +15,7 @@ import {
   dueReviewTechniqueIds,
   knownTechniqueIds,
   nextLesson,
+  rungsCleared,
   trainedToday,
 } from '@/lib/progress'
 import { levelFromXp, levelProgress, rankFor, xpForLevel, xpIntoLevel } from '@/lib/progression'
@@ -39,6 +41,17 @@ export default function TodayPage() {
 
   const now = useMemo(() => new Date(), [])
   const lesson = nextLesson(progress)
+
+  // The move with the fewest rungs cleared, so the ladder is climbed evenly
+  // rather than one move being taken to the top while the rest sit untouched.
+  const nextRung = (() => {
+    const ranked = [...MOVES]
+      .map((entry) => ({ move: entry, cleared: rungsCleared(progress, entry.id) }))
+      .filter((entry) => entry.cleared < entry.move.rungs.length)
+      .sort((a, b) => a.cleared - b.cleared)
+    const pick = ranked[0] ?? { move: MOVES[0]!, cleared: 0 }
+    return { ...pick, rung: pick.move.rungs[Math.min(pick.cleared, pick.move.rungs.length - 1)]! }
+  })()
   const technique = findTechnique(lesson?.techniqueId)
   const owner = master(technique?.masterId)
   const known = knownTechniqueIds(progress)
@@ -60,6 +73,7 @@ export default function TodayPage() {
 
   return (
     <main className="screen stack-lg">
+
       <header className="stack-sm">
         <div className="row-between">
           <span className="row" style={{ gap: 7 }}>
@@ -86,6 +100,25 @@ export default function TodayPage() {
           <Meter value={levelProgress(progress.xp)} label="Level progress" />
         </div>
       </header>
+
+      {/* The curriculum is the six moves now, so the next rung is the first
+          thing on this screen. The lesson card below is the older path and
+          still works. */}
+      <Link href={`/moves/${nextRung.move.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Card variant="amber">
+          <div className="stack-sm">
+            <div className="row-between">
+              <Eyebrow amber>Next rung</Eyebrow>
+              <span className="caption faint">
+                {nextRung.cleared} of {nextRung.move.rungs.length}
+              </span>
+            </div>
+            <p className="title">{nextRung.move.name}</p>
+            <p className="body">{nextRung.rung.move}</p>
+            <p className="caption faint">{nextRung.rung.drill}</p>
+          </div>
+        </Card>
+      </Link>
 
       {lesson && technique ? (
         <Card variant="amber">
